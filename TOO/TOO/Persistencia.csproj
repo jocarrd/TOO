@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteBD.cs" />
+    <Compile Include="BD.cs" />
     <Compile Include="VehiculoBD.cs" />
     <Compile Include="PresupuestoBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
