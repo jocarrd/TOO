@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class Cliente
+    public enum Tipo_cliente
     {
-        private String dni;
-        private String nombre;
-        private long tfno;
-        private Tipo_cliente categoria;
+        Baja,Media,Alta
     }
 }

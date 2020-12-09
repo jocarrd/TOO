@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
+
 
 namespace TOO
 {
@@ -11,7 +12,7 @@ namespace TOO
     {
         protected override string GetKeyForItem(double item)
         {
-            throw new NotImplementedException();
+            return Cliente.DNI;
         }
     }
 }

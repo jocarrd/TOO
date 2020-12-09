@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public class Class1
+    public class Vehiculo
     {
+        private String marcaBastidor;
+        private String marca;
+        private String modelo;
+        private int potencia;
+        private double pvp;
+
+        public Vehiculo(string marcaBastidor, string marca, string modelo, int potencia, double pvp)
+        {
+            this.marcaBastidor = marcaBastidor;
+            this.marca = marca;
+            this.modelo = modelo;
+            this.potencia = potencia;
+            this.pvp = pvp;
+        }
+
+        public string MarcaBastidor { get => marcaBastidor; set => marcaBastidor = value; }
+        public string Marca { get => marca; set => marca = value; }
+        public string Modelo { get => modelo; set => modelo = value; }
+        public int Potencia { get => potencia; set => potencia = value; }
+        public double Pvp { get => pvp; set => pvp = value; }
     }
 }
