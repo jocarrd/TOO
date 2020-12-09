@@ -14,9 +14,12 @@ namespace Negocio
         public SegundaMano(string matricula, DateTime fecha_matriculacion,string marcaBastidor, string marca, string modelo, int potencia, double pvp) : base(marcaBastidor, marca, modelo, potencia, pvp)
         {
             
-            Matricula = matricula;
-            Fecha_matriculacion = fecha_matriculacion;
+            Matricula1 = matricula;
+            Fecha_matriculacion1 = fecha_matriculacion;
 
         }
+
+        public string Matricula1 { get => Matricula; set => Matricula = value; }
+        public DateTime Fecha_matriculacion1 { get => Fecha_matriculacion; set => Fecha_matriculacion = value; }
     }
 }
