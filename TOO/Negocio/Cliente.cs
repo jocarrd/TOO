@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TOO
+namespace Negocio
 {
-    public class Vehiculo
+    public class Class1
     {
-
     }
 }
