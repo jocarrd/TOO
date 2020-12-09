@@ -5,14 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace TOO
 {
-    public class Cliente : KeyedCollection<string, double>
+    public class PresupuestoBD : KeyedCollection<string, Negocio.Presupuesto>
     {
-        protected override string GetKeyForItem(double item)
+        protected override string GetKeyForItem(Negocio.Presupuesto item)
         {
-            return Cliente.DNI;
+            return item.Id_presupuesto;
         }
+
     }
 }

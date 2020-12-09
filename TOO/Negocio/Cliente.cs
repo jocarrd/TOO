@@ -20,7 +20,6 @@ namespace Negocio
             this.Tfno = tfno;
             this.Categoria = categoria;
         }
-
         public string Dni { get => dni; set => dni = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public long Tfno { get => tfno; set => tfno = value; }

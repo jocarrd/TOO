@@ -42,10 +42,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente.cs" />
-    <Compile Include="Vehiculo.cs" />
-    <Compile Include="Presupuesto.cs" />
+    <Compile Include="ClienteBD.cs" />
+    <Compile Include="VehiculoBD.cs" />
+    <Compile Include="PresupuestoBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{d5c5dafd-6190-4edf-b774-cbb524cb4d24}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
