@@ -41,6 +41,7 @@ namespace TOO
             BD.presupuestos.Add(p);
         }
 
+
         public static VehiculoBD Vehiculos
         {
             get
@@ -53,6 +54,13 @@ namespace TOO
         public static void INSERTVehiculo(Negocio.Vehiculo v)
         {
             BD.Vehiculos.Add(v);
+        }
+
+
+
+        public static Negocio.Cliente SELECTCliente()
+        {
+           
         }
 
     }
