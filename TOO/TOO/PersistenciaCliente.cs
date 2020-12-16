@@ -8,25 +8,37 @@ using System.Threading.Tasks;
 
 namespace TOO
 {
-    public class Persistencia
+    public class PersistenciaCliente
     {
+
+       
         
         public static void Añadir(Negocio.Cliente c)
         {
             BD.INSERTCliente(c);
         }
        
-        public static Negocio.Cliente Buscar(Negocio.Cliente)
+        public static Negocio.Cliente Buscar(Negocio.Cliente c)
         {
-            if (BD.SELECTCliente()!=null)
+            if (BD.SELECTCliente(c)!=null)
             {
-                return BD.SELECTCliente();
+                return BD.SELECTCliente(c);
             }
             else
             {
                 return null;
             }
                 
+        }
+
+        public static bool Eliminar(Negocio.Cliente c)
+        {
+            return BD.DELETECliente(c);
+        }
+
+        public static bool ModificarCliente(Negocio.Cliente c)
+        {
+            return BD.UPDATECliente(c);
         }
 
 
