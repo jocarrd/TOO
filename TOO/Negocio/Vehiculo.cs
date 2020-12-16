@@ -12,7 +12,7 @@ namespace Negocio
         private String marca;
         private String modelo;
         private int potencia;
-        private double pvp;
+        private double precio;
 
         public Vehiculo(string marcaBastidor, string marca, string modelo, int potencia, double pvp)
         {
@@ -20,13 +20,13 @@ namespace Negocio
             this.marca = marca;
             this.modelo = modelo;
             this.potencia = potencia;
-            this.pvp = pvp;
+            this.precio = pvp;
         }
 
         public string MarcaBastidor { get => marcaBastidor; set => marcaBastidor = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Modelo { get => modelo; set => modelo = value; }
         public int Potencia { get => potencia; set => potencia = value; }
-        public double Pvp { get => pvp; set => pvp = value; }
+        public double Precio { get => precio; set => precio = value; }
     }
 }

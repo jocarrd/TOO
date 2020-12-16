@@ -10,13 +10,15 @@ namespace Negocio
     {
         private string Matricula;
         private DateTime Fecha_matriculacion;
+        private const double IVA = 21/100;
 
-        public SegundaMano(string matricula, DateTime fecha_matriculacion,string marcaBastidor, string marca, string modelo, int potencia, double pvp) : base(marcaBastidor, marca, modelo, potencia, pvp)
+        public SegundaMano(string matricula, DateTime fecha_matriculacion,string marcaBastidor, string marca, string modelo, int potencia, double precio) : base(marcaBastidor, marca, modelo, potencia, precio)
         {
             
             Matricula1 = matricula;
             Fecha_matriculacion1 = fecha_matriculacion;
-
+            precio = precio * IVA;
+            base.Precio = precio;
         }
 
         public string Matricula1 { get => Matricula; set => Matricula = value; }
