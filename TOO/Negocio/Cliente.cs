@@ -12,6 +12,7 @@ namespace Negocio
         private String nombre;
         private long tfno;
         private Tipo_cliente categoria;
+        private Presupuesto presupuesto;
 
         public Cliente(string dni, string nombre, long tfno, Tipo_cliente categoria)
         {
@@ -24,5 +25,9 @@ namespace Negocio
         public string Nombre { get => nombre; set => nombre = value; }
         public long Tfno { get => tfno; set => tfno = value; }
         public Tipo_cliente Categoria { get => categoria; set => categoria = value; }
+
+        public void solicitarPresupuesto() { 
+            
+        }
     }
 }
