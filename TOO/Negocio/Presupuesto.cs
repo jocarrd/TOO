@@ -21,6 +21,7 @@ namespace Negocio
             this.Estado = estado;
             this.Cliente = c;
             this.Coches = cochs;
+            
         }
 
         public string Id_presupuesto { get => id_presupuesto; set => id_presupuesto = value; }
