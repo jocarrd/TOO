@@ -13,7 +13,7 @@ namespace TOO
 
        
         
-        public static void Añadir(Negocio.Cliente c)
+        public static void Añadir(ClienteDato c)
         {
             
             BD.INSERTCliente(c);

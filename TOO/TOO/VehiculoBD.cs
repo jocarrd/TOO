@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace TOO
 {
-    public class VehiculoBD : KeyedCollection<string, Negocio.Vehiculo>
+    public class VehiculoBD : KeyedCollection<string, VehiculoDato>
     {
-        protected override string GetKeyForItem(Negocio.Vehiculo item)
+        protected override string GetKeyForItem(VehiculoDato item)
         {
-            return item.MarcaBastidor;
+            return item.marcaBastidor;
         }
 
     }

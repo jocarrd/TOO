@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace TOO
 {
-    class PresupuestoDato
+    public  class PresupuestoDato
     {
-        private String id_presupuesto;
-        private String fecha_Realizacion;
-        private String estado;
+        public String id_presupuesto;
+        public  String fecha_Realizacion;
+        public String estado;
+
+        public PresupuestoDato(String id_presupuesto , String fechaRealizacion , String estado)
+        {
+            this.id_presupuesto = id_presupuesto;
+            this.fecha_Realizacion = fechaRealizacion;
+            this.estado = estado;
+
+        }
 
     }
 }

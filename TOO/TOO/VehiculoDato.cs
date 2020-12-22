@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace TOO
 {
-    class VehiculoDato
+    public class VehiculoDato
     {
-        private String marcaBastidor;
-        private String marca;
-        private String modelo;
-        private int potencia;
-        private double precio;
+        public String marcaBastidor;
+        public String marca;
+        public  String modelo;
+        public int potencia;
+        public double precio;
 
         public VehiculoDato(String marcaBastidor , String marca , String modelo , int potencia , double precio)
         {

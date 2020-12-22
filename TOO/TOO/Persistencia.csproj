@@ -48,7 +48,9 @@
     <Compile Include="PersistenciaCliente.cs" />
     <Compile Include="PersistenciaPresupuesto.cs" />
     <Compile Include="PersistenciaVehiculo.cs" />
+    <Compile Include="PrepuestoVehiculoBD.cs" />
     <Compile Include="PresupuestoDato.cs" />
+    <Compile Include="PresupuestoVehiculoDato.cs" />
     <Compile Include="VehiculoBD.cs" />
     <Compile Include="PresupuestoBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

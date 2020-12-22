@@ -7,15 +7,13 @@ using Negocio;
 
 namespace TOO
 {
-    class ClienteDato
+   public class ClienteDato
     {
-        private String dni;
-        private String nombre;
-        private long tfno;
-        private String categoria;
+       public  String dni;
+       public  String nombre;
+       public long tfno;
+       public String categoria;
         
-
-
 
         public ClienteDato(String dni , String nombre ,long tfno , Tipo_cliente categoria , Presupuesto presupuesto)
         {

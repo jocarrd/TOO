@@ -5,12 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
 namespace TOO
 {
-    public class ClienteBD : KeyedCollection<string, ClienteDato>
+    class PrepuestoVehiculoBD : KeyedCollection<string, PresupuestoVehiculoDato>
     {
-        protected override string GetKeyForItem(ClienteDato item)
+        protected override string GetKeyForItem(PresupuestoVehiculoDato item)
         {
             return item.dni;
         }
