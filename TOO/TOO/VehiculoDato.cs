@@ -11,16 +11,19 @@ namespace TOO
         public String marcaBastidor;
         public String marca;
         public  String modelo;
-        public int potencia;
         public double precio;
+        public int potencia;
+        public String categoria;
+       
 
-        public VehiculoDato(String marcaBastidor , String marca , String modelo , int potencia , double precio)
+        public VehiculoDato(String marcaBastidor , String marca , String modelo , int potencia , double precio,String categoria)
         {
             this.marcaBastidor = marcaBastidor;
             this.marca = marca;
             this.modelo = modelo;
             this.potencia = potencia;
             this.precio = precio;
+            this.categoria = categoria;
 
         }
     }

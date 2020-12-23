@@ -8,6 +8,12 @@ namespace TOO
 {
     public class PresupuestoVehiculoDato
     {
-       public String id;
+       public Clave clavePresupuestoVehiculo;
+            
+            public PresupuestoVehiculoDato(Clave c)
+        {
+            this.clavePresupuestoVehiculo = c;
+        }
+        
     }
 }

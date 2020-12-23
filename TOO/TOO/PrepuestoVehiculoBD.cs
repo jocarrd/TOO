@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace TOO
 {
-    class PrepuestoVehiculoBD : KeyedCollection<string, PresupuestoVehiculoDato>
+    class PrepuestoVehiculoBD : KeyedCollection<Clave, PresupuestoVehiculoDato>
     {
-        protected override string GetKeyForItem(PresupuestoVehiculoDato item)
+        protected override Clave GetKeyForItem(PresupuestoVehiculoDato item)
         {
-            return item.dni;
+            return item.clavePresupuestoVehiculo;
+
         }
 
     }

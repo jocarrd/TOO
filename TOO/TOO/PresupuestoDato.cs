@@ -11,12 +11,14 @@ namespace TOO
         public String id_presupuesto;
         public  String fecha_Realizacion;
         public String estado;
+        public String id_cliente;
 
-        public PresupuestoDato(String id_presupuesto , String fechaRealizacion , String estado)
+        public PresupuestoDato(String id_presupuesto , String fechaRealizacion , String estado,String id_cliente)
         {
             this.id_presupuesto = id_presupuesto;
             this.fecha_Realizacion = fechaRealizacion;
             this.estado = estado;
+            this.id_cliente = id_cliente;
 
         }
 

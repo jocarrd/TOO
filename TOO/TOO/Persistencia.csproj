@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clave.cs" />
     <Compile Include="ClienteBD.cs" />
     <Compile Include="BD.cs" />
     <Compile Include="ClienteDato.cs" />
+    <Compile Include="ExtrasDato.cs" />
     <Compile Include="PersistenciaCliente.cs" />
     <Compile Include="PersistenciaPresupuesto.cs" />
     <Compile Include="PersistenciaVehiculo.cs" />
@@ -55,11 +57,13 @@
     <Compile Include="PresupuestoBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VehiculoDato.cs" />
+    <Compile Include="VehiculoNuevoExtraDato.cs" />
+    <Compile Include="VehiculoSegundaManoDato.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Negocio\Negocio.csproj">
+    <ProjectReference Include="..\Negocio\ModeloDominio.csproj">
       <Project>{d5c5dafd-6190-4edf-b774-cbb524cb4d24}</Project>
-      <Name>Negocio</Name>
+      <Name>ModeloDominio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
