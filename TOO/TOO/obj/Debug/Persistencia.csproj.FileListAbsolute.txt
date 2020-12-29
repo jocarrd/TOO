@@ -1,4 +1,0 @@
-C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\TOO\obj\Debug\Persistencia.csprojAssemblyReference.cache
-C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\TOO\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
-C:\Users\jocarrd\Documents\GitHub\TOO\TOO\TOO\obj\Debug\Persistencia.csprojAssemblyReference.cache
-C:\Users\jocarrd\Documents\GitHub\TOO\TOO\TOO\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache

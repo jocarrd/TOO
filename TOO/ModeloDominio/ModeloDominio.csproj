@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6ACC39D-8060-4F1E-ACBA-5970C0054CFC}</ProjectGuid>
+    <ProjectGuid>{B238B507-89B9-4A15-8A28-916F0CD694CE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogicaNegocio</RootNamespace>
-    <AssemblyName>LogicaNegocio</AssemblyName>
+    <RootNamespace>ModeloDominio</RootNamespace>
+    <AssemblyName>ModeloDominio</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,18 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NegocioAdmin.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="Nuevo.cs" />
+    <Compile Include="Presupuesto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ModeloDominio\ModeloDominio.csproj">
-      <Project>{b238b507-89b9-4a15-8a28-916f0cd694ce}</Project>
-      <Name>ModeloDominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
-      <Project>{07a65b12-2eb4-4105-bf1e-e02e254634ba}</Project>
-      <Name>Persistencia</Name>
-    </ProjectReference>
+    <Compile Include="SegundaMano.cs" />
+    <Compile Include="Tipo_cliente.cs" />
+    <Compile Include="Vehiculo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C6ACC39D-8060-4F1E-ACBA-5970C0054CFC}</ProjectGuid>
+    <ProjectGuid>{07A65B12-2EB4-4105-BF1E-E02E254634BA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LogicaNegocio</RootNamespace>
-    <AssemblyName>LogicaNegocio</AssemblyName>
+    <RootNamespace>Persistencia</RootNamespace>
+    <AssemblyName>Persistencia</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,17 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NegocioAdmin.cs" />
+    <Compile Include="BD.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Clave.cs" />
+    <Compile Include="ClienteBD.cs" />
+    <Compile Include="ClienteDato.cs" />
+    <Compile Include="ExtrasDato.cs" />
+    <Compile Include="PersistenciaCliente.cs" />
+    <Compile Include="PersistenciaPresupuesto.cs" />
+    <Compile Include="PersistenciaVehiculo.cs" />
+    <Compile Include="PrepuestoVehiculoBD.cs" />
+    <Compile Include="PresupuestoBD.cs" />
+    <Compile Include="PresupuestoDato.cs" />
+    <Compile Include="PresupuestoVehiculoDato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VehiculoBD.cs" />
+    <Compile Include="VehiculoDato.cs" />
+    <Compile Include="VehiculoNuevoExtraDato.cs" />
+    <Compile Include="VehiculoSegundaManoDato.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModeloDominio\ModeloDominio.csproj">
       <Project>{b238b507-89b9-4a15-8a28-916f0cd694ce}</Project>
       <Name>ModeloDominio</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Persistencia\Persistencia.csproj">
-      <Project>{07a65b12-2eb4-4105-bf1e-e02e254634ba}</Project>
-      <Name>Persistencia</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
