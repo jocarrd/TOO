@@ -7,3 +7,5 @@ C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.cs
 C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.csproj.CoreCompileInputs.cache
 C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.dll
 C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\bin\Debug\ModeloDominio.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\bin\Debug\ModeloDominio.pdb

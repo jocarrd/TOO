@@ -12,13 +12,12 @@ namespace ModeloDominio
         private DateTime fecha_matriculacion;
         private const double IVA = 21/100;
 
-        public SegundaMano(string matricula, DateTime fecha_matriculacion,string marcaBastidor, string marca, string modelo, int potencia, double precio) : base(marcaBastidor, marca, modelo, potencia, precio)
+        public SegundaMano(string marcaBastidor, string marca, string modelo, int potencia, double precio, string matricula, DateTime fecha_matriculacion) : base(marcaBastidor, marca, modelo, potencia, precio)
         {
 
             this.matricula = matricula;
-            this.fecha_matriculacion1 = fecha_matriculacion;
-            precio = precio * IVA;
-            base.Precio = precio;
+            this.fecha_matriculacion = fecha_matriculacion;
+            base.setPrecio(precio*IVA);
         }
 
         public void setMatricula(String matricula)

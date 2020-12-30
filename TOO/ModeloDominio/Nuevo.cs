@@ -33,7 +33,7 @@ namespace ModeloDominio
         }
 
         private void actualizarPrecio() {
-            precio = (Precio + calcularCosteExtras())*IVA;
+           base.setPrecio((base.getPrecio() + calcularCosteExtras())*IVA);
         }
 
         private bool añadirExtra(string nom, double precio) {
