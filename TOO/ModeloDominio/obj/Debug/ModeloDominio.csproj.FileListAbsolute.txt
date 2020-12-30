@@ -3,3 +3,7 @@ C:\Users\juanp\source\repos\TOO\ModeloDominio\bin\Debug\ModeloDominio.pdb
 C:\Users\juanp\source\repos\TOO\ModeloDominio\obj\Debug\ModeloDominio.csproj.CoreCompileInputs.cache
 C:\Users\juanp\source\repos\TOO\ModeloDominio\obj\Debug\ModeloDominio.dll
 C:\Users\juanp\source\repos\TOO\ModeloDominio\obj\Debug\ModeloDominio.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.csprojAssemblyReference.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.csproj.CoreCompileInputs.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.pdb

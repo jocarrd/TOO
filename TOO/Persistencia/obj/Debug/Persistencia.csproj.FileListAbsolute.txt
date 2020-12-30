@@ -1,2 +1,4 @@
 C:\Users\juanp\source\repos\TOO\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
 C:\Users\juanp\source\repos\TOO\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache

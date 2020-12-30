@@ -1,0 +1,2 @@
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csprojAssemblyReference.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache

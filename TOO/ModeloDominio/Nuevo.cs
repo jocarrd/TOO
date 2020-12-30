@@ -33,7 +33,7 @@ namespace ModeloDominio
         }
 
         private void actualizarPrecio() {
-            Precio = (Precio + calcularCosteExtras())*IVA;
+            precio = (Precio + calcularCosteExtras())*IVA;
         }
 
         private bool añadirExtra(string nom, double precio) {
@@ -59,6 +59,11 @@ namespace ModeloDominio
             }
             actualizarPrecio();
             return funado;
+        }
+
+        public Dictionary<string, double> getExtras()
+        {
+            return extras;
         }
     }
 }

@@ -8,20 +8,37 @@ namespace ModeloDominio
 {
     class SegundaMano : Vehiculo
     {
-        private string Matricula;
-        private DateTime Fecha_matriculacion;
+        private String matricula;
+        private DateTime fecha_matriculacion;
         private const double IVA = 21/100;
 
         public SegundaMano(string matricula, DateTime fecha_matriculacion,string marcaBastidor, string marca, string modelo, int potencia, double precio) : base(marcaBastidor, marca, modelo, potencia, precio)
         {
-            
-            Matricula1 = matricula;
-            Fecha_matriculacion1 = fecha_matriculacion;
+
+            this.matricula = matricula;
+            this.fecha_matriculacion1 = fecha_matriculacion;
             precio = precio * IVA;
             base.Precio = precio;
         }
 
-        public string Matricula1 { get => Matricula; set => Matricula = value; }
-        public DateTime Fecha_matriculacion1 { get => Fecha_matriculacion; set => Fecha_matriculacion = value; }
+        public void setMatricula(String matricula)
+        {
+            this.matricula = matricula;
+        }
+
+        public String getMatricula()
+        {
+            return this.matricula;
+        }
+
+        public void setFecha_matriculacion(DateTime fecha_matriculacion)
+        {
+            this.fecha_matriculacion = fecha_matriculacion;
+        }
+
+        public DateTime getFecha_matriculacion()
+        {
+            return this.fecha_matriculacion;
+        }
     }
 }
