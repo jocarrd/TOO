@@ -12,7 +12,6 @@ namespace Persistencia
         protected override Clave GetKeyForItem(PresupuestoVehiculoDato item)
         {
             return item.clavePresupuestoVehiculo;
-
         }
 
     }

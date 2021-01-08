@@ -14,6 +14,8 @@ namespace Persistencia
         private static PresupuestoBD presupuestos;
         private static VehiculoBD vehiculos;
         private BD() { }
+
+        //-------------------------------------------------------------------------CLIENTE-------------------------------------------------------------------
         public static ClienteBD Clientes
         {
             get
@@ -28,40 +30,6 @@ namespace Persistencia
             BD.clientes.Add(c);
             return true;
         }
-
-        public static PresupuestoBD Presupuestos
-        {
-            get
-            {
-                if (presupuestos == null)
-                    presupuestos = new PresupuestoBD();
-                return presupuestos;
-            }
-        }
-        public static bool INSERTPresupuesto(ModeloDominio.Presupuesto p)
-        {
-            BD.presupuestos.Add(p);
-            return true;
-        }
-
-
-        public static VehiculoBD Vehiculos
-        {
-            get
-            {
-                if (vehiculos == null)
-                    vehiculos = new VehiculoBD();
-                return vehiculos;
-            }
-        }
-        public static bool INSERTVehiculo(ModeloDominio.Vehiculo v)
-        {
-            BD.Vehiculos.Add(v);
-            return true;
-        }
-
-
-
         public static ModeloDominio.Cliente SELECTCliente(ModeloDominio.Cliente c)
         {
             IEnumerable<ModeloDominio.Cliente> cliente = BD.clientes.Select(clientes => c);
@@ -75,60 +43,10 @@ namespace Persistencia
                 return cliente.First();
             }
         }
-
-
-        public static ModeloDominio.Presupuesto SELECTPresupuesto(ModeloDominio.Presupuesto p)
-        {
-
-            IEnumerable<ModeloDominio.Presupuesto> presupuesto = BD.presupuestos.Select(presupuestos => p);
-
-            if (presupuesto == null)
-            {
-                return null;
-            }
-            else
-            {
-                return presupuesto.First();
-            }
-
-
-
-        }
-
-        public static ModeloDominio.Vehiculo SELECTVehiculo(ModeloDominio.Vehiculo v)
-        {
-            IEnumerable<ModeloDominio.Vehiculo> vehiculo = BD.vehiculos.Select(vehiculos => v);
-            if (vehiculo == null)
-            {
-                return null;
-            }
-            else
-            {
-                return vehiculo.First();
-            }
-        }
-
-
-
         public static bool DELETECliente(ModeloDominio.Cliente c)
         {
             return BD.clientes.Remove(c);
         }
-
-        public static bool DELETEPresupuesto(ModeloDominio.Presupuesto p)
-        {
-            return BD.presupuestos.Remove(p);
-        }
-
-
-
-        public static bool DELETEVehiculo(ModeloDominio.Vehiculo v)
-        {
-            return BD.vehiculos.Remove(v);
-        }
-
-
-
         public static bool UPDATECliente(ModeloDominio.Cliente c)
         {
             if (BD.DELETECliente(c))
@@ -144,6 +62,43 @@ namespace Persistencia
 
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------------------        
+        //-------------------------------------------------------------------------PRESUPUESTO--------------------------------------------------------
+        public static PresupuestoBD Presupuestos
+        {
+            get
+            {
+                if (presupuestos == null)
+                    presupuestos = new PresupuestoBD();
+                return presupuestos;
+            }
+        }
+        public static bool INSERTPresupuesto(ModeloDominio.Presupuesto p)
+        {
+            BD.presupuestos.Add(p);
+            return true;
+        }
+
+        public static ModeloDominio.Presupuesto SELECTPresupuesto(ModeloDominio.Presupuesto p)
+        {
+
+            IEnumerable<ModeloDominio.Presupuesto> presupuesto = BD.presupuestos.Select(presupuestos => p);
+
+            if (presupuesto == null)
+            {
+                return null;
+            }
+            else
+            {
+                return presupuesto.First();
+            }
+        }
+
+        public static bool DELETEPresupuesto(ModeloDominio.Presupuesto p)
+        {
+            return BD.presupuestos.Remove(p);
+        }
+
         public static bool UPDATEPresupuesto(ModeloDominio.Presupuesto p)
         {
 
@@ -155,7 +110,40 @@ namespace Persistencia
 
         }
 
+        //--------------------------------------------------------------------------------------------------------------------------------------------        
+        //-------------------------------------------------------------------------VEHICULO-----------------------------------------------------------       
+        public static VehiculoBD Vehiculos
+        {
+            get
+            {
+                if (vehiculos == null)
+                    vehiculos = new VehiculoBD();
+                return vehiculos;
+            }
+        }
+        public static bool INSERTVehiculo(ModeloDominio.Vehiculo v)
+        {
+            BD.Vehiculos.Add(v);
+            return true;
+        }
 
+        public static ModeloDominio.Vehiculo SELECTVehiculo(ModeloDominio.Vehiculo v)
+        {
+            IEnumerable<ModeloDominio.Vehiculo> vehiculo = BD.vehiculos.Select(vehiculos => v);
+            if (vehiculo == null)
+            {
+                return null;
+            }
+            else
+            {
+                return vehiculo.First();
+            }
+        }
+
+        public static bool DELETEVehiculo(ModeloDominio.Vehiculo v)
+        {
+            return BD.vehiculos.Remove(v);
+        }
 
         public static bool UPDATEVehiculo(ModeloDominio.Vehiculo v)
         {
@@ -165,8 +153,5 @@ namespace Persistencia
             }
             return false;
         }
-
-
     }
-
 }

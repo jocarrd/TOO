@@ -4,16 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using ModeloDominio;
 
 namespace Persistencia
 {
     public class PersistenciaCliente
-    {
-
-       
-        
-        public static void Añadir(ClienteDato c)
+    { 
+        public static void Añadir(ModeloDominio.Cliente c)
         {
             
             BD.INSERTCliente(c);
@@ -28,8 +25,7 @@ namespace Persistencia
             else
             {
                 return null;
-            }
-                
+            }                
         }
 
         public static bool Eliminar(ModeloDominio.Cliente c)
@@ -41,11 +37,6 @@ namespace Persistencia
         {
             return BD.UPDATECliente(c);
         }
-
-
-
-
-
     }
 
 }
