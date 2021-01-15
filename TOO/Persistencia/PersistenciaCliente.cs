@@ -11,8 +11,7 @@ namespace Persistencia
     public class PersistenciaCliente
     { 
         public static void Añadir(ModeloDominio.Cliente c)
-        {
-            
+        {           
             BD.INSERTCliente(c);
         }
        
