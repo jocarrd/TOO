@@ -36,49 +36,57 @@
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(238, 175);
+            this.botonCancelar.Location = new System.Drawing.Point(159, 114);
+            this.botonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(99, 37);
+            this.botonCancelar.Size = new System.Drawing.Size(66, 24);
             this.botonCancelar.TabIndex = 44;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
+            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(91, 175);
+            this.botonAceptar.Location = new System.Drawing.Point(61, 114);
+            this.botonAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(99, 37);
+            this.botonAceptar.Size = new System.Drawing.Size(66, 24);
             this.botonAceptar.TabIndex = 43;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
             // dnitb
             // 
-            this.dnitb.Location = new System.Drawing.Point(196, 63);
+            this.dnitb.Location = new System.Drawing.Point(131, 41);
+            this.dnitb.Margin = new System.Windows.Forms.Padding(2);
             this.dnitb.Name = "dnitb";
-            this.dnitb.Size = new System.Drawing.Size(125, 26);
+            this.dnitb.Size = new System.Drawing.Size(85, 20);
             this.dnitb.TabIndex = 42;
             // 
             // dnilb
             // 
             this.dnilb.AutoSize = true;
-            this.dnilb.Location = new System.Drawing.Point(97, 66);
+            this.dnilb.Location = new System.Drawing.Point(65, 43);
+            this.dnilb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dnilb.Name = "dnilb";
-            this.dnilb.Size = new System.Drawing.Size(41, 20);
+            this.dnilb.Size = new System.Drawing.Size(29, 13);
             this.dnilb.TabIndex = 41;
             this.dnilb.Text = "DNI:";
             // 
             // ClienteDNI
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 277);
+            this.ClientSize = new System.Drawing.Size(295, 180);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.dnitb);
             this.Controls.Add(this.dnilb);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ClienteDNI";
             this.Text = "Introducir DNI";
+            this.Load += new System.EventHandler(this.ClienteDNI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

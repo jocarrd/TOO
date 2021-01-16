@@ -15,9 +15,11 @@ namespace Presentación
 
 
 
-        public AltaCliente()
+        public AltaCliente(String dni)
         {
+            
             InitializeComponent();
+            this.dnitb.Text = dni;
         }
 
         private void botonAceptar_Click(object sender, EventArgs e)
@@ -29,13 +31,13 @@ namespace Presentación
 
                 }
                 else {
-                    MessageBox.Show("Seleccione al menos una categoría");
+                    MessageBox.Show("Seleccione al menos una categoría", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else {
-                if (nombretb.Text.Equals("")) MessageBox.Show("Completa el campo Nombre");
-                else if (telefonotb.Text.Equals("")) MessageBox.Show("Completa el campo Telefono");
-                else MessageBox.Show("Completa el campo DNI");
+                if (nombretb.Text.Equals("")) MessageBox.Show("Debes introducir uno nombre para el cliente ","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                else if (telefonotb.Text.Equals(""))  MessageBox.Show("Completa el campo Telefono", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
 
@@ -66,6 +68,11 @@ namespace Presentación
             //Comprueba que al meno haya seleccionado una categoría
             if (!this.botonA.Checked&& !this.botonB.Checked&& !this.botonC.Checked) return false;
             else return true;
+        }
+
+        private void AltaCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

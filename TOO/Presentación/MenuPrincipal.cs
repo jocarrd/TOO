@@ -16,5 +16,12 @@ namespace Presentación
         {
             InitializeComponent();
         }
+
+        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClienteDNI cliente = new ClienteDNI("alta");
+            cliente.Show();
+        }
+        
     }
 }
