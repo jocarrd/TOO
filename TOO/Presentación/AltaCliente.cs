@@ -12,6 +12,9 @@ namespace Presentación
 {
     public partial class AltaCliente : Form
     {
+
+
+
         public AltaCliente()
         {
             InitializeComponent();
@@ -19,9 +22,15 @@ namespace Presentación
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            if (!nombretb.Text.Equals("") || !telefonotb.Text.Equals("") || !dnitb.Text.Equals(""))
+            if (this.compruebaLosTextBox())
             {
+                if (this.compruebaLosBotones())
+                {
 
+                }
+                else {
+                    MessageBox.Show("Seleccione al menos una categoría");
+                }
             }
             else {
                 if (nombretb.Text.Equals("")) MessageBox.Show("Completa el campo Nombre");
@@ -52,6 +61,11 @@ namespace Presentación
 
 
             }else return false;
+        }
+        public bool compruebaLosBotones() {
+            //Comprueba que al meno haya seleccionado una categoría
+            if (!this.botonA.Checked&& !this.botonB.Checked&& !this.botonC.Checked) return false;
+            else return true;
         }
     }
 }
