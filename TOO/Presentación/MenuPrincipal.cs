@@ -12,9 +12,10 @@ namespace Presentación
 {
     public partial class MenuPrincipal : Form
     {
-        public MenuPrincipal()
+        public MenuPrincipal(String nombreComercial)
         {
             InitializeComponent();
+            this.Text = nombreComercial+": Gestión de concesionario";
         }
 
         private void altaToolStripMenuItem_Click(object sender, EventArgs e)

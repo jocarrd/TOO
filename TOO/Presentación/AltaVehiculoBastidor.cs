@@ -16,5 +16,18 @@ namespace Presentación
         {
             InitializeComponent();
         }
+
+        private void botonAceptar_Click(object sender, EventArgs e)
+        {
+            if (this.bastidortb.Text.Equals("")) 
+            {
+                MessageBox.Show("Introduce el número de bastidor");
+            }
+            else
+            {
+
+            }
+            
+        }
     }
 }

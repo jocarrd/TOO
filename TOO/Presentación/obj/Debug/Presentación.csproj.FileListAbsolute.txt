@@ -12,3 +12,15 @@ C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentac
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.exe
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csprojAssemblyReference.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculo.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculoBastidor.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ClienteDNI.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaCliente.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.MenuPrincipal.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.Properties.Resources.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.GenerateResource.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.exe
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.LoginComercial.resources

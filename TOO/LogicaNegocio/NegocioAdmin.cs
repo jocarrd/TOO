@@ -126,9 +126,9 @@ namespace LogicaNegocio
             }
         }
 
-        public void obtenerTodosPresupuestosPorEstado(bool stado)
+        public void obtenerTodosPresupuestosPorEstado(bool estado)
         {
-            foreach (ModeloDominio.Presupuesto p in Persistencia.BD.GETPresupuestoEstado(stado))
+            foreach (ModeloDominio.Presupuesto p in Persistencia.BD.GETPresupuestoEstado(estado))
             {
                 obtenerDatosClientePresupuesto(Persistencia.BD.SELECTPresupuesto(p));
             }
