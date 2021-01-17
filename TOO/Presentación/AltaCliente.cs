@@ -12,13 +12,22 @@ namespace Presentación
 {
     public partial class AltaCliente : Form
     {
-
-
-
         public AltaCliente(String dni)
         {
             InitializeComponent();
             this.dnitb.Text = dni;
+            this.botonAceptar.Focus();
+        }
+
+        public AltaCliente(String Dni, String nombre, long tfno) {
+            InitializeComponent();
+            this.dnitb.Text = Dni;
+            this.nombretb.Text = nombre;
+            this.nombretb.ReadOnly = true;
+            this.telefonotb.Text = tfno.ToString();
+            this.nombretb.ReadOnly = true;
+            this.botonCancelar.Visible = false;
+            this.botonAceptar.Focus();
         }
 
         private void botonAceptar_Click(object sender, EventArgs e)
@@ -27,7 +36,7 @@ namespace Presentación
             {
                 if (this.compruebaLosBotones())
                 {
-
+                    //AÑADIR A LA BASE DE DATOS
                 }
                 else {
                     MessageBox.Show("Seleccione al menos una categoría", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -67,11 +76,6 @@ namespace Presentación
             //Comprueba que al meno haya seleccionado una categoría
             if (!this.botonA.Checked&& !this.botonB.Checked&& !this.botonC.Checked) return false;
             else return true;
-        }
-
-        private void AltaCliente_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

@@ -23,7 +23,7 @@ namespace Presentación
         {
             switch (this.tipo) {
                 case "alta":
-                    if ( LogicaNegocio.NegocioAdmin. this.dnitb.Text /* NO EXISTE EN LA BD*/){ 
+                    if (/* NO EXISTE EL DNI EN LA BD*/){ 
                         AltaCliente nuevo = new AltaCliente(this.dnitb.Text);
                         nuevo.Show();
                         this.Close();
@@ -31,6 +31,7 @@ namespace Presentación
                         if (MessageBox.Show("Ya existe un cliente con ese DNI", "¿Quieres introducir otro DNI?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             this.dnitb.Clear();
+                            this.dnitb.Focus();
                         }
                         else { 
                             this.Close(); 
@@ -40,12 +41,27 @@ namespace Presentación
 
                 case "baja":
                     
-                    this.Close();
-                    break;
+                    break; 
 
                 case "búsqueda":
-                    
-                    this.Close();
+                    if (/*NO EXISTE EL DNI EN LA BASE DE DATOS*/)
+                    {
+                        if (MessageBox.Show("No existe un cliente con ese DNI", "¿Quieres introducir otro DNI?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            this.dnitb.Clear();
+                            this.dnitb.Focus();
+                        }
+                        else
+                        {
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        AltaCliente busqueda = new AltaCliente(this.dnitb.Text);
+                        busqueda.Text = "Datos del cliente";
+                        
+                    }
                     break;
             }
         
