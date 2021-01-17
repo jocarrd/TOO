@@ -17,7 +17,6 @@ namespace Presentación
 
         public AltaCliente(String dni)
         {
-            
             InitializeComponent();
             this.dnitb.Text = dni;
         }

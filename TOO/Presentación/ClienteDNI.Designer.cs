@@ -86,7 +86,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ClienteDNI";
             this.Text = "Introducir DNI";
-            this.Load += new System.EventHandler(this.ClienteDNI_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

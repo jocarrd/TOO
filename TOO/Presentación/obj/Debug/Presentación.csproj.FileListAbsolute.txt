@@ -24,3 +24,15 @@ C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.cs
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.exe
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.pdb
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.LoginComercial.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csprojAssemblyReference.cache
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculo.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculoBastidor.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ClienteDNI.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaCliente.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.LoginComercial.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.MenuPrincipal.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.Properties.Resources.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.GenerateResource.cache
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.exe
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.pdb

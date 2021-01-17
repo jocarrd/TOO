@@ -18,11 +18,24 @@ namespace Presentación
             this.Text = nombreComercial+": Gestión de concesionario";
         }
 
-        private void altaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ClienteDNI cliente = new ClienteDNI("alta");
-            cliente.Show();
+        private void clientesToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e) {
+            if (e.ClickedItem.Text.Equals("Alta"))
+            {
+                ClienteDNI cliente = new ClienteDNI("alta");
+                cliente.ShowDialog();
+            }
+
+            if (e.ClickedItem.Text.Equals("Baja"))
+            {
+                ClienteDNI cliente = new ClienteDNI("baja");
+                cliente.ShowDialog();
+            }
+
+            if (e.ClickedItem.Text.Equals("Búsqueda"))
+            {
+                ClienteDNI cliente = new ClienteDNI("búsqueda");
+                cliente.ShowDialog();
+            }
         }
-        
     }
 }

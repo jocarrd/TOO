@@ -9,3 +9,9 @@ C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.dl
 C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.pdb
 C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\bin\Debug\ModeloDominio.dll
 C:\Users\juanp\Documents\GitHub\TOO\TOO\ModeloDominio\bin\Debug\ModeloDominio.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\ModeloDominio\bin\Debug\ModeloDominio.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\ModeloDominio\bin\Debug\ModeloDominio.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.csprojAssemblyReference.cache
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.csproj.CoreCompileInputs.cache
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\ModeloDominio\obj\Debug\ModeloDominio.pdb
