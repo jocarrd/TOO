@@ -36,3 +36,4 @@ C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presen
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.exe
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.pdb
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.LoginComercial.resources

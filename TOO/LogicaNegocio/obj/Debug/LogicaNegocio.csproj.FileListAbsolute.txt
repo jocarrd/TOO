@@ -2,3 +2,5 @@ C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.cs
 C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csprojAssemblyReference.cache
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csprojAssemblyReference.cache
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache

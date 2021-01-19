@@ -36,6 +36,12 @@ namespace Persistencia
             return BD.UPDATEVehiculo(c);
         }
 
+        public static List<ModeloDominio.Vehiculo> GetVehiculos()
+        {
+            return BD.GETVehiculos();
+        }
+
+
 
 
 

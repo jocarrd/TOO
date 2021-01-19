@@ -17,6 +17,16 @@ namespace Persistencia
             this.segunda = f;
 
         }
+        public String GetPrimera()
+        {
+            return this.primera;
+
+        }
+        public String GetSegunda()
+        {
+            return this.segunda;
+
+        }
 
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    class PrepuestoVehiculoBD : KeyedCollection<Clave, PresupuestoVehiculoDato>
+    public class PresupuestoVehiculoBD : KeyedCollection<Clave, PresupuestoVehiculoDato>
     {
         protected override Clave GetKeyForItem(PresupuestoVehiculoDato item)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    class PersistenciaPresupuesto
+   public class PersistenciaPresupuesto
     {
         public static void Añadir(ModeloDominio.Presupuesto c)
         {
@@ -34,6 +34,16 @@ namespace Persistencia
         public static bool ModificarPresupuesto(ModeloDominio.Presupuesto c)
         {
             return BD.UPDATEPresupuesto(c);
+        }
+
+        public static List<ModeloDominio.Presupuesto> GETPresupuestos()
+        {
+            return BD.GETPresupuestos();
+        }
+
+        public static List<ModeloDominio.Presupuesto> GETPresupuestos(ModeloDominio.Cliente c)
+        {
+            return BD.GETPresupuestos(c);
         }
 
     }

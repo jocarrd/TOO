@@ -14,6 +14,11 @@ namespace Persistencia
         {
             this.clavePresupuestoVehiculo = c;
         }
+
+        public Clave GetClave()
+        {
+            return this.clavePresupuestoVehiculo;
+        }
         
     }
 }

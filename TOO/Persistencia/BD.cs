@@ -13,7 +13,91 @@ namespace Persistencia
         private static ClienteBD clientes;
         private static PresupuestoBD presupuestos;
         private static VehiculoBD vehiculos;
+        private static Persistencia.PresupuestoVehiculoBD presupuestosVehiculos;
+
         private BD() { }
+
+        //-------------------------------------------------------------------------PresupuestoVehiculo-------------------------------------------------------------------
+
+        public static Persistencia.PresupuestoVehiculoBD PresupuestosVehiculos
+        {
+            get
+            {
+                if (presupuestosVehiculos == null)
+                    presupuestosVehiculos = new Persistencia.PresupuestoVehiculoBD();
+                return presupuestosVehiculos;
+            }
+        }
+
+        public static bool INSERTPresupuestoVehiculo(PresupuestoVehiculoDato c)
+        {
+           
+
+            if (BD.presupuestosVehiculos.Contains(c))
+            {
+                return false;
+
+            }
+            else
+            {
+                return true;
+            }
+
+
+        }
+
+        public static PresupuestoVehiculoDato SELECTPresupuestoVehiculo(PresupuestoVehiculoDato c)
+        {
+            IEnumerable<PresupuestoVehiculoDato> PV = BD.presupuestosVehiculos.Select(presupuestosVehiculos => c);
+
+            if (PV == null)
+            {
+                return null;
+            }
+            else
+            {
+                return PV.First();
+            }
+        }
+
+        public static bool DELETEPresupuestoVehiculo(PresupuestoVehiculoDato c)
+        {
+            return BD.presupuestosVehiculos.Remove(c);
+        }
+
+        public static bool UPDATEPresupuestoVehiculo(PresupuestoVehiculoDato c)
+        {
+            if (BD.DELETEPresupuestoVehiculo(c))
+            {
+                return BD.INSERTPresupuestoVehiculo(c);
+
+
+            }
+            return false;
+        }
+
+        public static List<PresupuestoVehiculoDato> GETPresupuestosVehiculosDatos()
+        {
+            return BD.presupuestosVehiculos.ToList();
+        }
+
+
+        public static List<PresupuestoVehiculoDato> GETPresupuestosVehiculosDatos(ModeloDominio.Vehiculo v)
+        {
+            List<PresupuestoVehiculoDato> resultado = new List<PresupuestoVehiculoDato>();
+            foreach (PresupuestoVehiculoDato vd  in BD.presupuestosVehiculos)
+            {
+                Clave c = (Clave)vd.GetClave();
+                if (c.GetSegunda().Equals(v.getNumBastidor()))
+                {
+                    resultado.Add(vd);
+                }
+            }
+            return resultado;
+        }
+
+
+
 
         //-------------------------------------------------------------------------CLIENTE-------------------------------------------------------------------
         public static ClienteBD Clientes
@@ -27,8 +111,15 @@ namespace Persistencia
         }
         public static bool INSERTCliente(ModeloDominio.Cliente c)
         {
-            BD.clientes.Add(c);
-            return true;
+            if (BD.clientes.Contains(c))
+            {
+                return false;
+            }
+            else
+            {
+                BD.clientes.Add(c);
+                return true;
+            }
         }
         public static ModeloDominio.Cliente SELECTCliente(ModeloDominio.Cliente c)
         {
@@ -71,8 +162,16 @@ namespace Persistencia
         }
         public static bool INSERTPresupuesto(ModeloDominio.Presupuesto p)
         {
-            BD.presupuestos.Add(p);
-            return true;
+            if (BD.presupuestos.Contains(p))
+            {
+                return false;
+            }
+            else
+            {
+                BD.presupuestos.Add(p);
+                return true;
+            }
+           
         }
 
         public static ModeloDominio.Presupuesto SELECTPresupuesto(ModeloDominio.Presupuesto p)
@@ -105,6 +204,26 @@ namespace Persistencia
             return false;
 
         }
+
+        public static List<ModeloDominio.Presupuesto> GETPresupuestos()
+        {
+            return BD.presupuestos.ToList();
+        }
+
+        public static List<ModeloDominio.Presupuesto> GETPresupuestos(ModeloDominio.Cliente c)
+        {
+            List<ModeloDominio.Presupuesto> resultado = new List<ModeloDominio.Presupuesto>();
+            foreach(ModeloDominio.Presupuesto p in BD.presupuestos)
+            {
+                ModeloDominio.Cliente cast = (ModeloDominio.Cliente)p.getCliente();
+                if (cast.getDni().Equals(c.getDni()))
+                {
+                    resultado.Add(p);
+                }
+            }
+            return resultado;
+        }
+
 
         //--------------------------------------------------------------------------------------------------------------------------------------------        
         //-------------------------------------------------------------------------VEHICULO-----------------------------------------------------------       
@@ -148,6 +267,11 @@ namespace Persistencia
                 return BD.INSERTVehiculo(v);
             }
             return false;
+        }
+
+        public static List<ModeloDominio.Vehiculo > GETVehiculos()
+        {
+            return BD.vehiculos.ToList();
         }
     }
 }
