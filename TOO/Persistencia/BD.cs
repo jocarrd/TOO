@@ -13,7 +13,9 @@ namespace Persistencia
         private static ClienteBD clientes;
         private static PresupuestoBD presupuestos;
         private static VehiculoBD vehiculos;
-        private static Persistencia.PresupuestoVehiculoBD presupuestosVehiculos;
+        private static VehiculoNuevo_extraBD vehiculosNuevos;
+        private static VehiculoSegunda_manoBD vehiculosSegundaMano;
+        private static PresupuestoVehiculoBD presupuestosVehiculos;
 
         private BD() { }
 
@@ -210,7 +212,7 @@ namespace Persistencia
             return BD.presupuestos.ToList();
         }
 
-        public static List<ModeloDominio.Presupuesto> GETPresupuestos(ModeloDominio.Cliente c)
+        public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)
         {
             List<ModeloDominio.Presupuesto> resultado = new List<ModeloDominio.Presupuesto>();
             foreach(ModeloDominio.Presupuesto p in BD.presupuestos)
@@ -272,6 +274,16 @@ namespace Persistencia
         public static List<ModeloDominio.Vehiculo > GETVehiculos()
         {
             return BD.vehiculos.ToList();
+        }
+
+        public static List<ModeloDominio.SegundaMano> GETVehiculosSegundaMano()
+        {
+            return BD.vehiculosSegundaMano.ToList();
+        }
+
+        public static List<ModeloDominio.Nuevo> GETVehiculosNuevo()
+        {
+            return BD.vehiculosNuevos.ToList();
         }
     }
 }

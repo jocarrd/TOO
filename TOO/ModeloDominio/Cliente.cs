@@ -71,5 +71,10 @@ namespace ModeloDominio
         {
             return presupuestoList;
         }
+
+        public bool equals(Cliente c)
+        {
+            return (this.dni.Equals(c.getDni());
+        }
     }
 }

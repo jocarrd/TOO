@@ -72,5 +72,10 @@ namespace ModeloDominio
         {
             return cocheList;
         }
+
+        public bool equals(Presupuesto c)
+        {
+            return (this.id_presupuesto.Equals(c.getId_presupuesto());
+        }
     }
 }

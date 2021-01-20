@@ -41,9 +41,9 @@ namespace Persistencia
             return BD.GETPresupuestos();
         }
 
-        public static List<ModeloDominio.Presupuesto> GETPresupuestos(ModeloDominio.Cliente c)
+        public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)
         {
-            return BD.GETPresupuestos(c);
+            return BD.GETPresupuestosCliente(c);
         }
 
     }

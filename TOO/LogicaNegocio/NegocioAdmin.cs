@@ -23,9 +23,9 @@ namespace LogicaNegocio
             Persistencia.BD.DELETECliente(c);
         }
 
-        public void obtenerPresupuestos(ModeloDominio.Cliente c)
+        public void obtenerPresupuestosCliente(ModeloDominio.Cliente c)
         {
-            Persistencia.BD.GETPresupuestos(Persistencia.BD.SELECTCliente(c));
+            Persistencia.BD.GETPresupuestosCliente(Persistencia.BD.SELECTCliente(c));
         }
 
         public void obtenerInfoCliente(ModeloDominio.Cliente c)
@@ -60,19 +60,19 @@ namespace LogicaNegocio
             System.Console.WriteLine("Precio: " + v.getPrecio());
         }
 
-        public void obtenerTodosVehiculos()
+        public List<ModeloDominio.Vehiculo> obtenerTodosVehiculos()
         {
-            foreach (ModeloDominio.Vehiculo v in Persistencia.BD.GETVehiculos()) {
-                obtenerInfoVehiculo(v);
-            }
+            return Persistencia.BD.GETVehiculos();
         }
 
-        public void obtenerVehiculosSegundaMano()
+        public List<ModeloDominio.SegundaMano> obtenerVehiculosSegundaMano()
         {
-            foreach (ModeloDominio.Vehiculo v in Persistencia.BD.GETVehiculosSegMano())
-            {
-                obtenerInfoVehiculo(v);
-            }
+            return Persistencia.BD.GETVehiculosSegundaMano();
+        }
+
+        public List<ModeloDominio.Nuevo> obtenerVehiculosNuevos()
+        {
+            return Persistencia.BD.GETVehiculosNuevo();
         }
 
         //------------------------------------------------------------------------------

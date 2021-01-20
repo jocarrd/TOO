@@ -39,5 +39,10 @@ namespace ModeloDominio
         {
             return this.fecha_matriculacion;
         }
+
+        public bool equals(SegundaMano c)
+        {
+            return (base.Equals(c.getNumBastidor()));
+        }
     }
 }

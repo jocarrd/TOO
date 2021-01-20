@@ -36,5 +36,10 @@ namespace ModeloDominio
         {
             return this.precio;
         }
+
+        public bool equals(Extra c)
+        {
+            return (this.nombre.Equals(c.getNombre()));
+        }
     }
 }

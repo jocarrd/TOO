@@ -71,5 +71,10 @@ namespace ModeloDominio
         {
             return this.precio;
         }
+
+        public bool equals(Vehiculo c)
+        {
+            return (numBastidor.Equals(c.getNumBastidor());
+        }
     }
 }
