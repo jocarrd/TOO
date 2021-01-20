@@ -27,6 +27,12 @@ namespace Persistencia
             return this.segunda;
 
         }
+        
+        public bool Equals(Clave c)
+        {
+            return (this.GetPrimera().Equals(c.GetPrimera()) && this.GetSegunda().Equals(c.GetSegunda()));
+              
+        }
 
     }
 }
