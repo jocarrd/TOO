@@ -42,7 +42,7 @@ namespace ModeloDominio
 
         public bool equals(SegundaMano c)
         {
-            return (base.Equals(c.getNumBastidor()));
+            return (this.getNumBastidor().Equals(c.getNumBastidor()));
         }
     }
 }

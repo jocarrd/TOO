@@ -68,7 +68,7 @@ namespace ModeloDominio
 
         public bool equals(Nuevo c)
         {
-            return (base.Equals(c.getNumBastidor()));
+            return (this.getNumBastidor().Equals(c.getNumBastidor()));
         }
     }
 }
