@@ -22,15 +22,12 @@ namespace Presentación
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            bool existeCliente=false;
-            if (this.existeCliente(this.dnitb.Text)!=null)
-            {
-                existeCliente = true;
-            }
+            ModeloDominio.Cliente cliente = new ModeloDominio.Cliente(this.dnitb.Text,"",0,ModeloDominio.Tipo_cliente.Baja);
+            bool existe = this.existeCliente(cliente);
             switch (this.tipo)
             {
                 case "alta":
-                    if (!existeCliente)
+                    if (!existe)
                     {
                         GestionClientes nuevo = new GestionClientes(this.dnitb.Text);
                         nuevo.Text = "Alta de un cliente";
@@ -52,7 +49,7 @@ namespace Presentación
                     break;
 
                 case "baja":
-                    if (!existeCliente)
+                    if (!existe)
                     {
                         if (MessageBox.Show("No existe un cliente con ese DNI", "¿Quieres introducir otro DNI?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
@@ -66,13 +63,13 @@ namespace Presentación
                     }
                     else
                     {
-                        GestionClientes baja = new GestionClientes(this.dnitb.Text, NOMBRE, TELEFONO, TIPOCLIENTE, this.tipo);
+                        GestionClientes baja = new GestionClientes(this.dnitb.Text, cliente.getNombre(), cliente.getTfno(), cliente.getCategoria(), this.tipo);
                         baja.Text = "Baja de un cliente";
                     }
                     break;
 
                 case "búsqueda":
-                    if (!existeCliente)
+                    if (!existe)
                     {
                         if (MessageBox.Show("No existe un cliente con ese DNI", "¿Quieres introducir otro DNI?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
@@ -86,7 +83,7 @@ namespace Presentación
                     }
                     else
                     {
-                        GestionClientes busqueda = new GestionClientes(this.dnitb.Text, NOMBRE, TELEFONO, TIPOCLIENTE, this.tipo);
+                        GestionClientes busqueda = new GestionClientes(this.dnitb.Text, cliente.getNombre(), cliente.getTfno(), cliente.getCategoria(), this.tipo);
                         busqueda.Text = "Datos del cliente";
                         busqueda.Show();
                         this.Close();
@@ -102,9 +99,16 @@ namespace Presentación
             this.Close();
         }
 
-        public ModeloDominio.Cliente existeCliente(String dni)
+        private bool existeCliente(ModeloDominio.Cliente c)
         {
-            //HACER BUSQUEDA DEL CLIENTE
+            if ((c = LogicaNegocio.NegocioAdmin.obtenerCliente(this.dnitb.Text)) != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

@@ -70,6 +70,8 @@ namespace Presentación
                 if (this.compruebaLosBotones())
                 {
                     //AÑADIR A LA BASE DE DATOS
+                    ModeloDominio.Cliente nuevo = new Cliente(this.dnitb.Text,this.nombretb.Text, long.Parse(telefonotb.Text), this.getTipoCliente());
+                    LogicaNegocio.NegocioAdmin.darAltaCliente(nuevo);
                 }
                 else
                 {
@@ -105,6 +107,7 @@ namespace Presentación
             if (MessageBox.Show("Aviso", "Está seuro de que desea dar de baja este cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 //BORRAR EL CLIENTE DE LA BASE DE DATOS
+                LogicaNegocio.NegocioAdmin.darBajaCliente(LogicaNegocio.NegocioAdmin.obtenerCliente(this.dnitb.Text));
                 MessageBox.Show("Aviso", "Cliente eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Close();
@@ -167,6 +170,22 @@ namespace Presentación
                     botonB.Checked = false;
                     botonC.Checked = false;
                     break;
+            }
+        }
+
+        public ModeloDominio.Tipo_cliente getTipoCliente() {
+            if (this.botonA.Checked) {
+                return ModeloDominio.Tipo_cliente.Alta;
+            }
+            else { 
+                if (this.botonB.Checked)
+                {
+                    return ModeloDominio.Tipo_cliente.Media;
+                }
+                else
+                {
+                    return ModeloDominio.Tipo_cliente.Baja;
+                }
             }
         }
     }

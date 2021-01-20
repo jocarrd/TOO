@@ -70,6 +70,7 @@
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.clientesToolStripMenuItem_DropDownItemClicked);
             // 
             // altaToolStripMenuItem
             // 
@@ -165,7 +166,7 @@
             this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MenuPrincipal";
             this.Text = "(Se cambia al hacer el login)";
             this.menuStrip1.ResumeLayout(false);

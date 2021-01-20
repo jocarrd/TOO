@@ -7,34 +7,29 @@ using System.Threading.Tasks;
 namespace LogicaNegocio
 {
     public class NegocioAdmin
-    {
-
+    { 
         //-------------------------------------------------------------------------------
         //Gestion de Clientes
 
-        public void darAltaCliente(String Dni, String name, long tfno, ModeloDominio.Tipo_cliente tipoCliente)
+        public static void darAltaCliente(ModeloDominio.Cliente nuevoCliente)
         {
-            ModeloDominio.Cliente nuevoCliente = new ModeloDominio.Cliente(Dni,name,tfno,tipoCliente);
             Persistencia.BD.INSERTCliente(nuevoCliente);
         }
 
-        public void darBajaCliente(ModeloDominio.Cliente c)
+        public static void darBajaCliente(ModeloDominio.Cliente c)
         {
             Persistencia.BD.DELETECliente(c);
         }
 
-        public void obtenerPresupuestosCliente(ModeloDominio.Cliente c)
+        public static void obtenerPresupuestosCliente(ModeloDominio.Cliente c)
         {
             Persistencia.BD.GETPresupuestosCliente(Persistencia.BD.SELECTCliente(c));
         }
 
-        public void obtenerInfoCliente(ModeloDominio.Cliente c)
+        public static ModeloDominio.Cliente obtenerCliente(String dni)
         {
-                System.Console.WriteLine("Cliente: "+ Persistencia.BD.SELECTCliente(c).getNombre());
-                System.Console.WriteLine("Dni: " + Persistencia.BD.SELECTCliente(c).getDni());
-                System.Console.WriteLine("Telefono: " + Persistencia.BD.SELECTCliente(c).getTfno());
-                System.Console.WriteLine("Categoria: " + Persistencia.BD.SELECTCliente(c).getCategoria());
-                System.Console.WriteLine("Presupuesto: " + Persistencia.BD.SELECTCliente(c).getPresupuesto());
+            ModeloDominio.Cliente vacio = new ModeloDominio.Cliente(dni,"",0,ModeloDominio.Tipo_cliente.Media);
+            return Persistencia.BD.SELECTCliente(vacio);
         }
 
         //------------------------------------------------------------------------------

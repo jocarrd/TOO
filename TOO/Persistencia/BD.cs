@@ -136,6 +136,21 @@ namespace Persistencia
                 return cliente.First();
             }
         }
+
+        public static ModeloDominio.Cliente SELECTClienteByDNI(String dni)
+        {
+            IEnumerable<ModeloDominio.Cliente> cliente = BD.clientes.Select(clientes => c);
+
+            if (cliente == null)
+            {
+                return null;
+            }
+            else
+            {
+                return cliente.First();
+            }
+        }
+
         public static bool DELETECliente(ModeloDominio.Cliente c)
         {
             return BD.clientes.Remove(c);
@@ -145,11 +160,11 @@ namespace Persistencia
             if (BD.DELETECliente(c))
             {
                 return BD.INSERTCliente(c);
-
-
             }
             return false;
         }
+
+        
 
         //--------------------------------------------------------------------------------------------------------------------------------------------        
         //-------------------------------------------------------------------------PRESUPUESTO--------------------------------------------------------

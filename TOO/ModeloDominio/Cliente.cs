@@ -74,7 +74,7 @@ namespace ModeloDominio
 
         public bool equals(Cliente c)
         {
-            return (this.dni.Equals(c.getDni());
+            return (this.dni.Equals(c.getDni()));
         }
     }
 }
