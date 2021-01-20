@@ -16,7 +16,6 @@ C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.cs
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculo.resources
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculoBastidor.resources
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ClienteDNI.resources
-C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaCliente.resources
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.MenuPrincipal.resources
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.Properties.Resources.resources
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.GenerateResource.cache
@@ -49,3 +48,14 @@ C:\Users\jocarrd\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.
 C:\Users\jocarrd\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CoreCompileInputs.cache
 C:\Users\jocarrd\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.exe
 C:\Users\jocarrd\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.GestionClientes.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\Presentación.exe.config
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\Presentación.exe
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\Presentación.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\LogicaNegocio.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\ModeloDominio.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\Persistencia.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\LogicaNegocio.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\ModeloDominio.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\Persistencia.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CopyComplete

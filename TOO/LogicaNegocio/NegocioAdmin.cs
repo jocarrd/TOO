@@ -79,11 +79,12 @@ namespace LogicaNegocio
             Persistencia.BD.INSERTPresupuesto(nuevoPresupuesto);
         }
 
+        /*
         public void obtenerDatosClientePresupuesto(ModeloDominio.Presupuesto p)
         {
             obtenerInfoCliente(Persistencia.BD.SELECTPresupuesto(p).getCliente())
-;        }
-
+;       }
+        */
         public void obtenerDatosVehiculoPresupuesto(ModeloDominio.Presupuesto p)
         {
             foreach (ModeloDominio.Vehiculo v in Persistencia.BD.SELECTPresupuesto(p).getVehiculos()) { 
@@ -115,18 +116,24 @@ namespace LogicaNegocio
             System.Console.WriteLine("Vehiculos: " + p.getVehiculos());
         }
 
-        public void obtenerTodosPresupuestosVehiculo(ModeloDominio.Vehiculo v) {
-            foreach (ModeloDominio.Presupuesto p in Persistencia.BD.GETPresupuestoVehiculo(v)) {
-                obtenerDatosClientePresupuesto(Persistencia.BD.SELECTPresupuesto(p));
-            }
-        }
 
+        //Seguramente de fallo
+        public List<ModeloDominio.Presupuesto> obtenerTodosPresupuestosVehiculo(ModeloDominio.Vehiculo v) {
+            System.Collections.IList list = Persistencia.BD.GETPresupuestosVehiculosDatos(v);
+            List<ModeloDominio.Presupuesto> listaP = new List<ModeloDominio.Presupuesto>();
+            for (int i = 0; i < list.Count; i++) {
+                ModeloDominio.Presupuesto p = (ModeloDominio.Presupuesto)list[i];
+                listaP.Add(p);
+            }
+            return listaP;
+        }
+        /*
         public void obtenerTodosPresupuestosPorEstado(bool estado)
         {
-            foreach (ModeloDominio.Presupuesto p in Persistencia.BD.GETPresupuestoEstado(estado))
+            foreach (ModeloDominio.Presupuesto p in Persistencia.BD.GETPresupuestosVehiculosDatos(estado))
             {
                 obtenerDatosClientePresupuesto(Persistencia.BD.SELECTPresupuesto(p));
             }
-        }
+        }*/
     }
 }

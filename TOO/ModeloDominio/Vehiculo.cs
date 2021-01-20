@@ -74,7 +74,7 @@ namespace ModeloDominio
 
         public bool equals(Vehiculo c)
         {
-            return (numBastidor.Equals(c.getNumBastidor());
+            return (numBastidor.Equals(c.getNumBastidor()));
         }
     }
 }

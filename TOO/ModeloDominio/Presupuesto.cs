@@ -75,7 +75,7 @@ namespace ModeloDominio
 
         public bool equals(Presupuesto c)
         {
-            return (this.id_presupuesto.Equals(c.getId_presupuesto());
+            return (this.id_presupuesto.Equals(c.getId_presupuesto()));
         }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bastidortb = new System.Windows.Forms.TextBox();
             this.botonCancelar = new System.Windows.Forms.Button();
             this.botonAceptar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -43,12 +43,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de bastidor:";
             // 
-            // textBox1
+            // bastidortb
             // 
-            this.textBox1.Location = new System.Drawing.Point(233, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 26);
-            this.textBox1.TabIndex = 1;
+            this.bastidortb.Location = new System.Drawing.Point(233, 89);
+            this.bastidortb.Name = "bastidortb";
+            this.bastidortb.Size = new System.Drawing.Size(125, 26);
+            this.bastidortb.TabIndex = 1;
             // 
             // botonCancelar
             // 
@@ -75,7 +75,7 @@
             this.ClientSize = new System.Drawing.Size(450, 333);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonAceptar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.bastidortb);
             this.Controls.Add(this.label1);
             this.Name = "AltaVehiculoBastidor";
             this.Text = "Introducir número de bastidor";
@@ -87,7 +87,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox bastidortb;
         private System.Windows.Forms.Button botonCancelar;
         private System.Windows.Forms.Button botonAceptar;
     }

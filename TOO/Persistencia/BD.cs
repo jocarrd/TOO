@@ -136,7 +136,7 @@ namespace Persistencia
                 return cliente.First();
             }
         }
-
+        /*
         public static ModeloDominio.Cliente SELECTClienteByDNI(String dni)
         {
             IEnumerable<ModeloDominio.Cliente> cliente = BD.clientes.Select(clientes => c);
@@ -149,7 +149,7 @@ namespace Persistencia
             {
                 return cliente.First();
             }
-        }
+        }*/
 
         public static bool DELETECliente(ModeloDominio.Cliente c)
         {

@@ -6,3 +6,12 @@ C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNeg
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
 C:\Users\jocarrd\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csprojAssemblyReference.cache
 C:\Users\jocarrd\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\ModeloDominio.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\Persistencia.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\ModeloDominio.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\Persistencia.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

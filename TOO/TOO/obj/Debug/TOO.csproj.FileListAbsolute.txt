@@ -4,3 +4,9 @@ C:\Users\juanp\source\repos\TOO\TOO\obj\Debug\TOO.csprojAssemblyReference.cache
 C:\Users\juanp\source\repos\TOO\TOO\obj\Debug\TOO.csproj.CoreCompileInputs.cache
 C:\Users\juanp\source\repos\TOO\TOO\obj\Debug\TOO.dll
 C:\Users\juanp\source\repos\TOO\TOO\obj\Debug\TOO.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\TOO\bin\Debug\TOO.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\TOO\bin\Debug\TOO.pdb
+C:\Users\juanp\Documents\GitHub\TOO\TOO\TOO\obj\Debug\TOO.csprojAssemblyReference.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\TOO\obj\Debug\TOO.csproj.CoreCompileInputs.cache
+C:\Users\juanp\Documents\GitHub\TOO\TOO\TOO\obj\Debug\TOO.dll
+C:\Users\juanp\Documents\GitHub\TOO\TOO\TOO\obj\Debug\TOO.pdb
