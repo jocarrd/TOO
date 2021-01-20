@@ -4,3 +4,5 @@ C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\Logica
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csprojAssemblyReference.cache
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\jocarrd\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csprojAssemblyReference.cache
+C:\Users\jocarrd\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CoreCompileInputs.cache

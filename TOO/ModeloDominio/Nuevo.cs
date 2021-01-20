@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeloDominio
 {
-    class Nuevo : Vehiculo
+   public  class Nuevo : Vehiculo
     {
         private Dictionary<string, double> extras;
         private const double IVA = 10/100;

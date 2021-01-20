@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeloDominio
 {
-    class Extra
+    public class Extra
     {
         private String nombre;
         private double precio;

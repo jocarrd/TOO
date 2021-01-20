@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ModeloDominio
 {
-    class SegundaMano : Vehiculo
+   public class SegundaMano : Vehiculo
     {
         private String matricula;
         private DateTime fecha_matriculacion;

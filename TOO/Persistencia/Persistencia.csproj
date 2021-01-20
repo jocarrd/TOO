@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BD.cs" />
+    <Compile Include="ExtrasBD.cs" />
     <Compile Include="PersistenciaPresupuestoVehiculo.cs" />
     <Compile Include="Clave.cs" />
     <Compile Include="ClienteBD.cs" />
@@ -53,6 +54,8 @@
     <Compile Include="PresupuestoVehiculoDato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VehiculoBD.cs" />
+    <Compile Include="VehiculoNuevo-extraBD.cs" />
+    <Compile Include="VehiculoSegunda-manoBD.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModeloDominio\ModeloDominio.csproj">

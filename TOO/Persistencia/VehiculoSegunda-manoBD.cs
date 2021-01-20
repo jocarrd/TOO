@@ -4,16 +4,15 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ModeloDominio;
 
 namespace Persistencia
 {
-    public class VehiculoBD : KeyedCollection<string, ModeloDominio.Vehiculo>
+    public class VehiculoSegunda_manoBD : KeyedCollection<string, ModeloDominio.SegundaMano>
     {
-        protected override string GetKeyForItem(ModeloDominio.Vehiculo item)
+
+        protected override string GetKeyForItem(ModeloDominio.SegundaMano item)
         {
             return item.getNumBastidor();
         }
-
     }
 }
