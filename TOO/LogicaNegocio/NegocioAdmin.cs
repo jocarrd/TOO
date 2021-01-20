@@ -26,12 +26,6 @@ namespace LogicaNegocio
             Persistencia.BD.GETPresupuestosCliente(Persistencia.BD.SELECTCliente(c));
         }
 
-        public static ModeloDominio.Cliente obtenerCliente(String dni)
-        {
-            ModeloDominio.Cliente vacio = new ModeloDominio.Cliente(dni,"",0,ModeloDominio.Tipo_cliente.Media);
-            return Persistencia.BD.SELECTCliente(vacio);
-        }
-
         //------------------------------------------------------------------------------
         //Gestion de Vehiculos
 

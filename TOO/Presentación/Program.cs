@@ -16,7 +16,7 @@ namespace Presentación
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginComercial());
+            Application.Run(new MenuPrincipal("hola"));
         }
     }
 }

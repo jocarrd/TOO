@@ -136,20 +136,18 @@ namespace Persistencia
                 return cliente.First();
             }
         }
-        /*
-        public static ModeloDominio.Cliente SELECTClienteByDNI(String dni)
+        
+        public static Boolean existe(String dni)
         {
-            IEnumerable<ModeloDominio.Cliente> cliente = BD.clientes.Select(clientes => c);
-
-            if (cliente == null)
+            if (BD.clientes.Contains(dni))
             {
-                return null;
+                return true;
             }
             else
             {
-                return cliente.First();
+                return false;
             }
-        }*/
+        }
 
         public static bool DELETECliente(ModeloDominio.Cliente c)
         {

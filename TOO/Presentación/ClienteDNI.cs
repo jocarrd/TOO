@@ -23,7 +23,7 @@ namespace Presentación
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             ModeloDominio.Cliente cliente = new ModeloDominio.Cliente(this.dnitb.Text,"",0,ModeloDominio.Tipo_cliente.Baja);
-            bool existe = this.existeCliente(cliente);
+            bool existe = false;
             switch (this.tipo)
             {
                 case "alta":
@@ -97,18 +97,6 @@ namespace Presentación
         private void botonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private bool existeCliente(ModeloDominio.Cliente c)
-        {
-            if ((c = LogicaNegocio.NegocioAdmin.obtenerCliente(this.dnitb.Text)) != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
     }
 }
