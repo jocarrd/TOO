@@ -1,6 +1,6 @@
 ﻿namespace Presentación
 {
-    partial class AltaCliente
+    partial class GestionClientes
     {
         /// <summary>
         /// Required designer variable.

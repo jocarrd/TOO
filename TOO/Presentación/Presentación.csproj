@@ -64,11 +64,11 @@
     <Compile Include="ClienteDNI.Designer.cs">
       <DependentUpon>ClienteDNI.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaCliente.cs">
+    <Compile Include="GestionClientes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaCliente.Designer.cs">
-      <DependentUpon>AltaCliente.cs</DependentUpon>
+    <Compile Include="GestionClientes.Designer.cs">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginComercial.cs">
       <SubType>Form</SubType>
@@ -93,8 +93,8 @@
     <EmbeddedResource Include="ClienteDNI.resx">
       <DependentUpon>ClienteDNI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaCliente.resx">
-      <DependentUpon>AltaCliente.cs</DependentUpon>
+    <EmbeddedResource Include="GestionClientes.resx">
+      <DependentUpon>GestionClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginComercial.resx">
       <DependentUpon>LoginComercial.cs</DependentUpon>

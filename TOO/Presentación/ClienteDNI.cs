@@ -13,38 +13,46 @@ namespace Presentación
     public partial class ClienteDNI : Form
     {
         String tipo;
+
         public ClienteDNI(String a)
         {
-            this.tipo = a;
             InitializeComponent();
+            this.tipo = a;
         }
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            switch (this.tipo) {
+            bool existeCliente=false;
+            if (this.existeCliente(this.dnitb.Text)!=null)
+            {
+                existeCliente = true;
+            }
+            switch (this.tipo)
+            {
                 case "alta":
-                    if (/* NO EXISTE EL DNI EN LA BD*/){ 
-                        AltaCliente nuevo = new AltaCliente(this.dnitb.Text);
+                    if (!existeCliente)
+                    {
+                        GestionClientes nuevo = new GestionClientes(this.dnitb.Text);
+                        nuevo.Text = "Alta de un cliente";
                         nuevo.Show();
                         this.Close();
-                    }else {
+                    }
+                    else
+                    {
                         if (MessageBox.Show("Ya existe un cliente con ese DNI", "¿Quieres introducir otro DNI?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             this.dnitb.Clear();
                             this.dnitb.Focus();
                         }
-                        else { 
-                            this.Close(); 
+                        else
+                        {
+                            this.Close();
                         }
                     }
                     break;
 
                 case "baja":
-                    
-                    break; 
-
-                case "búsqueda":
-                    if (/*NO EXISTE EL DNI EN LA BASE DE DATOS*/)
+                    if (!existeCliente)
                     {
                         if (MessageBox.Show("No existe un cliente con ese DNI", "¿Quieres introducir otro DNI?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
@@ -58,20 +66,45 @@ namespace Presentación
                     }
                     else
                     {
-                        AltaCliente busqueda = new AltaCliente(this.dnitb.Text);
+                        GestionClientes baja = new GestionClientes(this.dnitb.Text, NOMBRE, TELEFONO, TIPOCLIENTE, this.tipo);
+                        baja.Text = "Baja de un cliente";
+                    }
+                    break;
+
+                case "búsqueda":
+                    if (!existeCliente)
+                    {
+                        if (MessageBox.Show("No existe un cliente con ese DNI", "¿Quieres introducir otro DNI?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            this.dnitb.Clear();
+                            this.dnitb.Focus();
+                        }
+                        else
+                        {
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        GestionClientes busqueda = new GestionClientes(this.dnitb.Text, NOMBRE, TELEFONO, TIPOCLIENTE, this.tipo);
                         busqueda.Text = "Datos del cliente";
-                        
+                        busqueda.Show();
+                        this.Close();
                     }
                     break;
             }
-        
-            
+
+
         }
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
-            
+        }
+
+        public ModeloDominio.Cliente existeCliente(String dni)
+        {
+            //HACER BUSQUEDA DEL CLIENTE
         }
     }
 }
