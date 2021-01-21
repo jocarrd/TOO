@@ -38,7 +38,7 @@ namespace Presentación
 
             if (e.ClickedItem.Text.Equals("Búsqueda"))
             {
-                ClienteDNI cliente = new ClienteDNI("búsqueda".neg);
+                ClienteDNI cliente = new ClienteDNI("búsqueda",neg);
                 cliente.ShowDialog();
                 this.Close();
             }
