@@ -7,34 +7,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio;
 
 namespace Presentación
 {
     public partial class MenuPrincipal : Form
     {
-        public MenuPrincipal(String nombreComercial)
+        private NegocioAdmin neg;
+        public MenuPrincipal(String nombreComercial, NegocioAdmin neg )
         {
             InitializeComponent();
             this.Text = nombreComercial+": Gestión de concesionario";
+            this.neg = neg;
         }
 
         private void clientesToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e) {
             if (e.ClickedItem.Text.Equals("Alta"))
             {
-                ClienteDNI cliente = new ClienteDNI("alta");
+                ClienteDNI cliente = new ClienteDNI("alta",neg);
                 cliente.ShowDialog();
+                //this.Close();
             }
 
             if (e.ClickedItem.Text.Equals("Baja"))
             {
-                ClienteDNI cliente = new ClienteDNI("baja");
+                ClienteDNI cliente = new ClienteDNI("baja",neg);
                 cliente.ShowDialog();
+                this.Close();
             }
 
             if (e.ClickedItem.Text.Equals("Búsqueda"))
             {
-                ClienteDNI cliente = new ClienteDNI("búsqueda");
+                ClienteDNI cliente = new ClienteDNI("búsqueda".neg);
                 cliente.ShowDialog();
+                this.Close();
             }
         }
     }

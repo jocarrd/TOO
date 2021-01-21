@@ -7,29 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio;
 
 namespace Presentación
 {
     public partial class ClienteDNI : Form
     {
         String tipo;
+        private NegocioAdmin neg;
 
-        public ClienteDNI(String a)
+        public ClienteDNI(String a, NegocioAdmin neg)
         {
             InitializeComponent();
+            this.neg = neg;
             this.tipo = a;
         }
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            ModeloDominio.Cliente cliente = new ModeloDominio.Cliente(this.dnitb.Text,"",0,ModeloDominio.Tipo_cliente.Baja);
-            bool existe = false;
+            bool existe = neg.existe(this.dnitb.Text);
             switch (this.tipo)
             {
                 case "alta":
                     if (!existe)
                     {
-                        GestionClientes nuevo = new GestionClientes(this.dnitb.Text);
+                        GestionClientes nuevo = new GestionClientes(this.dnitb.Text, this.neg);
                         nuevo.Text = "Alta de un cliente";
                         nuevo.Show();
                         this.Close();
@@ -63,8 +65,7 @@ namespace Presentación
                     }
                     else
                     {
-                        GestionClientes baja = new GestionClientes(this.dnitb.Text, cliente.getNombre(), cliente.getTfno(), cliente.getCategoria(), this.tipo);
-                        baja.Text = "Baja de un cliente";
+                        //baja.Text = "Baja de un cliente";
                     }
                     break;
 
@@ -83,9 +84,9 @@ namespace Presentación
                     }
                     else
                     {
-                        GestionClientes busqueda = new GestionClientes(this.dnitb.Text, cliente.getNombre(), cliente.getTfno(), cliente.getCategoria(), this.tipo);
-                        busqueda.Text = "Datos del cliente";
-                        busqueda.Show();
+                        MessageBox.Show("Existe un cliente con ese DNI");
+                        //busqueda.Text = "Datos del cliente";
+                        //busqueda.Show();
                         this.Close();
                     }
                     break;

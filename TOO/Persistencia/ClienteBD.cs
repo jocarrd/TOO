@@ -15,6 +15,5 @@ namespace Persistencia
         {
             return item.getDni();
         }
-
     }
 }

@@ -36,6 +36,32 @@ namespace Persistencia
         {
             return BD.UPDATECliente(c);
         }
+
+        public static bool existeCliente(String dni)
+        {
+            if (BD.Clientes.Contains(dni))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)
+        {
+            List<ModeloDominio.Presupuesto> resultado = new List<ModeloDominio.Presupuesto>();
+            foreach (ModeloDominio.Presupuesto p in BD.Presupuestos)
+            {
+                ModeloDominio.Cliente cast = (ModeloDominio.Cliente)p.getCliente();
+                if (cast.getDni().Equals(c.getDni()))
+                {
+                    resultado.Add(p);
+                }
+            }
+            return resultado;
+        }
     }
 
 }

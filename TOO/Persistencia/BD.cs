@@ -19,6 +19,8 @@ namespace Persistencia
 
         private BD() { }
 
+
+//Mirar porque el presupuesto ya tiene una clase interna que almacena cada coche que tiene ese presupuesto
         //-------------------------------------------------------------------------PresupuestoVehiculo-------------------------------------------------------------------
 
         public static Persistencia.PresupuestoVehiculoBD PresupuestosVehiculos
@@ -33,12 +35,9 @@ namespace Persistencia
 
         public static bool INSERTPresupuestoVehiculo(PresupuestoVehiculoDato c)
         {
-           
-
             if (BD.presupuestosVehiculos.Contains(c))
             {
                 return false;
-
             }
             else
             {
@@ -64,9 +63,15 @@ namespace Persistencia
 
         public static bool DELETEPresupuestoVehiculo(PresupuestoVehiculoDato c)
         {
-            return BD.presupuestosVehiculos.Remove(c);
+            if (BD.presupuestosVehiculos.Contains(c))
+            {
+                return BD.presupuestosVehiculos.Remove(c);
+            }
+            return false;
         }
 
+
+        //---
         public static bool UPDATEPresupuestoVehiculo(PresupuestoVehiculoDato c)
         {
             if (BD.DELETEPresupuestoVehiculo(c))
@@ -77,6 +82,8 @@ namespace Persistencia
             }
             return false;
         }
+
+        //---
 
         public static List<PresupuestoVehiculoDato> GETPresupuestosVehiculosDatos()
         {
@@ -97,7 +104,7 @@ namespace Persistencia
             }
             return resultado;
         }
-
+//------------------------------------------------------------------------------
 
 
 
@@ -107,19 +114,19 @@ namespace Persistencia
             get
             {
                 if (clientes == null)
-                    clientes = new ClienteBD();
+                    clientes = new Persistencia.ClienteBD();
                 return clientes;
             }
         }
         public static bool INSERTCliente(ModeloDominio.Cliente c)
         {
-            if (BD.clientes.Contains(c))
+            if (BD.Clientes.Contains(c))
             {
                 return false;
             }
             else
             {
-                BD.clientes.Add(c);
+                BD.Clientes.Add(c);
                 return true;
             }
         }
@@ -136,23 +143,17 @@ namespace Persistencia
                 return cliente.First();
             }
         }
-        
-        public static Boolean existe(String dni)
-        {
-            if (BD.clientes.Contains(dni))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         public static bool DELETECliente(ModeloDominio.Cliente c)
         {
-            return BD.clientes.Remove(c);
+            if (BD.Clientes.Contains(c))
+            {
+                return BD.Clientes.Remove(c);
+            }return false;
         }
+
+
+        //SEGURAMENTE SE PUEDA BORRAR ESTE MÉTODO, SOLO CONFUNDE
         public static bool UPDATECliente(ModeloDominio.Cliente c)
         {
             if (BD.DELETECliente(c))
@@ -162,8 +163,6 @@ namespace Persistencia
             return false;
         }
 
-        
-
         //--------------------------------------------------------------------------------------------------------------------------------------------        
         //-------------------------------------------------------------------------PRESUPUESTO--------------------------------------------------------
         public static PresupuestoBD Presupuestos
@@ -171,7 +170,7 @@ namespace Persistencia
             get
             {
                 if (presupuestos == null)
-                    presupuestos = new PresupuestoBD();
+                    presupuestos = new Persistencia.PresupuestoBD();
                 return presupuestos;
             }
         }
@@ -206,9 +205,14 @@ namespace Persistencia
 
         public static bool DELETEPresupuesto(ModeloDominio.Presupuesto p)
         {
-            return BD.presupuestos.Remove(p);
+            if (BD.presupuestos.Contains(p))
+            {
+                return BD.presupuestos.Remove(p);
+            }return false;
         }
 
+
+        //SEGURAMENTE SE PUEDA BORRAR ESTE MÉTODO, SOLO CONFUNDE
         public static bool UPDATEPresupuesto(ModeloDominio.Presupuesto p)
         {
 
@@ -218,25 +222,6 @@ namespace Persistencia
             }
             return false;
 
-        }
-
-        public static List<ModeloDominio.Presupuesto> GETPresupuestos()
-        {
-            return BD.presupuestos.ToList();
-        }
-
-        public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)
-        {
-            List<ModeloDominio.Presupuesto> resultado = new List<ModeloDominio.Presupuesto>();
-            foreach(ModeloDominio.Presupuesto p in BD.presupuestos)
-            {
-                ModeloDominio.Cliente cast = (ModeloDominio.Cliente)p.getCliente();
-                if (cast.getDni().Equals(c.getDni()))
-                {
-                    resultado.Add(p);
-                }
-            }
-            return resultado;
         }
 
 
@@ -272,9 +257,13 @@ namespace Persistencia
 
         public static bool DELETEVehiculo(ModeloDominio.Vehiculo v)
         {
-            return BD.vehiculos.Remove(v);
+            if (BD.vehiculos.Contains(v))
+            {
+                return BD.vehiculos.Remove(v);
+            }return false;
         }
 
+        //SEGURAMENTE SE PUEDA BORRAR ESTE MÉTODO, SOLO CONFUNDE
         public static bool UPDATEVehiculo(ModeloDominio.Vehiculo v)
         {
             if (BD.DELETEVehiculo(v))
@@ -282,21 +271,6 @@ namespace Persistencia
                 return BD.INSERTVehiculo(v);
             }
             return false;
-        }
-
-        public static List<ModeloDominio.Vehiculo > GETVehiculos()
-        {
-            return BD.vehiculos.ToList();
-        }
-
-        public static List<ModeloDominio.SegundaMano> GETVehiculosSegundaMano()
-        {
-            return BD.vehiculosSegundaMano.ToList();
-        }
-
-        public static List<ModeloDominio.Nuevo> GETVehiculosNuevo()
-        {
-            return BD.vehiculosNuevos.ToList();
         }
     }
 }

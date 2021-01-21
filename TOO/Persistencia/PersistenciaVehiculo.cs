@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    class PersistenciaVehiculo
+    public class PersistenciaVehiculo
     {
         public static void Añadir(ModeloDominio.Vehiculo c)
         {
@@ -38,11 +38,30 @@ namespace Persistencia
 
         public static List<ModeloDominio.Vehiculo> GetVehiculos()
         {
-            return BD.GETVehiculos();
+            return BD.Vehiculos.ToList();
         }
 
+        public static bool existeVehiculo(String bas)
+        {
+            if (BD.Vehiculos.Contains(bas))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
-
+        /*
+        public static List<ModeloDominio.SegundaMano> GETVehiculosSegundaMano()
+        {
+            return BD.VehiculosSegundaMano.ToList();
+        }
+        public static List<ModeloDominio.Nuevo> GETVehiculosNuevo()
+        {
+            return BD.vehiculosNuevos.ToList();
+        }*/
 
 
     }

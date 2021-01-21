@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Persistencia;
 
 namespace LogicaNegocio
 {
@@ -11,19 +12,25 @@ namespace LogicaNegocio
         //-------------------------------------------------------------------------------
         //Gestion de Clientes
 
-        public static void darAltaCliente(ModeloDominio.Cliente nuevoCliente)
+        public void darAltaCliente(string dni, string nombre, long tfno, ModeloDominio.Tipo_cliente categoria)
         {
-            Persistencia.BD.INSERTCliente(nuevoCliente);
+            ModeloDominio.Cliente nuevoCliente = new ModeloDominio.Cliente(dni,nombre,tfno,categoria);
+            PersistenciaCliente.Añadir(nuevoCliente);
         }
 
-        public static void darBajaCliente(ModeloDominio.Cliente c)
+        public bool darBajaCliente(ModeloDominio.Cliente c)
         {
-            Persistencia.BD.DELETECliente(c);
+            return PersistenciaCliente.Eliminar(c);
         }
 
-        public static void obtenerPresupuestosCliente(ModeloDominio.Cliente c)
+        public Boolean existeCliente(String dni)
         {
-            Persistencia.BD.GETPresupuestosCliente(Persistencia.BD.SELECTCliente(c));
+            return PersistenciaCliente.existeCliente(dni);
+        }
+
+        public List<ModeloDominio.Presupuesto> obtenerPresupuestosCliente(ModeloDominio.Cliente c)
+        {
+            return PersistenciaCliente.GETPresupuestosCliente(c);
         }
 
         //------------------------------------------------------------------------------
@@ -32,12 +39,17 @@ namespace LogicaNegocio
         public void darAltaVehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp)
         {
             ModeloDominio.Vehiculo nuevoVehiculo = new ModeloDominio.Vehiculo(numBastidor,marca,modelo,potencia,pvp);
-            Persistencia.BD.INSERTVehiculo(nuevoVehiculo);
+            PersistenciaVehiculo.Añadir(nuevoVehiculo);
         }
 
-        public void darBajaVehiculo(ModeloDominio.Vehiculo v)
+        public bool darBajaVehiculo(ModeloDominio.Vehiculo v)
         {
-            Persistencia.BD.DELETEVehiculo(v);
+            return PersistenciaVehiculo.Eliminar(v);
+        }
+
+        public Boolean existe(String bas)
+        {
+            return PersistenciaVehiculo.existeVehiculo(bas);
         }
 
         public void obtenerInfoVehiculo(ModeloDominio.Vehiculo v)
@@ -51,9 +63,10 @@ namespace LogicaNegocio
 
         public List<ModeloDominio.Vehiculo> obtenerTodosVehiculos()
         {
-            return Persistencia.BD.GETVehiculos();
+            return PersistenciaVehiculo.GetVehiculos();
         }
 
+        /*
         public List<ModeloDominio.SegundaMano> obtenerVehiculosSegundaMano()
         {
             return Persistencia.BD.GETVehiculosSegundaMano();
@@ -63,14 +76,29 @@ namespace LogicaNegocio
         {
             return Persistencia.BD.GETVehiculosNuevo();
         }
-
+        */
         //------------------------------------------------------------------------------
         //Gestion de Presupuestos
 
         public void crearPresupuesto(string id_presupuesto, DateTime fecha_Realizacion, bool estado, ModeloDominio.Cliente c)
         {
             ModeloDominio.Presupuesto nuevoPresupuesto = new ModeloDominio.Presupuesto(id_presupuesto, fecha_Realizacion, estado, c);
-            Persistencia.BD.INSERTPresupuesto(nuevoPresupuesto);
+            PersistenciaPresupuesto.añadir(nuevoPresupuesto);
+        }
+
+        public bool eliminarPresupuesto(ModeloDominio.Presupuesto p)
+        {
+            return PersistenciaPresupuesto.eliminar(p);
+        }
+
+        public List<ModeloDominio.Presupuesto> obtenerTodosPresupuestos()
+        {
+            return PersistenciaPresupuesto.getPresupuestos();
+        }
+
+        public List<ModeloDominio.Presupuesto> getPresupuestosCliente(ModeloDominio.Cliente c)
+        {
+            return PersistenciaPresupuesto.getPresupuestosCliente(c);
         }
 
         /*
@@ -78,28 +106,14 @@ namespace LogicaNegocio
         {
             obtenerInfoCliente(Persistencia.BD.SELECTPresupuesto(p).getCliente())
 ;       }
-        */
+        
         public void obtenerDatosVehiculoPresupuesto(ModeloDominio.Presupuesto p)
         {
             foreach (ModeloDominio.Vehiculo v in Persistencia.BD.SELECTPresupuesto(p).getVehiculos()) { 
                 obtenerInfoVehiculo(v);
             }
         }
-
-        public bool obtenerConfirmacionPresupuesto(ModeloDominio.Presupuesto p)
-        {
-            return obtenerEstadoPresupueto(p);
-        }
-
-        public bool obtenerEstadoPresupueto(ModeloDominio.Presupuesto p)
-        {
-            return Persistencia.BD.SELECTPresupuesto(p).getEstado();
-        }
-
-        public void eliminarPresupuesto(ModeloDominio.Presupuesto p)
-        {
-            Persistencia.BD.DELETEPresupuesto(p);
-        }
+       
 
         public void obtenerDatosPresupuesto(ModeloDominio.Presupuesto p)
         {
@@ -121,7 +135,7 @@ namespace LogicaNegocio
             }
             return listaP;
         }
-        /*
+        
         public void obtenerTodosPresupuestosPorEstado(bool estado)
         {
             foreach (ModeloDominio.Presupuesto p in Persistencia.BD.GETPresupuestosVehiculosDatos(estado))

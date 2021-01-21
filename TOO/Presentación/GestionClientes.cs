@@ -8,17 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio;
 
 namespace Presentación
 {
     public partial class GestionClientes : Form
     {
         String tipoForm;
+        private NegocioAdmin neg;
 
-        public GestionClientes(String dni)
+        public GestionClientes(String dni, NegocioAdmin neg)
         {
             //ESTO ES ALTA CLIENTE
             InitializeComponent();
+            this.neg = neg;
             this.tipoForm = "alta";
             this.dnitb.Text = dni;
             this.botonAceptar.Click += this.botonAceptarAlta_Click;
@@ -70,8 +73,8 @@ namespace Presentación
                 if (this.compruebaLosBotones())
                 {
                     //AÑADIR A LA BASE DE DATOS
-                    ModeloDominio.Cliente nuevo = new Cliente(this.dnitb.Text,this.nombretb.Text, long.Parse(telefonotb.Text), this.getTipoCliente());
-                    LogicaNegocio.NegocioAdmin.darAltaCliente(nuevo);
+                    neg.darAltaCliente(this.dnitb.Text, this.nombretb.Text, long.Parse(telefonotb.Text), this.getTipoCliente());
+                    this.Close();
                 }
                 else
                 {
@@ -107,7 +110,7 @@ namespace Presentación
             if (MessageBox.Show("Aviso", "Está seuro de que desea dar de baja este cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 //BORRAR EL CLIENTE DE LA BASE DE DATOS
-                LogicaNegocio.NegocioAdmin.darBajaCliente(LogicaNegocio.NegocioAdmin.obtenerCliente(this.dnitb.Text));
+                //LogicaNegocio.NegocioAdmin.darBajaCliente(LogicaNegocio.NegocioAdmin.obtenerCliente(this.dnitb.Text));
                 MessageBox.Show("Aviso", "Cliente eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Close();
