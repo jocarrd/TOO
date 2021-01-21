@@ -26,7 +26,6 @@ C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presen
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculo.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculoBastidor.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ClienteDNI.resources
-C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaCliente.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.LoginComercial.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.MenuPrincipal.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.Properties.Resources.resources
@@ -66,3 +65,14 @@ C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\LogicaNeg
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\ModeloDominio.pdb
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\bin\Debug\Persistencia.pdb
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CopyComplete
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\Presentación.exe.config
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\Presentación.exe
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\Presentación.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\LogicaNegocio.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\ModeloDominio.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\Persistencia.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\LogicaNegocio.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\ModeloDominio.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\bin\Debug\Persistencia.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.GestionClientes.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CopyComplete

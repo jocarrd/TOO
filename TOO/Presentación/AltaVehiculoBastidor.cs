@@ -21,11 +21,12 @@ namespace Presentación
         {
             if (this.bastidortb.Text.Equals("")) 
             {
-                MessageBox.Show("Introduce el número de bastidor");
+                MessageBox.Show("Error","Introduce el número de bastidor", MessageBoxButtons.OK);
+                this.bastidortb.Focus();
             }
             else
             {
-
+                ModeloDominio.Vehiculo nuevoVehiculo = new ModeloDominio.Vehiculo(this.bastidortb.Text, "", "", 0, 0);
             }
             
         }

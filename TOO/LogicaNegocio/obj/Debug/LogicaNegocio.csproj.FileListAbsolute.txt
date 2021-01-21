@@ -24,3 +24,12 @@ C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\Persisten
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.dll
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\ModeloDominio.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\Persistencia.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\ModeloDominio.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\bin\Debug\Persistencia.pdb
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.csproj.CopyComplete
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

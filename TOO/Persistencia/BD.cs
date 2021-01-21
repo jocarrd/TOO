@@ -17,10 +17,10 @@ namespace Persistencia
         private static VehiculoSegunda_manoBD vehiculosSegundaMano;
         private static PresupuestoVehiculoBD presupuestosVehiculos;
 
-        private BD() { }
+        private BD() {}
 
+        //Mirar porque el presupuesto ya tiene una clase interna que almacena cada coche que tiene ese presupuesto
 
-//Mirar porque el presupuesto ya tiene una clase interna que almacena cada coche que tiene ese presupuesto
         //-------------------------------------------------------------------------PresupuestoVehiculo-------------------------------------------------------------------
 
         public static Persistencia.PresupuestoVehiculoBD PresupuestosVehiculos

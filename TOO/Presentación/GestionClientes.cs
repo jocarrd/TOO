@@ -28,10 +28,11 @@ namespace Presentación
             this.botonAceptar.Focus();
         }
 
-        public GestionClientes(String Dni, String nombre, long tfno, Tipo_cliente tipo_Cliente, String tipo)
+        public GestionClientes(String Dni, String nombre, long tfno, Tipo_cliente tipo_Cliente, String tipo, NegocioAdmin neg)
         {
             //BUSQUEDA CLIENTES
             InitializeComponent();
+            this.neg = neg;
             if (tipo.Equals("búsqueda"))
             {
                 this.tipoForm = "búsqueda";
@@ -72,14 +73,22 @@ namespace Presentación
             {
                 if (this.compruebaLosBotones())
                 {
+                    this.nombrelb.Font = new Font(dnilb.Font, FontStyle.Regular);
+                    this.nombrelb.ForeColor = dnilb.ForeColor;
+                    this.telefonolb.Font = new Font(dnilb.Font, FontStyle.Regular);
+                    this.telefonolb.ForeColor = dnilb.ForeColor;
+                    this.categorialbl.Font = new Font(dnilb.Font, FontStyle.Regular);
+                    this.categorialbl.ForeColor = dnilb.ForeColor;
                     //AÑADIR A LA BASE DE DATOS
                     neg.darAltaCliente(this.dnitb.Text, this.nombretb.Text, long.Parse(telefonotb.Text), this.getTipoCliente());
+                    MessageBox.Show("Se ha añadido a "+this.nombretb.Text,"Añadido",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
                     MessageBox.Show("Seleccione al menos una categoría", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.flowLayoutPanel1.ForeColor = Color.Red;
+                    this.categorialbl.ForeColor = Color.Red;
+                    this.categorialbl.Font = new Font(categorialbl.Font, FontStyle.Bold);
                 }
             }
             else
@@ -107,11 +116,11 @@ namespace Presentación
 
         private void botonAceptarBaja_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Aviso", "Está seuro de que desea dar de baja este cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (MessageBox.Show("Está seuro de que desea dar de baja este cliente", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 //BORRAR EL CLIENTE DE LA BASE DE DATOS
                 //LogicaNegocio.NegocioAdmin.darBajaCliente(LogicaNegocio.NegocioAdmin.obtenerCliente(this.dnitb.Text));
-                MessageBox.Show("Aviso", "Cliente eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cliente eliminado","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Close();
         }

@@ -36,7 +36,7 @@
             this.telefonolb = new System.Windows.Forms.Label();
             this.botonB = new System.Windows.Forms.RadioButton();
             this.botonA = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
+            this.categorialbl = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.botonC = new System.Windows.Forms.RadioButton();
             this.botonCancelar = new System.Windows.Forms.Button();
@@ -122,15 +122,15 @@
             this.botonA.Text = "A";
             this.botonA.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // categorialbl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(57, 157);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 13);
-            this.label6.TabIndex = 51;
-            this.label6.Text = "Categoría";
+            this.categorialbl.AutoSize = true;
+            this.categorialbl.Location = new System.Drawing.Point(57, 157);
+            this.categorialbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.categorialbl.Name = "categorialbl";
+            this.categorialbl.Size = new System.Drawing.Size(54, 13);
+            this.categorialbl.TabIndex = 51;
+            this.categorialbl.Text = "Categoría";
             // 
             // flowLayoutPanel1
             // 
@@ -173,7 +173,7 @@
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
             // 
-            // AltaCliente
+            // GestionClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -183,7 +183,7 @@
             this.Controls.Add(this.botonC);
             this.Controls.Add(this.botonB);
             this.Controls.Add(this.botonA);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.categorialbl);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.telefonotb);
             this.Controls.Add(this.telefonolb);
@@ -192,7 +192,7 @@
             this.Controls.Add(this.dnitb);
             this.Controls.Add(this.dnilb);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "AltaCliente";
+            this.Name = "GestionClientes";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -209,7 +209,7 @@
         private System.Windows.Forms.Label telefonolb;
         private System.Windows.Forms.RadioButton botonB;
         private System.Windows.Forms.RadioButton botonA;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label categorialbl;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.RadioButton botonC;
         private System.Windows.Forms.Button botonCancelar;

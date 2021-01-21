@@ -39,14 +39,7 @@ namespace Persistencia
 
         public static bool existeCliente(String dni)
         {
-            if (BD.Clientes.Contains(dni))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return BD.SELECTCliente(new Cliente(dni,"",0,Tipo_cliente.Alta))!=null;
         }
 
         public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)

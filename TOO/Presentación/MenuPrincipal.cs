@@ -14,6 +14,7 @@ namespace Presentación
     public partial class MenuPrincipal : Form
     {
         private NegocioAdmin neg;
+
         public MenuPrincipal(String nombreComercial, NegocioAdmin neg )
         {
             InitializeComponent();
@@ -26,21 +27,18 @@ namespace Presentación
             {
                 ClienteDNI cliente = new ClienteDNI("alta",neg);
                 cliente.ShowDialog();
-                //this.Close();
             }
 
             if (e.ClickedItem.Text.Equals("Baja"))
             {
                 ClienteDNI cliente = new ClienteDNI("baja",neg);
                 cliente.ShowDialog();
-                this.Close();
             }
 
             if (e.ClickedItem.Text.Equals("Búsqueda"))
             {
                 ClienteDNI cliente = new ClienteDNI("búsqueda",neg);
                 cliente.ShowDialog();
-                this.Close();
             }
         }
     }
