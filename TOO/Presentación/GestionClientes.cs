@@ -140,27 +140,20 @@ namespace Presentación
             //Comprueba si los TextBox son vacíos o si tienen algun dato mal introducido
 
             //Comprobamos que no sean vacíos, sino dev falso
-            if (!nombretb.Text.Equals("") || !telefonotb.Text.Equals("") || !dnitb.Text.Equals(""))
+            if (!nombretb.Text.Equals("") || !telefonotb.Text.Equals(""))
             {
-                //Como los otros campos no pueden ser parseados por ser strings, comprobamos que el telf es in int
-                if (!long.TryParse(telefonotb.Text, out long telf))
-                {
-                    return false;
-                }
-                else
+                //Como los otros campos no pueden ser parseados por ser strings, comprobamos que el telf es un long
+                if (long.TryParse(telefonotb.Text, out long telf))
                 {
                     return true;
                 }
-
-
             }
-            else return false;
+            return false;
         }
         public bool compruebaLosBotones()
         {
             //Comprueba que al meno haya seleccionado una categoría
-            if (!this.botonA.Checked && !this.botonB.Checked && !this.botonC.Checked) return false;
-            else return true;
+            return this.botonA.Checked && this.botonB.Checked && this.botonC.Checked;
         }
 
         public void marcarTipoCliente(Tipo_cliente t)

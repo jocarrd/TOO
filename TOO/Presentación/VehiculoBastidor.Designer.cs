@@ -1,6 +1,6 @@
 ﻿namespace Presentación
 {
-    partial class AltaVehiculoBastidor
+    partial class VehiculoBastidor
     {
         /// <summary>
         /// Required designer variable.
@@ -37,47 +37,54 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 89);
+            this.label1.Location = new System.Drawing.Point(39, 58);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 20);
+            this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Número de bastidor:";
             // 
             // bastidortb
             // 
-            this.bastidortb.Location = new System.Drawing.Point(233, 89);
+            this.bastidortb.Location = new System.Drawing.Point(155, 58);
+            this.bastidortb.Margin = new System.Windows.Forms.Padding(2);
             this.bastidortb.Name = "bastidortb";
-            this.bastidortb.Size = new System.Drawing.Size(125, 26);
+            this.bastidortb.Size = new System.Drawing.Size(85, 20);
             this.bastidortb.TabIndex = 1;
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(233, 201);
+            this.botonCancelar.Location = new System.Drawing.Point(155, 131);
+            this.botonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(99, 37);
+            this.botonCancelar.Size = new System.Drawing.Size(66, 24);
             this.botonCancelar.TabIndex = 40;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
+            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(86, 201);
+            this.botonAceptar.Location = new System.Drawing.Point(57, 131);
+            this.botonAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(99, 37);
+            this.botonAceptar.Size = new System.Drawing.Size(66, 24);
             this.botonAceptar.TabIndex = 39;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
-            // AltaVehiculoBastidor
+            // VehiculoBastidor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 333);
+            this.ClientSize = new System.Drawing.Size(300, 216);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.bastidortb);
             this.Controls.Add(this.label1);
-            this.Name = "AltaVehiculoBastidor";
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "VehiculoBastidor";
             this.Text = "Introducir número de bastidor";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AltaVehiculo.cs">
+    <Compile Include="GestionVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaVehiculo.Designer.cs">
-      <DependentUpon>AltaVehiculo.cs</DependentUpon>
+    <Compile Include="GestionVehiculos.Designer.cs">
+      <DependentUpon>GestionVehiculos.cs</DependentUpon>
     </Compile>
-    <Compile Include="AltaVehiculoBastidor.cs">
+    <Compile Include="VehiculoBastidor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AltaVehiculoBastidor.Designer.cs">
-      <DependentUpon>AltaVehiculoBastidor.cs</DependentUpon>
+    <Compile Include="VehiculoBastidor.Designer.cs">
+      <DependentUpon>VehiculoBastidor.cs</DependentUpon>
     </Compile>
     <Compile Include="ClienteDNI.cs">
       <SubType>Form</SubType>
@@ -84,11 +84,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AltaVehiculo.resx">
-      <DependentUpon>AltaVehiculo.cs</DependentUpon>
+    <EmbeddedResource Include="GestionVehiculos.resx">
+      <DependentUpon>GestionVehiculos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AltaVehiculoBastidor.resx">
-      <DependentUpon>AltaVehiculoBastidor.cs</DependentUpon>
+    <EmbeddedResource Include="VehiculoBastidor.resx">
+      <DependentUpon>VehiculoBastidor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ClienteDNI.resx">
       <DependentUpon>ClienteDNI.cs</DependentUpon>
