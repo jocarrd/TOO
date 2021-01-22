@@ -34,6 +34,11 @@ namespace LogicaNegocio
             return PersistenciaCliente.existeCliente(dni);
         }
 
+        public List<ModeloDominio.Cliente> listarClientes()
+        {
+            return PersistenciaCliente.getClientes();
+        }
+
         public List<ModeloDominio.Presupuesto> obtenerPresupuestosCliente(ModeloDominio.Cliente c)
         {
             return PersistenciaCliente.GETPresupuestosCliente(c);
@@ -52,7 +57,7 @@ namespace LogicaNegocio
             return PersistenciaVehiculo.Eliminar(v);
         }
 
-        public Boolean existe(String bas)
+        public Boolean existeVehiculo(String bas)
         {
             return PersistenciaVehiculo.existeVehiculo(bas);
         }
@@ -85,9 +90,9 @@ namespace LogicaNegocio
         //------------------------------------------------------------------------------
         //Gestion de Presupuestos
 
-        public void crearPresupuesto(string id_presupuesto, DateTime fecha_Realizacion, bool estado, ModeloDominio.Cliente c)
+        public void crearPresupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, bool estado, ModeloDominio.Cliente c)
         {
-            ModeloDominio.Presupuesto nuevoPresupuesto = new ModeloDominio.Presupuesto(id_presupuesto, fecha_Realizacion, estado, c);
+            ModeloDominio.Presupuesto nuevoPresupuesto = new ModeloDominio.Presupuesto(id_presupuesto, cantidad,fecha_Realizacion, estado, c);
             PersistenciaPresupuesto.añadir(nuevoPresupuesto);
         }
 
@@ -104,6 +109,11 @@ namespace LogicaNegocio
         public List<ModeloDominio.Presupuesto> getPresupuestosCliente(ModeloDominio.Cliente c)
         {
             return PersistenciaPresupuesto.getPresupuestosCliente(c);
+        }
+
+        public Boolean existePresupuesto(String iden)
+        {
+            return PersistenciaPresupuesto.existePresupuesto(iden);
         }
 
         /*

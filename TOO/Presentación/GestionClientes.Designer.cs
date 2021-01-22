@@ -179,7 +179,7 @@
             this.Controls.Add(this.dnitb);
             this.Controls.Add(this.dnilb);
             this.Name = "GestionClientes";
-            this.Text = "Form1";
+            this.Text = "Gestión de Clientes";
             this.ResumeLayout(false);
             this.PerformLayout();
 

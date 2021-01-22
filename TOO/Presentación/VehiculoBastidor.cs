@@ -25,15 +25,15 @@ namespace Presentación
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            if (this.bastidortb.Text.Length >= 5)
+            if (this.numBastb.Text.Length >= 5)
             {
-                bool existe = neg.existeCliente(this.bastidortb.Text);
+                bool existe = neg.existeCliente(this.numBastb.Text);
                 switch (this.tipo)
                 {
                     case "alta":
                         if (!existe)
                         {
-                            GestionVehiculos nuevo = new GestionVehiculos(this.bastidortb.Text, this.neg);
+                            GestionVehiculos nuevo = new GestionVehiculos(this.numBastb.Text, this.neg);
                             nuevo.Text = "Alta de un vehiculo";
                             nuevo.ShowDialog();
                             this.Close();
@@ -42,8 +42,8 @@ namespace Presentación
                         {
                             if (MessageBox.Show("¿Quieres introducir otro Bastidor?", "Ya existe un vehiculo con ese Bastidor", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
-                                this.bastidortb.Clear();
-                                this.bastidortb.Focus();
+                                this.numBastb.Clear();
+                                this.numBastb.Focus();
                             }
                             else
                             {
@@ -57,8 +57,8 @@ namespace Presentación
                         {
                             if (MessageBox.Show("¿Quieres introducir otro Bastidor?", "No existe un vehiculo con ese Bastidor", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
-                                this.bastidortb.Clear();
-                                this.bastidortb.Focus();
+                                this.numBastb.Clear();
+                                this.numBastb.Focus();
                             }
                             else
                             {
@@ -76,8 +76,8 @@ namespace Presentación
                         {
                             if (MessageBox.Show("¿Quieres introducir otro Bastidor?", "No existe un vehiculo con ese Bastidor", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
-                                this.bastidortb.Clear();
-                                this.bastidortb.Focus();
+                                this.numBastb.Clear();
+                                this.numBastb.Focus();
                             }
                             else
                             {
@@ -97,7 +97,7 @@ namespace Presentación
             else
             {
                 MessageBox.Show("Error al introducir Bastidor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                bastidortb.Focus();
+                numBastb.Focus();
             }
 
         }
@@ -106,7 +106,5 @@ namespace Presentación
         {
             this.Close();
         }
-
-
     }
 }

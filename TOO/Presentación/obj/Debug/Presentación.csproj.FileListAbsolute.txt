@@ -76,3 +76,6 @@ C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.Ge
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.VehiculoBastidor.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.GestionVehiculos.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.VehiculoBastidor.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ListadoClientes.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.GestionPresupuestos.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.IdentificadorPresupuesto.resources

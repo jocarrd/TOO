@@ -1,6 +1,6 @@
 ﻿namespace Presentación
 {
-    partial class VehiculoBastidor
+    partial class IdentificadorPresupuesto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,59 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.numBaslb = new System.Windows.Forms.Label();
-            this.numBastb = new System.Windows.Forms.TextBox();
             this.botonCancelar = new System.Windows.Forms.Button();
             this.botonAceptar = new System.Windows.Forms.Button();
+            this.IdePrestb = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // numBaslb
-            // 
-            this.numBaslb.AutoSize = true;
-            this.numBaslb.Location = new System.Drawing.Point(58, 89);
-            this.numBaslb.Name = "numBaslb";
-            this.numBaslb.Size = new System.Drawing.Size(154, 20);
-            this.numBaslb.TabIndex = 0;
-            this.numBaslb.Text = "Número de Bastidor:";
-            // 
-            // numBastb
-            // 
-            this.numBastb.Location = new System.Drawing.Point(239, 86);
-            this.numBastb.Name = "numBastb";
-            this.numBastb.Size = new System.Drawing.Size(126, 26);
-            this.numBastb.TabIndex = 1;
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(239, 170);
+            this.botonCancelar.Location = new System.Drawing.Point(294, 183);
             this.botonCancelar.Name = "botonCancelar";
             this.botonCancelar.Size = new System.Drawing.Size(99, 37);
-            this.botonCancelar.TabIndex = 40;
+            this.botonCancelar.TabIndex = 44;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
             this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(93, 170);
+            this.botonAceptar.Location = new System.Drawing.Point(148, 183);
             this.botonAceptar.Name = "botonAceptar";
             this.botonAceptar.Size = new System.Drawing.Size(99, 37);
-            this.botonAceptar.TabIndex = 39;
+            this.botonAceptar.TabIndex = 43;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
             this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
-            // VehiculoBastidor
+            // IdePrestb
+            // 
+            this.IdePrestb.Location = new System.Drawing.Point(294, 92);
+            this.IdePrestb.Name = "IdePrestb";
+            this.IdePrestb.Size = new System.Drawing.Size(126, 26);
+            this.IdePrestb.TabIndex = 42;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(71, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(217, 20);
+            this.label1.TabIndex = 41;
+            this.label1.Text = "Identificador de Presupuesto:";
+            // 
+            // IdentificadorPresupuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 295);
+            this.ClientSize = new System.Drawing.Size(530, 311);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonAceptar);
-            this.Controls.Add(this.numBastb);
-            this.Controls.Add(this.numBaslb);
-            this.Name = "VehiculoBastidor";
-            this.Text = "Introducir número de bastidor";
+            this.Controls.Add(this.IdePrestb);
+            this.Controls.Add(this.label1);
+            this.Name = "IdentificadorPresupuesto";
+            this.Text = "Introducir identificador y cliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -88,9 +88,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Label numBaslb;
-        private System.Windows.Forms.TextBox numBastb;
         private System.Windows.Forms.Button botonCancelar;
         private System.Windows.Forms.Button botonAceptar;
+        private System.Windows.Forms.TextBox IdePrestb;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -46,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestionPresupuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GestionPresupuestos.Designer.cs">
+      <DependentUpon>GestionPresupuestos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="IdentificadorPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IdentificadorPresupuesto.Designer.cs">
+      <DependentUpon>IdentificadorPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoClientes.Designer.cs">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,8 +102,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GestionPresupuestos.resx">
+      <DependentUpon>GestionPresupuestos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GestionVehiculos.resx">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IdentificadorPresupuesto.resx">
+      <DependentUpon>IdentificadorPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoClientes.resx">
+      <DependentUpon>ListadoClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehiculoBastidor.resx">
       <DependentUpon>VehiculoBastidor.cs</DependentUpon>

@@ -52,10 +52,9 @@
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(292, 257);
-            this.botonCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.botonCancelar.Location = new System.Drawing.Point(438, 395);
             this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(66, 24);
+            this.botonCancelar.Size = new System.Drawing.Size(99, 37);
             this.botonCancelar.TabIndex = 38;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
@@ -63,49 +62,44 @@
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(167, 257);
-            this.botonAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.botonAceptar.Location = new System.Drawing.Point(250, 395);
             this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(66, 24);
+            this.botonAceptar.Size = new System.Drawing.Size(99, 37);
             this.botonAceptar.TabIndex = 37;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
             // 
             // fechaMatriculatb
             // 
-            this.fechaMatriculatb.Location = new System.Drawing.Point(397, 184);
-            this.fechaMatriculatb.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaMatriculatb.Location = new System.Drawing.Point(596, 283);
             this.fechaMatriculatb.Name = "fechaMatriculatb";
-            this.fechaMatriculatb.Size = new System.Drawing.Size(68, 20);
+            this.fechaMatriculatb.Size = new System.Drawing.Size(100, 26);
             this.fechaMatriculatb.TabIndex = 36;
             // 
             // fechaMatriculalb
             // 
             this.fechaMatriculalb.AutoSize = true;
-            this.fechaMatriculalb.Location = new System.Drawing.Point(289, 186);
-            this.fechaMatriculalb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.fechaMatriculalb.Location = new System.Drawing.Point(434, 286);
             this.fechaMatriculalb.Name = "fechaMatriculalb";
-            this.fechaMatriculalb.Size = new System.Drawing.Size(106, 13);
+            this.fechaMatriculalb.Size = new System.Drawing.Size(155, 20);
             this.fechaMatriculalb.TabIndex = 35;
             this.fechaMatriculalb.Text = "Fecha Matriculación:";
             // 
             // matriculalb
             // 
             this.matriculalb.AutoSize = true;
-            this.matriculalb.Location = new System.Drawing.Point(289, 141);
-            this.matriculalb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.matriculalb.Location = new System.Drawing.Point(434, 217);
             this.matriculalb.Name = "matriculalb";
-            this.matriculalb.Size = new System.Drawing.Size(55, 13);
+            this.matriculalb.Size = new System.Drawing.Size(77, 20);
             this.matriculalb.TabIndex = 34;
             this.matriculalb.Text = "Matrícula:";
             // 
             // botonSegMano
             // 
             this.botonSegMano.AutoSize = true;
-            this.botonSegMano.Location = new System.Drawing.Point(389, 43);
-            this.botonSegMano.Margin = new System.Windows.Forms.Padding(2);
+            this.botonSegMano.Location = new System.Drawing.Point(584, 66);
             this.botonSegMano.Name = "botonSegMano";
-            this.botonSegMano.Size = new System.Drawing.Size(98, 17);
+            this.botonSegMano.Size = new System.Drawing.Size(143, 24);
             this.botonSegMano.TabIndex = 33;
             this.botonSegMano.TabStop = true;
             this.botonSegMano.Text = "Segunda Mano";
@@ -115,10 +109,9 @@
             // botonNuevo
             // 
             this.botonNuevo.AutoSize = true;
-            this.botonNuevo.Location = new System.Drawing.Point(318, 43);
-            this.botonNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.botonNuevo.Location = new System.Drawing.Point(477, 66);
             this.botonNuevo.Name = "botonNuevo";
-            this.botonNuevo.Size = new System.Drawing.Size(57, 17);
+            this.botonNuevo.Size = new System.Drawing.Size(79, 24);
             this.botonNuevo.TabIndex = 20;
             this.botonNuevo.TabStop = true;
             this.botonNuevo.Text = "Nuevo";
@@ -128,124 +121,111 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(315, 12);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(472, 18);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(50, 13);
+            this.label6.Size = new System.Drawing.Size(70, 20);
             this.label6.TabIndex = 32;
             this.label6.Text = "Vehículo";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(292, 18);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(438, 28);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(217, 65);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(326, 100);
             this.flowLayoutPanel1.TabIndex = 31;
             // 
             // matriculatb
             // 
-            this.matriculatb.Location = new System.Drawing.Point(397, 137);
-            this.matriculatb.Margin = new System.Windows.Forms.Padding(2);
+            this.matriculatb.Location = new System.Drawing.Point(596, 211);
             this.matriculatb.Name = "matriculatb";
-            this.matriculatb.Size = new System.Drawing.Size(68, 20);
+            this.matriculatb.Size = new System.Drawing.Size(100, 26);
             this.matriculatb.TabIndex = 30;
             // 
             // precioRectb
             // 
-            this.precioRectb.Location = new System.Drawing.Point(137, 186);
-            this.precioRectb.Margin = new System.Windows.Forms.Padding(2);
+            this.precioRectb.Location = new System.Drawing.Point(206, 286);
             this.precioRectb.Name = "precioRectb";
-            this.precioRectb.Size = new System.Drawing.Size(68, 20);
+            this.precioRectb.Size = new System.Drawing.Size(100, 26);
             this.precioRectb.TabIndex = 29;
             // 
             // potenciatb
             // 
-            this.potenciatb.Location = new System.Drawing.Point(137, 141);
-            this.potenciatb.Margin = new System.Windows.Forms.Padding(2);
+            this.potenciatb.Location = new System.Drawing.Point(206, 217);
             this.potenciatb.Name = "potenciatb";
-            this.potenciatb.Size = new System.Drawing.Size(68, 20);
+            this.potenciatb.Size = new System.Drawing.Size(100, 26);
             this.potenciatb.TabIndex = 28;
             // 
             // modelotb
             // 
-            this.modelotb.Location = new System.Drawing.Point(137, 101);
-            this.modelotb.Margin = new System.Windows.Forms.Padding(2);
+            this.modelotb.Location = new System.Drawing.Point(206, 155);
             this.modelotb.Name = "modelotb";
-            this.modelotb.Size = new System.Drawing.Size(68, 20);
+            this.modelotb.Size = new System.Drawing.Size(100, 26);
             this.modelotb.TabIndex = 27;
             // 
             // marcatb
             // 
-            this.marcatb.Location = new System.Drawing.Point(137, 60);
-            this.marcatb.Margin = new System.Windows.Forms.Padding(2);
+            this.marcatb.Location = new System.Drawing.Point(206, 92);
             this.marcatb.Name = "marcatb";
-            this.marcatb.Size = new System.Drawing.Size(68, 20);
+            this.marcatb.Size = new System.Drawing.Size(100, 26);
             this.marcatb.TabIndex = 26;
             // 
             // numBastb
             // 
-            this.numBastb.Location = new System.Drawing.Point(137, 18);
-            this.numBastb.Margin = new System.Windows.Forms.Padding(2);
+            this.numBastb.Location = new System.Drawing.Point(206, 28);
             this.numBastb.Name = "numBastb";
-            this.numBastb.Size = new System.Drawing.Size(68, 20);
+            this.numBastb.Size = new System.Drawing.Size(100, 26);
             this.numBastb.TabIndex = 25;
             // 
             // precioReclb
             // 
             this.precioReclb.AutoSize = true;
-            this.precioReclb.Location = new System.Drawing.Point(25, 190);
-            this.precioReclb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.precioReclb.Location = new System.Drawing.Point(38, 292);
             this.precioReclb.Name = "precioReclb";
-            this.precioReclb.Size = new System.Drawing.Size(113, 13);
+            this.precioReclb.Size = new System.Drawing.Size(166, 20);
             this.precioReclb.TabIndex = 24;
             this.precioReclb.Text = "Precio Recomendado:";
             // 
             // potencialb
             // 
             this.potencialb.AutoSize = true;
-            this.potencialb.Location = new System.Drawing.Point(25, 145);
-            this.potencialb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.potencialb.Location = new System.Drawing.Point(38, 223);
             this.potencialb.Name = "potencialb";
-            this.potencialb.Size = new System.Drawing.Size(52, 13);
+            this.potencialb.Size = new System.Drawing.Size(75, 20);
             this.potencialb.TabIndex = 23;
             this.potencialb.Text = "Potencia:";
             // 
             // modelolb
             // 
             this.modelolb.AutoSize = true;
-            this.modelolb.Location = new System.Drawing.Point(25, 105);
-            this.modelolb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.modelolb.Location = new System.Drawing.Point(38, 162);
             this.modelolb.Name = "modelolb";
-            this.modelolb.Size = new System.Drawing.Size(45, 13);
+            this.modelolb.Size = new System.Drawing.Size(65, 20);
             this.modelolb.TabIndex = 22;
             this.modelolb.Text = "Modelo:";
             // 
             // marcalb
             // 
             this.marcalb.AutoSize = true;
-            this.marcalb.Location = new System.Drawing.Point(25, 62);
-            this.marcalb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.marcalb.Location = new System.Drawing.Point(38, 95);
             this.marcalb.Name = "marcalb";
-            this.marcalb.Size = new System.Drawing.Size(40, 13);
+            this.marcalb.Size = new System.Drawing.Size(57, 20);
             this.marcalb.TabIndex = 21;
             this.marcalb.Text = "Marca:";
             // 
             // numBastlb
             // 
             this.numBastlb.AutoSize = true;
-            this.numBastlb.Location = new System.Drawing.Point(25, 19);
-            this.numBastlb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.numBastlb.Location = new System.Drawing.Point(38, 29);
             this.numBastlb.Name = "numBastlb";
-            this.numBastlb.Size = new System.Drawing.Size(103, 13);
+            this.numBastlb.Size = new System.Drawing.Size(154, 20);
             this.numBastlb.TabIndex = 19;
             this.numBastlb.Text = "Número de Bastidor:";
             // 
             // GestionVehiculos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(533, 292);
+            this.ClientSize = new System.Drawing.Size(800, 449);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.fechaMatriculatb);
@@ -266,9 +246,8 @@
             this.Controls.Add(this.modelolb);
             this.Controls.Add(this.marcalb);
             this.Controls.Add(this.numBastlb);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionVehiculos";
-            this.Text = "Alta de vehiculo";
+            this.Text = "Gestión de Vehiculos";
             this.ResumeLayout(false);
             this.PerformLayout();
 

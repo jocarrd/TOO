@@ -54,6 +54,16 @@ namespace Persistencia
             return BD.Clientes.Contains(dni);
         }
 
+        public static List<ModeloDominio.Cliente> getClientes()
+        {
+            List<ModeloDominio.Cliente> lista = new List<Cliente>();
+            foreach (Cliente c in BD.Clientes)
+            {
+                lista.Add(c);
+            }
+            return lista;
+        }
+
         public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)
         {
             List<ModeloDominio.Presupuesto> resultado = new List<ModeloDominio.Presupuesto>();

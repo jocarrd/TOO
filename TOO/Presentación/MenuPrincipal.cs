@@ -63,5 +63,27 @@ namespace Presentación
                 vehiculo.ShowDialog();
            }
         }
+        private void presupuestosToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (e.ClickedItem.Text.Equals("Crear nuevo"))
+            {
+                IdentificadorPresupuesto vehiculo = new IdentificadorPresupuesto("crear", neg);
+                vehiculo.ShowDialog();
+            }
+
+            if (e.ClickedItem.Text.Equals("Búsqueda"))
+            {
+                VehiculoBastidor vehiculo = new VehiculoBastidor("búsqueda", neg);
+                vehiculo.ShowDialog();
+            }
+        }
+        private void listarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ListadoClientes lis = new ListadoClientes(neg);
+            lis.ShowDialog();
+
+        }
+
+        
     }
 }

@@ -37,6 +37,18 @@ namespace Persistencia
             return BD.UPDATEPresupuesto(c);
         }
 
+        public static bool existePresupuesto(String bas)
+        {
+            if (BD.Presupuestos.Contains(bas))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public static List<ModeloDominio.Presupuesto> getPresupuestos()
         {
             return BD.Presupuestos.ToList();
