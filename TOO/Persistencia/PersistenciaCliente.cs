@@ -27,6 +27,18 @@ namespace Persistencia
             }                
         }
 
+        public static Cliente seleccionarCliente(String dni)
+        {
+            foreach (Cliente c in BD.Clientes)
+            {
+                if (c.getDni().Equals(dni))
+                {
+                    return c;
+                }
+            }
+            return null;
+        }
+
         public static bool Eliminar(ModeloDominio.Cliente c)
         {
             return BD.DELETECliente(c);
@@ -39,7 +51,7 @@ namespace Persistencia
 
         public static bool existeCliente(String dni)
         {
-            return BD.SELECTCliente(new Cliente(dni,"",0,Tipo_cliente.Alta))!=null;
+            return BD.Clientes.Contains(dni);
         }
 
         public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)

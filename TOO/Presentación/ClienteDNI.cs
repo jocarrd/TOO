@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using LogicaNegocio;
+using ModeloDominio;
 
 namespace Presentación
 {
@@ -25,7 +26,7 @@ namespace Presentación
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            if (this.dnitb.Text.Length>=5)
+            if (this.dnitb.Text.Length>=2)
             {
                 bool existe = neg.existeCliente(this.dnitb.Text);
                 switch (this.tipo)
@@ -67,7 +68,10 @@ namespace Presentación
                         }
                         else
                         {
-                            //baja.Text = "Baja de un cliente";
+                            Cliente c = neg.seleccionarCliente(this.dnitb.Text);
+                            GestionClientes bus = new GestionClientes(c.getDni(), c.getNombre(), c.getTfno(), c.getCategoria(), "baja", neg);
+                            bus.ShowDialog();
+                            this.Close();
                         }
                         break;
 
@@ -87,8 +91,10 @@ namespace Presentación
                         else
                         {
                             MessageBox.Show("Existe un cliente con ese DNI");
-                            //busqueda.Text = "Datos del cliente";
-                            //busqueda.Show();
+                            Cliente c = neg.seleccionarCliente(this.dnitb.Text);
+
+                            GestionClientes bus = new GestionClientes(c.getDni(),c.getNombre(),c.getTfno(),c.getCategoria(), "búsqueda",neg);
+                            bus.ShowDialog();
                             this.Close();
                         }
                         break;

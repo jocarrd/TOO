@@ -119,7 +119,8 @@ namespace Presentación
             if (MessageBox.Show("Está seuro de que desea dar de baja este cliente", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
             {
                 //BORRAR EL CLIENTE DE LA BASE DE DATOS
-                //LogicaNegocio.NegocioAdmin.darBajaCliente(LogicaNegocio.NegocioAdmin.obtenerCliente(this.dnitb.Text));
+                Cliente c = neg.seleccionarCliente(this.dnitb.Text);
+                neg.darBajaCliente(c);
                 MessageBox.Show("Cliente eliminado","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Close();
@@ -153,7 +154,7 @@ namespace Presentación
         public bool compruebaLosBotones()
         {
             //Comprueba que al meno haya seleccionado una categoría
-            return this.botonA.Checked && this.botonB.Checked && this.botonC.Checked;
+            return this.botonA.Checked || this.botonB.Checked || this.botonC.Checked;
         }
 
         public void marcarTipoCliente(Tipo_cliente t)

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LogicaNegocio;
 
 namespace Presentación
 {
@@ -14,9 +15,10 @@ namespace Presentación
         [STAThread]
         static void Main()
         {
+            NegocioAdmin neg = new NegocioAdmin();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginComercial());
+            Application.Run(new MenuPrincipal("JUAN", neg));
         }
     }
 }

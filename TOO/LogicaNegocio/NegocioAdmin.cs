@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Persistencia;
+using ModeloDominio;
 
 namespace LogicaNegocio
 {
@@ -21,6 +22,11 @@ namespace LogicaNegocio
         public bool darBajaCliente(ModeloDominio.Cliente c)
         {
             return PersistenciaCliente.Eliminar(c);
+        }
+
+        public Cliente seleccionarCliente(String dni)
+        {
+            return PersistenciaCliente.seleccionarCliente(dni);
         }
 
         public Boolean existeCliente(String dni)
