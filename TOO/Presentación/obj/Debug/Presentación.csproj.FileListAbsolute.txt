@@ -21,8 +21,6 @@ C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ex
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.pdb
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.LoginComercial.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csprojAssemblyReference.cache
-C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculo.resources
-C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.AltaVehiculoBastidor.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ClienteDNI.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.LoginComercial.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.MenuPrincipal.resources
@@ -76,3 +74,5 @@ C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presen
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.csproj.CopyComplete
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.GestionVehiculos.resources
 C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.VehiculoBastidor.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.GestionVehiculos.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.VehiculoBastidor.resources

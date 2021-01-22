@@ -42,9 +42,8 @@ namespace LogicaNegocio
         //------------------------------------------------------------------------------
         //Gestion de Vehiculos
 
-        public void darAltaVehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp)
+        public void darAltaVehiculo(ModeloDominio.Vehiculo nuevoVehiculo)
         {
-            ModeloDominio.Vehiculo nuevoVehiculo = new ModeloDominio.Vehiculo(numBastidor,marca,modelo,potencia,pvp);
             PersistenciaVehiculo.Añadir(nuevoVehiculo);
         }
 

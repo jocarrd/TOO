@@ -44,7 +44,24 @@ namespace Presentación
 
         private void vehiculosToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+           
+            if (e.ClickedItem.Text.Equals("Alta"))
+             {
+                 VehiculoBastidor vehiculo = new VehiculoBastidor("alta", neg);
+                 vehiculo.ShowDialog();
+             }
 
+            if (e.ClickedItem.Text.Equals("Baja"))
+            {
+                VehiculoBastidor vehiculo = new VehiculoBastidor("baja", neg);
+                vehiculo.ShowDialog();
+            }
+
+           if (e.ClickedItem.Text.Equals("Búsqueda"))
+           {
+                VehiculoBastidor vehiculo = new VehiculoBastidor("búsqueda", neg);
+                vehiculo.ShowDialog();
+           }
         }
     }
 }

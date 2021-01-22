@@ -11,6 +11,7 @@ namespace Persistencia
         public static void Añadir(ModeloDominio.Vehiculo c)
         {
             BD.INSERTVehiculo(c);
+
         }
 
         public static ModeloDominio.Vehiculo Buscar(ModeloDominio.Vehiculo c)
