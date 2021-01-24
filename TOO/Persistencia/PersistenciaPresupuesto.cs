@@ -49,6 +49,18 @@ namespace Persistencia
             }
         }
 
+        public static ModeloDominio.Presupuesto seleccionarPresupuesto(String pres)
+        {
+            foreach (ModeloDominio.Presupuesto c in BD.Presupuestos)
+            {
+                if (c.getId_presupuesto().Equals(pres))
+                {
+                    return c;
+                }
+            }
+            return null;
+        }
+
         public static List<ModeloDominio.Presupuesto> getPresupuestos()
         {
             return BD.Presupuestos.ToList();

@@ -11,11 +11,11 @@ namespace ModeloDominio
         private String id_presupuesto;
         private int cantidad;
         private DateTime fecha_Realizacion;
-        private bool estado;
+        private EstadoPresupuesto estado;
         private Cliente cliente;
         private List<Vehiculo> cocheList;
 
-        public Presupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, bool estado, Cliente c)
+        public Presupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, EstadoPresupuesto estado, Cliente c)
         {
             this.id_presupuesto = id_presupuesto;
             this.cantidad = cantidad;
@@ -55,12 +55,12 @@ namespace ModeloDominio
             return this.fecha_Realizacion;
         }
 
-        public void setEstado(bool estado)
+        public void setEstado(EstadoPresupuesto estado)
         {
             this.estado = estado;
         }
 
-        public bool getEstado()
+        public EstadoPresupuesto getEstado()
         {
             return this.estado;
         }

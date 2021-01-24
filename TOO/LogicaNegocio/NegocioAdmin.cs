@@ -62,6 +62,11 @@ namespace LogicaNegocio
             return PersistenciaVehiculo.existeVehiculo(bas);
         }
 
+        public Vehiculo seleccionarVehiculo(String bas)
+        {
+            return PersistenciaVehiculo.seleccionarVehiculo(bas);
+        }
+
         public void obtenerInfoVehiculo(ModeloDominio.Vehiculo v)
         {
             System.Console.WriteLine("Numero de Bastidor: " + v.getNumBastidor());
@@ -90,9 +95,15 @@ namespace LogicaNegocio
         //------------------------------------------------------------------------------
         //Gestion de Presupuestos
 
-        public void crearPresupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, bool estado, ModeloDominio.Cliente c)
+        public void crearPresupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, EstadoPresupuesto estado, ModeloDominio.Cliente c, List<Vehiculo> vehiculos)
         {
             ModeloDominio.Presupuesto nuevoPresupuesto = new ModeloDominio.Presupuesto(id_presupuesto, cantidad,fecha_Realizacion, estado, c);
+
+            foreach(Vehiculo v in vehiculos)
+            {
+                nuevoPresupuesto.anadirVehiculo(v);
+            }
+
             PersistenciaPresupuesto.añadir(nuevoPresupuesto);
         }
 
@@ -114,6 +125,11 @@ namespace LogicaNegocio
         public Boolean existePresupuesto(String iden)
         {
             return PersistenciaPresupuesto.existePresupuesto(iden);
+        }
+
+        public Presupuesto seleccionarPresupuesto(String pres)
+        {
+            return PersistenciaPresupuesto.seleccionarPresupuesto(pres);
         }
 
         /*

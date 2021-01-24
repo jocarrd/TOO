@@ -73,7 +73,7 @@ namespace Presentación
 
             if (e.ClickedItem.Text.Equals("Búsqueda"))
             {
-                VehiculoBastidor vehiculo = new VehiculoBastidor("búsqueda", neg);
+                IdentificadorPresupuesto vehiculo = new IdentificadorPresupuesto("búsqueda", neg);
                 vehiculo.ShowDialog();
             }
         }

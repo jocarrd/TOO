@@ -72,13 +72,14 @@ namespace Presentación
             if (this.compruebaLosTextBox())
             {
                 if (this.compruebaLosBotones())
-                {
+                {   
+                    /*
                     this.nombrelb.Font = new Font(dnilb.Font, FontStyle.Regular);
                     this.nombrelb.ForeColor = dnilb.ForeColor;
                     this.telefonolb.Font = new Font(dnilb.Font, FontStyle.Regular);
                     this.telefonolb.ForeColor = dnilb.ForeColor;
                     this.categorialbl.Font = new Font(dnilb.Font, FontStyle.Regular);
-                    this.categorialbl.ForeColor = dnilb.ForeColor;
+                    this.categorialbl.ForeColor = dnilb.ForeColor;*/
                     //AÑADIR A LA BASE DE DATOS
                     neg.darAltaCliente(this.dnitb.Text, this.nombretb.Text, long.Parse(telefonotb.Text), this.getTipoCliente());
                     MessageBox.Show("Se ha añadido a "+this.nombretb.Text,"Añadido",MessageBoxButtons.OK,MessageBoxIcon.Information);

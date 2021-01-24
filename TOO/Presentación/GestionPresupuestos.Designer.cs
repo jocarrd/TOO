@@ -32,26 +32,26 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cantidadlb = new System.Windows.Forms.Label();
             this.cantidadtb = new System.Windows.Forms.TextBox();
-            this.clientetb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.estadotb = new System.Windows.Forms.TextBox();
+            this.clientetb = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.listVehilb = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.numbastb = new System.Windows.Forms.TextBox();
             this.botonAñadir = new System.Windows.Forms.Button();
             this.botonEliminar = new System.Windows.Forms.Button();
             this.botonCancelar = new System.Windows.Forms.Button();
             this.botonAceptar = new System.Windows.Forms.Button();
+            this.estadocb = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // idePrestb
             // 
             this.idePrestb.Location = new System.Drawing.Point(276, 89);
             this.idePrestb.Name = "idePrestb";
-            this.idePrestb.Size = new System.Drawing.Size(109, 26);
+            this.idePrestb.Size = new System.Drawing.Size(121, 26);
             this.idePrestb.TabIndex = 0;
             // 
             // label2
@@ -76,15 +76,8 @@
             // 
             this.cantidadtb.Location = new System.Drawing.Point(276, 158);
             this.cantidadtb.Name = "cantidadtb";
-            this.cantidadtb.Size = new System.Drawing.Size(109, 26);
+            this.cantidadtb.Size = new System.Drawing.Size(121, 26);
             this.cantidadtb.TabIndex = 44;
-            // 
-            // clientetb
-            // 
-            this.clientetb.Location = new System.Drawing.Point(276, 300);
-            this.clientetb.Name = "clientetb";
-            this.clientetb.Size = new System.Drawing.Size(109, 26);
-            this.clientetb.TabIndex = 48;
             // 
             // label1
             // 
@@ -104,12 +97,12 @@
             this.label3.TabIndex = 46;
             this.label3.Text = "Estado:";
             // 
-            // estadotb
+            // clientetb
             // 
-            this.estadotb.Location = new System.Drawing.Point(276, 231);
-            this.estadotb.Name = "estadotb";
-            this.estadotb.Size = new System.Drawing.Size(109, 26);
-            this.estadotb.TabIndex = 45;
+            this.clientetb.Location = new System.Drawing.Point(276, 300);
+            this.clientetb.Name = "clientetb";
+            this.clientetb.Size = new System.Drawing.Size(121, 26);
+            this.clientetb.TabIndex = 45;
             // 
             // dateTimePicker1
             // 
@@ -145,31 +138,33 @@
             this.listVehilb.TabIndex = 52;
             this.listVehilb.Text = "Listado de Vehiculos:";
             // 
-            // textBox1
+            // numbastb
             // 
-            this.textBox1.Location = new System.Drawing.Point(534, 302);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(189, 26);
-            this.textBox1.TabIndex = 53;
-            this.textBox1.Text = "--Numero de bastidor--";
+            this.numbastb.Location = new System.Drawing.Point(534, 300);
+            this.numbastb.Name = "numbastb";
+            this.numbastb.Size = new System.Drawing.Size(189, 26);
+            this.numbastb.TabIndex = 53;
+            this.numbastb.Text = "--Numero de bastidor--";
             // 
             // botonAñadir
             // 
             this.botonAñadir.Location = new System.Drawing.Point(534, 344);
             this.botonAñadir.Name = "botonAñadir";
-            this.botonAñadir.Size = new System.Drawing.Size(79, 27);
+            this.botonAñadir.Size = new System.Drawing.Size(83, 33);
             this.botonAñadir.TabIndex = 54;
             this.botonAñadir.Text = "Añadir";
             this.botonAñadir.UseVisualStyleBackColor = true;
+            this.botonAñadir.Click += new System.EventHandler(this.botonAñadir_Click);
             // 
             // botonEliminar
             // 
             this.botonEliminar.Location = new System.Drawing.Point(644, 344);
             this.botonEliminar.Name = "botonEliminar";
-            this.botonEliminar.Size = new System.Drawing.Size(79, 27);
+            this.botonEliminar.Size = new System.Drawing.Size(79, 33);
             this.botonEliminar.TabIndex = 55;
             this.botonEliminar.Text = "Eliminar";
             this.botonEliminar.UseVisualStyleBackColor = true;
+            this.botonEliminar.Click += new System.EventHandler(this.botonEliminar_Click);
             // 
             // botonCancelar
             // 
@@ -188,25 +183,34 @@
             this.botonAceptar.TabIndex = 56;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
+            // 
+            // estadocb
+            // 
+            this.estadocb.FormattingEnabled = true;
+            this.estadocb.Location = new System.Drawing.Point(276, 228);
+            this.estadocb.Name = "estadocb";
+            this.estadocb.Size = new System.Drawing.Size(121, 28);
+            this.estadocb.TabIndex = 58;
             // 
             // GestionPresupuestos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 539);
+            this.Controls.Add(this.estadocb);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.botonEliminar);
             this.Controls.Add(this.botonAñadir);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.numbastb);
             this.Controls.Add(this.listVehilb);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.clientetb);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.estadotb);
+            this.Controls.Add(this.clientetb);
             this.Controls.Add(this.cantidadtb);
             this.Controls.Add(this.cantidadlb);
             this.Controls.Add(this.label2);
@@ -224,18 +228,18 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label cantidadlb;
         private System.Windows.Forms.TextBox cantidadtb;
-        private System.Windows.Forms.TextBox clientetb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox estadotb;
+        private System.Windows.Forms.TextBox clientetb;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label listVehilb;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox numbastb;
         private System.Windows.Forms.Button botonAñadir;
         private System.Windows.Forms.Button botonEliminar;
         private System.Windows.Forms.Button botonCancelar;
         private System.Windows.Forms.Button botonAceptar;
+        private System.Windows.Forms.ComboBox estadocb;
     }
 }

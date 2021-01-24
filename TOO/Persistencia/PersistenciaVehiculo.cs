@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace Persistencia
 {
     public class PersistenciaVehiculo
@@ -14,17 +16,16 @@ namespace Persistencia
 
         }
 
-        public static ModeloDominio.Vehiculo Buscar(ModeloDominio.Vehiculo c)
+        public static ModeloDominio.Vehiculo seleccionarVehiculo(String bas)
         {
-            if (BD.SELECTVehiculo(c) != null)
+            foreach (ModeloDominio.Vehiculo c in BD.Vehiculos)
             {
-                return BD.SELECTVehiculo(c);
+                if (c.getNumBastidor().Equals(bas))
+                {
+                    return c;
+                }
             }
-            else
-            {
-                return null;
-            }
-
+            return null;
         }
 
         public static bool Eliminar(ModeloDominio.Vehiculo c)
