@@ -13,6 +13,7 @@ namespace ModeloDominio
         private String modelo;
         private int potencia;
         private double precio;
+        //private double IVA;
 
         public Vehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp)
         {

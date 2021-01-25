@@ -63,7 +63,12 @@ namespace Persistencia
 
         public static List<ModeloDominio.Presupuesto> getPresupuestos()
         {
-            return BD.Presupuestos.ToList();
+            List<ModeloDominio.Presupuesto> lista = new List<ModeloDominio.Presupuesto>();
+            foreach (ModeloDominio.Presupuesto c in BD.Presupuestos)
+            {
+                lista.Add(c);
+            }
+            return lista;
         }
 
         public static List<ModeloDominio.Presupuesto> getPresupuestosCliente(ModeloDominio.Cliente c)

@@ -38,11 +38,6 @@ namespace Persistencia
             return BD.UPDATEVehiculo(c);
         }
 
-        public static List<ModeloDominio.Vehiculo> GetVehiculos()
-        {
-            return BD.Vehiculos.ToList();
-        }
-
         public static bool existeVehiculo(String bas)
         {
             if (BD.Vehiculos.Contains(bas))
@@ -53,6 +48,16 @@ namespace Persistencia
             {
                 return false;
             }
+        }
+
+        public static List<ModeloDominio.Vehiculo> getVehiculos()
+        {
+            List<ModeloDominio.Vehiculo> lista = new List<ModeloDominio.Vehiculo>();
+            foreach (ModeloDominio.Vehiculo c in BD.Vehiculos)
+            {
+                lista.Add(c);
+            }
+            return lista;
         }
 
         /*

@@ -84,6 +84,17 @@ namespace Presentación
 
         }
 
-        
+        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListadoVehiculosCompleto l = new ListadoVehiculosCompleto(neg);
+            l.ShowDialog();
+        }
+
+        private void listadoCompletoToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ListadoPresupuestosCompleto lis = new ListadoPresupuestosCompleto(neg);
+            lis.ShowDialog();
+
+        }
     }
 }

@@ -76,9 +76,9 @@ namespace LogicaNegocio
             System.Console.WriteLine("Precio: " + v.getPrecio());
         }
 
-        public List<ModeloDominio.Vehiculo> obtenerTodosVehiculos()
+        public List<ModeloDominio.Vehiculo> listarVehiculos()
         {
-            return PersistenciaVehiculo.GetVehiculos();
+            return PersistenciaVehiculo.getVehiculos();
         }
 
         /*

@@ -70,6 +70,18 @@
     <Compile Include="GestionVehiculos.Designer.cs">
       <DependentUpon>GestionVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="ListadoPresupuestosCompleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoPresupuestosCompleto.Designer.cs">
+      <DependentUpon>ListadoPresupuestosCompleto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ListadoVehiculosCompleto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoVehiculosCompleto.Designer.cs">
+      <DependentUpon>ListadoVehiculosCompleto.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehiculoBastidor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoClientes.resx">
       <DependentUpon>ListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoPresupuestosCompleto.resx">
+      <DependentUpon>ListadoPresupuestosCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoVehiculosCompleto.resx">
+      <DependentUpon>ListadoVehiculosCompleto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehiculoBastidor.resx">
       <DependentUpon>VehiculoBastidor.cs</DependentUpon>
