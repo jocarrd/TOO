@@ -17,12 +17,12 @@ namespace Presentación
     {
         Vehiculo vehiculo;
 
-        public GestionVehiculos(String bastidor, Vehiculo v)
+        public GestionVehiculos(String bastidor)
         {
             InitializeComponent();
       
             this.numBastb.Text = bastidor;
-            this.vehiculo = v;
+            this.vehiculo = new Vehiculo(this.numBastb.Text);
             this.matriculalb.Visible = false;
             this.matriculatb.Enabled = false;
             this.matriculatb.Visible = false;
@@ -36,6 +36,7 @@ namespace Presentación
         {
             //BUSQUEDA CLIENTES
             InitializeComponent();
+            this.vehiculo = v;
             this.numBastb.Text = v.NumBastidor;
             this.marcatb.Text = v.Marca;
             this.marcatb.ReadOnly = true;
@@ -216,6 +217,10 @@ namespace Presentación
             this.fechaMatriculatb.Visible = false;
             this.fechaMatriculatb.Enabled = false;
             this.fechaMatriculalb.Visible = false;
+        }
+
+        public Vehiculo debVehiculo() {
+            return this.vehiculo;
         }
     }
 }

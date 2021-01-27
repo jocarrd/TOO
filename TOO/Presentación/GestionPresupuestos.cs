@@ -14,95 +14,81 @@ namespace Presentación
 {
     public partial class GestionPresupuestos : Form
     {
-        private List<ModeloDominio.Vehiculo> v;
-        public GestionPresupuestos(String iden, String tipo, NegocioAdmin neg)
+        private List<Vehiculo> v;
+        private Presupuesto presupuesto;
+
+        public GestionPresupuestos(String iden)
         {
             InitializeComponent();
             this.idePrestb.Text = iden;
             this.idePrestb.ReadOnly = true;
-            if (this.tipo.Equals("crear"))
-            {
-                this.estadocb.Items.Add("Aceptado");
-                this.estadocb.Items.Add("Pendiente");
-                this.estadocb.Items.Add("Desestimado");
-                v = new List<Vehiculo>();
-            }
-            else
-            {
-                Presupuesto pres = new Presupuesto(this.idePrestb.Text);
-                this.cantidadtb.Text = pres.getCantidad().ToString();
-                this.cantidadtb.ReadOnly = true;
-                this.estadocb.Items.Add("pres.getEstado()");
-                this.estadocb.Text = pres.getEstado().ToString();
-                this.clientetb.Text = pres.getCliente().getDni();
-                this.clientetb.ReadOnly = true;
-                this.dateTimePicker1.Value = pres.getFecha_Realizacion();
-                this.numbastb.Text = "";
-                this.numbastb.Enabled = false;
+            this.estadocb.Items.Add("Aceptado");
+            this.estadocb.Items.Add("Pendiente");
+            this.estadocb.Items.Add("Desestimado");
+            v = new List<Vehiculo>();
+        }
 
-                v = pres.getVehiculos();
+         public GestionPresupuestos(Presupuesto p){
+            this.presupuesto = p;
+            this.cantidadtb.Text = this.presupuesto.Cantidad.ToString();
+            this.cantidadtb.ReadOnly = true;
+            this.estadocb.Items.Add(this.presupuesto.Estado);
+            this.estadocb.Text = this.presupuesto.Estado.ToString();
+            this.clientetb.Text = this.presupuesto.Cliente.Dni;
+            this.clientetb.ReadOnly = true;
+            this.dateTimePicker1.Value = this.presupuesto.Fecha_Realizacion;
+            this.numbastb.Text = "";
+            this.numbastb.Enabled = false;
+            v = this.presupuesto.CocheList;
                 foreach (Vehiculo ve in v)
                 {
-                    this.listBox1.Items.Add(ve.getNumBastidor());
+                    this.listBox1.Items.Add(ve.NumBastidor);
                 }
 
-                this.botonAñadir.Enabled = false;
-                this.botonEliminar.Enabled = false;
-            }
-
-        }
+            this.botonAñadir.Enabled = false;
+            this.botonEliminar.Enabled = false;
+         }
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            if (tipo.Equals("crear"))
+
+            if (this.compruebaLosTextBox())
             {
-                if (this.compruebaLosTextBox() && neg.existeCliente(this.clientetb.Text))
+                int indice = estadocb.SelectedIndex;
+                String estado = estadocb.Items[indice].ToString();
+                presupuesto.Cantidad = int.Parse(this.cantidadtb.Text);
+                presupuesto.Cliente = new Cliente(this.clientetb.Text);
+                presupuesto.Estado =this.estadoPesupuesto(estado);
+                presupuesto.Fecha_Realizacion = this.dateTimePicker1.Value;
+                presupuesto.CocheList = this.v;
+                this.Close();
+            }
+            else
+            {
+                if (this.cantidadtb.Text.Equals(""))
                 {
-                    int indice = estadocb.SelectedIndex;
-                    String estado = estadocb.Items[indice].ToString();
-
-                    Cliente c = neg.seleccionarCliente(this.clientetb.Text);
-
-                    neg.crearPresupuesto(this.idePrestb.Text, int.Parse(this.cantidadtb.Text), this.dateTimePicker1.Value.Date, this.estadoPesupuesto(estado), c, v);
-                    this.Close();
+                    MessageBox.Show("Debes introducir una cantidad para el presupuesto ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    this.cantidadlb.Font = new Font(cantidadlb.Font, FontStyle.Bold);
+                    this.cantidadlb.ForeColor = Color.Red;
+                    this.cantidadlb.Focus();
                 }
                 else
                 {
-                    if (this.cantidadtb.Text.Equals(""))
+                    if (this.estadocb.Text.Equals(""))
                     {
-                        MessageBox.Show("Debes introducir una cantidad para el presupuesto ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        this.cantidadtb.Font = new Font(cantidadtb.Font, FontStyle.Bold);
-                        this.cantidadtb.ForeColor = Color.Red;
-                        this.cantidadtb.Focus();
+                        MessageBox.Show("Completa el campo estado del presupuesto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.label3.Font = new Font(estadocb.Font, FontStyle.Bold);
+                        this.label3.ForeColor = Color.Red;
+                        this.estadocb.Focus();
                     }
                     else
                     {
-                        if (this.estadocb.Text.Equals(""))
+                        if (this.clientetb.Text.Equals(""))
                         {
-                            MessageBox.Show("Completa el campo estado del presupuesto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            this.estadocb.Font = new Font(estadocb.Font, FontStyle.Bold);
-                            this.estadocb.ForeColor = Color.Red;
-                            this.estadocb.Focus();
-                        }
-                        else
-                        {
-                            if (this.clientetb.Text.Equals(""))
-                            {
-                                MessageBox.Show("Debes introducir un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                this.clientetb.Font = new Font(estadocb.Font, FontStyle.Bold);
-                                this.clientetb.ForeColor = Color.Red;
-                                this.clientetb.Focus();
-                            }
-                            else
-                            {
-                                if (!neg.existeCliente(this.clientetb.Text))
-                                {
-                                    MessageBox.Show("El cliente no existe en la BD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    this.clientetb.Font = new Font(estadocb.Font, FontStyle.Bold);
-                                    this.clientetb.ForeColor = Color.Red;
-                                    this.clientetb.Focus();
-                                }
-                            }
+                            MessageBox.Show("Debes introducir un cliente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            this.label1.Font = new Font(estadocb.Font, FontStyle.Bold);
+                            this.label1.ForeColor = Color.Red;
+                            this.clientetb.Focus();
                         }
                     }
                 }
@@ -146,16 +132,7 @@ namespace Presentación
 
         private void botonAñadir_Click(object sender, EventArgs e)
         {
-            if (neg.existeVehiculo(this.numbastb.Text))
-            {
-                Vehiculo vehiculo = neg.seleccionarVehiculo(this.numbastb.Text);
-                v.Add(vehiculo);
-                this.listBox1.Items.Add(this.numbastb.Text);
-            }
-            else
-            {
-                MessageBox.Show("El vehículo no se encuenta en la BD", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            this.listBox1.Items.Add(this.numbastb.Text);
         }
 
         private void botonEliminar_Click(object sender, EventArgs e)
@@ -163,9 +140,23 @@ namespace Presentación
             int indice = listBox1.SelectedIndex;
             if (indice != -1)
             {
-                v.RemoveAt(indice);
                 this.listBox1.Items.RemoveAt(indice);
             }
+        }
+
+        public Presupuesto devPresupuesto()
+        {
+            return this.presupuesto;
+        }
+
+        public List<Vehiculo> devVehiculos()
+        {
+            return this.v;
+        }
+
+        private void botonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

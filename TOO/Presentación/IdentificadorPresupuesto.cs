@@ -17,30 +17,25 @@ namespace Presentación
     {
         private Presupuesto presupuesto;
 
-        public IdentificadorPresupuesto()
-        {
-            InitializeComponent();
-            this.botonAceptar.Click += botonAceptarCrear_Click;
-        }
-
         public IdentificadorPresupuesto(Presupuesto p)
         {
             InitializeComponent();
             this.presupuesto = p;
-
         }
-
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            GestionPresupuestos nuevo = new GestionPresupuestos(this.IdePrestb.Text,this.presupuesto);
-            nuevo.Text = "Alta presupuesto";
-            nuevo.ShowDialog();
+            this.presupuesto.Id_presupuesto = this.IdePrestb.Text;
+            this.Close();
         }
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public Presupuesto debPresupuesto() {
+            return this.presupuesto;
         }
     }
 }

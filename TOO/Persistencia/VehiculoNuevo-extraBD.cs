@@ -11,7 +11,7 @@ namespace Persistencia
     {
         protected override string GetKeyForItem(ModeloDominio.Vehiculo item)
         {
-            return item.getNumBastidor();
+            return item.NumBastidor;
         }
     }
 }

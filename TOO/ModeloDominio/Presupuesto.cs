@@ -15,6 +15,11 @@ namespace ModeloDominio
         private Cliente cliente;
         private List<Vehiculo> cocheList;
 
+        public Presupuesto(string id_presupuesto)
+        {
+            this.id_presupuesto = id_presupuesto;
+        }
+
         public Presupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, EstadoPresupuesto estado, Cliente c)
         {
             this.Id_presupuesto = id_presupuesto;

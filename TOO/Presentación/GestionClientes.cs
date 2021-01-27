@@ -21,6 +21,7 @@ namespace Presentación
             //ESTO ES ALTA CLIENTE
             InitializeComponent();
             this.dnitb.Text = dni;
+            this.cliente = new Cliente(this.dnitb.Text);
             this.botonAceptar.Focus();
         }
 
@@ -28,6 +29,7 @@ namespace Presentación
         {
             //BAJA/BUSQUEDA CLIENTES
             InitializeComponent();
+            this.cliente = c;
             this.dnitb.Text = c.Dni;
             this.nombretb.Text = c.Nombre;
             this.nombretb.ReadOnly = true;

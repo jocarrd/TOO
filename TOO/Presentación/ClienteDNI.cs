@@ -29,7 +29,7 @@ namespace Presentación
             this.Close();
         }
 
-        public Cliente clienteNuevo() { 
+        public Cliente debCliente() { 
             return this.cliente;
         }
 
