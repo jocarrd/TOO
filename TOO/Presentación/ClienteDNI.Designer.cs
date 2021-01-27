@@ -43,7 +43,6 @@
             this.botonCancelar.TabIndex = 44;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
-            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // botonAceptar
             // 
@@ -54,7 +53,6 @@
             this.botonAceptar.TabIndex = 43;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
-            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
             // dnitb
             // 

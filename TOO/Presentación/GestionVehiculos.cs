@@ -1,4 +1,6 @@
 ﻿using LogicaNegocio;
+using Persistencia;
+using ModeloDominio;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,80 +15,46 @@ namespace Presentación
 {
     public partial class GestionVehiculos : Form
     {
-        String tipoForm;
-        private NegocioAdmin neg;
+        Vehiculo vehiculo;
 
-        public GestionVehiculos(String bastidor, NegocioAdmin neg)
+        public GestionVehiculos(String bastidor, Vehiculo v)
         {
             InitializeComponent();
-            this.neg = neg;
-            this.tipoForm = "alta";
+      
             this.numBastb.Text = bastidor;
+            this.vehiculo = v;
             this.matriculalb.Visible = false;
             this.matriculatb.Enabled = false;
             this.matriculatb.Visible = false;
             this.fechaMatriculatb.Visible = false;
             this.fechaMatriculatb.Enabled = false;
             this.fechaMatriculalb.Visible = false;
-            this.botonAceptar.Click += this.botonAceptarAlta_Click;
             this.botonAceptar.Focus();
         }
 
-        public GestionVehiculos(String bastidor, String marca, String modelo, int potencia, double precio, String tipoVehiculo, String tipo, NegocioAdmin neg)
+        public GestionVehiculos(Vehiculo v)
         {
             //BUSQUEDA CLIENTES
             InitializeComponent();
-            this.neg = neg;
-            if (tipo.Equals("búsqueda"))
-            {
-                this.tipoForm = "búsqueda";
-                this.numBastb.Text = bastidor;
-                this.marcatb.Text = marca;
-                this.marcatb.ReadOnly = true;
-                this.modelotb.Text = modelo;
-                this.modelotb.ReadOnly = true;
-                this.potenciatb.Text = potencia.ToString();
-                this.potenciatb.ReadOnly = true;
-                this.precioRectb.Text = precio.ToString();
-                this.precioRectb.ReadOnly = true;
-                this.marcarTipoVehiculo(tipoVehiculo);
-                this.botonNuevo.Enabled = false;
-                this.botonSegMano.Enabled = false;
-                this.botonCancelar.Visible = false;
-                this.botonCancelar.Enabled = false;
-                this.matriculalb.Visible = false;
-                this.matriculatb.Enabled = false;
-                this.matriculatb.Visible = false;
-                this.fechaMatriculatb.Visible = false;
-                this.fechaMatriculatb.Enabled = false;
-                this.fechaMatriculalb.Visible = false;
-                this.botonAceptar.Click += this.botonAceptarBusqueda_Click;
-                this.botonAceptar.Focus();
-            }
-            else
-            {
-                this.tipoForm = "baja";
-                this.numBastb.Text = bastidor;
-                this.marcatb.Text = marca;
-                this.marcatb.ReadOnly = true;
-                this.modelotb.Text = modelo;
-                this.modelotb.ReadOnly = true;
-                this.potenciatb.Text = potencia.ToString();
-                this.potenciatb.ReadOnly = true;
-                this.precioRectb.Text = precio.ToString();
-                this.precioRectb.ReadOnly = true;
-                this.marcarTipoVehiculo(tipoVehiculo);
-                this.botonNuevo.Enabled = false;
-                this.botonSegMano.Enabled = false;
-                this.matriculalb.Visible = false;
-                this.matriculatb.Enabled = false;
-                this.matriculatb.Visible = false;
-                this.fechaMatriculatb.Visible = false;
-                this.fechaMatriculatb.Enabled = false;
-                this.fechaMatriculalb.Visible = false;
-                this.botonAceptar.Click += this.botonAceptarBaja_Click;
-                this.botonAceptar.Focus();
-            }
+            this.numBastb.Text = v.NumBastidor;
+            this.marcatb.Text = v.Marca;
+            this.marcatb.ReadOnly = true;
+            this.modelotb.Text = v.Modelo;
+            this.modelotb.ReadOnly = true;
+            this.potenciatb.Text = v.Potencia.ToString();
+            this.potenciatb.ReadOnly = true;
+            this.precioRectb.Text = v.Precio.ToString();
+            this.precioRectb.ReadOnly = true;
+            this.marcarTipoVehiculo(v);
+            this.botonNuevo.Enabled = false;
+            this.botonSegMano.Enabled = false;
+            this.matriculalb.Visible = false;
+            this.matriculatb.Enabled = false;
+            this.matriculatb.Visible = false;
+            this.fechaMatriculatb.Visible = false;
+            this.fechaMatriculatb.Enabled = false;
+            this.fechaMatriculalb.Visible = false;
+            this.botonAceptar.Focus();
         }
 
         private void botonAceptarAlta_Click(object sender, EventArgs e)
@@ -105,22 +73,16 @@ namespace Presentación
                 this.matriculalb.ForeColor = numBastb.ForeColor;
                 this.fechaMatriculalb.Font = new Font(numBastb.Font, FontStyle.Regular);
                 this.fechaMatriculalb.ForeColor = numBastb.ForeColor;
-
                 this.label6.Font = new Font(numBastb.Font, FontStyle.Regular);
                 this.label6.ForeColor = numBastb.ForeColor;
 
-                //AÑADIR A LA BASE DE DATOS
-                ModeloDominio.Vehiculo nuevo;
-                if (this.esVehiculoNuevo())
-                {
-                    nuevo = new ModeloDominio.Nuevo(this.numBastb.Text, this.marcatb.Text, this.modelotb.Text, int.Parse(potenciatb.Text), double.Parse(precioRectb.Text));
-                }
-                else
-                {
-                    nuevo = new ModeloDominio.SegundaMano(this.numBastb.Text, this.marcatb.Text, this.modelotb.Text, int.Parse(potenciatb.Text), double.Parse(precioRectb.Text), this.matriculatb.Text, DateTime.Parse(this.fechaMatriculatb.Text));
-                }
-                neg.darAltaVehiculo(nuevo);
-                MessageBox.Show("Se ha añadido " + this.marcatb.Text + " " + this.modelotb.Text + " con numero de bastidor: " + this.numBastb.Text, "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.vehiculo.NumBastidor = this.numBastb.Text;
+                this.vehiculo.Marca = this.marcatb.Text;
+                this.vehiculo.Modelo = this.modelotb.Text;
+                this.vehiculo.Potencia = int.Parse(this.potenciatb.Text);
+                this.vehiculo.Precio = double.Parse(this.fechaMatriculatb.Text);
+                this.vehiculo.Matricula = this.fechaMatriculatb.Text;
+                this.vehiculo.Fecha_matriculacion = DateTime.Parse(this.fechaMatriculatb.Text);
                 this.Close();
             }
             else
@@ -143,7 +105,7 @@ namespace Presentación
                     }
                     else
                     {
-                        if (this.potenciatb.Text.Equals("")|| !int.TryParse(potencialb.Text, out int pot))
+                        if (this.potenciatb.Text.Equals("") || !int.TryParse(potencialb.Text, out int pot))
                         {
                             MessageBox.Show("Corrige el campo potenia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             this.potencialb.Font = new Font(potenciatb.Font, FontStyle.Bold);
@@ -152,7 +114,7 @@ namespace Presentación
                         }
                         else
                         {
-                            if (this.precioRectb.Text.Equals("")||!double.TryParse(precioRectb.Text, out double prec))
+                            if (this.precioRectb.Text.Equals("") || !double.TryParse(precioRectb.Text, out double prec))
                             {
                                 MessageBox.Show("Completa el campo precio recomendado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 this.precioReclb.Font = new Font(precioRectb.Font, FontStyle.Bold);
@@ -185,22 +147,6 @@ namespace Presentación
             }
         }
 
-        private void botonAceptarBaja_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Está seuro de que desea dar de baja este vehiculo", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                //BORRAR EL Vehiculo DE LA BASE DE DATOS
-                //this.neg.darBajaVehiculo(this.neg.obtenerInfoVehiculo(this.numBastb.Text));
-                MessageBox.Show("Vehiculo eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            this.Close();
-        }
-
-        private void botonAceptarBusqueda_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void botonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -211,7 +157,8 @@ namespace Presentación
             //Comprueba si los TextBox son vacíos o si tienen algun dato mal introducido
 
             //Comprobamos que no sean vacíos, sino dev falso
-            if (this.botonNuevo.Checked) {
+            if (this.botonNuevo.Checked)
+            {
                 if (!marcatb.Text.Equals("") || !modelolb.Text.Equals("") || !matriculatb.Text.Equals("") || !fechaMatriculatb.Text.Equals(""))
                 {
                     //Como los otros campos no pueden ser parseados por ser strings, comprobamos que la pot es in int
@@ -220,24 +167,26 @@ namespace Presentación
                         return true;
                     }
                 }
-            } else
+            }
+            else
             {
-                if (!marcatb.Text.Equals("") || !modelolb.Text.Equals("")){
+                if (!marcatb.Text.Equals("") || !modelolb.Text.Equals(""))
+                {
                     //Como los otros campos no pueden ser parseados por ser strings, comprobamos que la pot es in int
                     if (int.TryParse(potencialb.Text, out int pot) || double.TryParse(precioRectb.Text, out double prec))
                     {
                         return true;
                     }
-                }  
+                }
             }
             return false;
         }
 
-       
 
-        public void marcarTipoVehiculo(String t)
+
+        public void marcarTipoVehiculo(Vehiculo v)
         {
-            if (t.Equals("nuevo"))
+            if (v.Matricula==null)
             {
                 botonSegMano.Checked = false;
                 botonNuevo.Checked = true;
@@ -246,18 +195,6 @@ namespace Presentación
             {
                 botonSegMano.Checked = true;
                 botonNuevo.Checked = false;
-            }
-        }
-
-        public bool esVehiculoNuevo()
-        {
-            if (this.botonNuevo.Checked)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 

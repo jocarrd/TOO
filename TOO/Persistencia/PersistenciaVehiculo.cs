@@ -1,4 +1,5 @@
 ﻿using System;
+using ModeloDominio;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,50 +11,42 @@ namespace Persistencia
 {
     public class PersistenciaVehiculo
     {
-        public static void Añadir(ModeloDominio.Vehiculo c)
+        public static void Añadir(Vehiculo v)
         {
-            BD.INSERTVehiculo(c);
-
+            BD.INSERTVehiculo(v);
         }
 
-        public static ModeloDominio.Vehiculo seleccionarVehiculo(String bas)
+        public static Vehiculo Buscar(Vehiculo v)
         {
-            foreach (ModeloDominio.Vehiculo c in BD.Vehiculos)
+            if (BD.SELECTVehiculo(v) != null)
             {
-                if (c.getNumBastidor().Equals(bas))
-                {
-                    return c;
-                }
+                return BD.SELECTVehiculo(v);
             }
-            return null;
+            else
+            {
+                return null;
+            }
         }
 
-        public static bool Eliminar(ModeloDominio.Vehiculo c)
+        public static bool Eliminar(Vehiculo c)
         {
             return BD.DELETEVehiculo(c);
         }
 
-        public static bool ModificarVehiculo(ModeloDominio.Vehiculo c)
+        public static bool ModificarVehiculo(Vehiculo c)
         {
             return BD.UPDATEVehiculo(c);
         }
 
-        public static bool existeVehiculo(String bas)
+        public static bool Existe(String bas)
         {
-            if (BD.Vehiculos.Contains(bas))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return BD.Vehiculos.Contains(bas);
         }
 
-        public static List<ModeloDominio.Vehiculo> getVehiculos()
+        public static List<Vehiculo> GETVehiculos()
         {
-            List<ModeloDominio.Vehiculo> lista = new List<ModeloDominio.Vehiculo>();
-            foreach (ModeloDominio.Vehiculo c in BD.Vehiculos)
+            List<Vehiculo> lista = new List<Vehiculo>();
+            foreach (Vehiculo c in BD.Vehiculos)
             {
                 lista.Add(c);
             }

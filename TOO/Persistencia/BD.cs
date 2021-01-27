@@ -14,7 +14,6 @@ namespace Persistencia
         private static PresupuestoBD presupuestos;
         private static VehiculoBD vehiculos;
         private static VehiculoNuevo_extraBD vehiculosNuevos;
-        private static VehiculoSegunda_manoBD vehiculosSegundaMano;
         private static PresupuestoVehiculoBD presupuestosVehiculos;
 
         private BD() {}
@@ -97,7 +96,7 @@ namespace Persistencia
             foreach (PresupuestoVehiculoDato vd  in BD.presupuestosVehiculos)
             {
                 Clave c = (Clave)vd.GetClave();
-                if (c.GetSegunda().Equals(v.getNumBastidor()))
+                if (c.GetSegunda().Equals(v.NumBastidor))
                 {
                     resultado.Add(vd);
                 }

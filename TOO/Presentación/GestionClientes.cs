@@ -14,75 +14,52 @@ namespace Presentación
 {
     public partial class GestionClientes : Form
     {
-        String tipoForm;
-        private NegocioAdmin neg;
+        Cliente cliente;
 
-        public GestionClientes(String dni, NegocioAdmin neg)
+        public GestionClientes(String dni)
         {
             //ESTO ES ALTA CLIENTE
             InitializeComponent();
-            this.neg = neg;
-            this.tipoForm = "alta";
             this.dnitb.Text = dni;
-            this.botonAceptar.Click += this.botonAceptarAlta_Click;
             this.botonAceptar.Focus();
         }
 
-        public GestionClientes(String Dni, String nombre, long tfno, Tipo_cliente tipo_Cliente, String tipo, NegocioAdmin neg)
+        public GestionClientes(Cliente c)
         {
-            //BUSQUEDA CLIENTES
+            //BAJA/BUSQUEDA CLIENTES
             InitializeComponent();
-            this.neg = neg;
-            if (tipo.Equals("búsqueda"))
-            {
-                this.tipoForm = "búsqueda";
-                this.dnitb.Text = Dni;
-                this.nombretb.Text = nombre;
-                this.nombretb.ReadOnly = true;
-                this.telefonotb.Text = tfno.ToString();
-                this.telefonotb.ReadOnly = true;
-                this.botonCancelar.Visible = false;
-                this.botonCancelar.Enabled = false;
-                this.marcarTipoCliente(tipo_Cliente);
-                this.botonA.Enabled = false;
-                this.botonB.Enabled = false;
-                this.botonC.Enabled = false;
-                this.botonAceptar.Click += this.botonAceptarBusqueda_Click;
-                this.botonAceptar.Focus();
-            }
-            else
-            {
-                this.tipoForm = "baja";
-                this.dnitb.Text = Dni;
-                this.nombretb.Text = nombre;
-                this.nombretb.ReadOnly = true;
-                this.telefonotb.Text = tfno.ToString();
-                this.telefonotb.ReadOnly = true;
-                this.marcarTipoCliente(tipo_Cliente);
-                this.botonA.Enabled = false;
-                this.botonB.Enabled = false;
-                this.botonC.Enabled = false;
-                this.botonAceptar.Click += this.botonAceptarBaja_Click;
-                this.botonAceptar.Focus();
-            }
+            this.dnitb.Text = c.Dni;
+            this.nombretb.Text = c.Nombre;
+            this.nombretb.ReadOnly = true;
+            this.telefonotb.Text = c.Tfno.ToString();
+            this.telefonotb.ReadOnly = true;
+            this.botonCancelar.Visible = false;
+            this.botonCancelar.Enabled = false;
+            this.marcarTipoCliente(c.Categoria);
+            this.botonA.Enabled = false;
+            this.botonB.Enabled = false;
+            this.botonC.Enabled = false;
+            this.botonAceptar.Focus();
         }
 
-        private void botonAceptarAlta_Click(object sender, EventArgs e)
+
+        private void botonAceptar_Click(object sender, EventArgs e)
         {
             if (this.compruebaLosTextBox())
             {
                 if (this.compruebaLosBotones())
-                {   
-                    /*
+                {
                     this.nombrelb.Font = new Font(dnilb.Font, FontStyle.Regular);
                     this.nombrelb.ForeColor = dnilb.ForeColor;
                     this.telefonolb.Font = new Font(dnilb.Font, FontStyle.Regular);
                     this.telefonolb.ForeColor = dnilb.ForeColor;
                     this.categorialbl.Font = new Font(dnilb.Font, FontStyle.Regular);
-                    this.categorialbl.ForeColor = dnilb.ForeColor;*/
-                    //AÑADIR A LA BASE DE DATOS
-                    neg.darAltaCliente(this.dnitb.Text, this.nombretb.Text, long.Parse(telefonotb.Text), this.getTipoCliente());
-                    MessageBox.Show("Se ha añadido a "+this.nombretb.Text,"Añadido",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    this.categorialbl.ForeColor = dnilb.ForeColor;
+
+                    this.cliente.Dni = this.dnitb.Text;
+                    this.cliente.Nombre = this.nombretb.Text;
+                    this.cliente.Tfno = long.Parse(this.telefonotb.Text);
+                    this.cliente.Categoria = this.GetTipo_Cliente();
                     this.Close();
                 }
                 else
@@ -113,28 +90,6 @@ namespace Presentación
                 }
 
             }
-        }
-
-        private void botonAceptarBaja_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("Está seuro de que desea dar de baja este cliente", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
-            {
-                //BORRAR EL CLIENTE DE LA BASE DE DATOS
-                Cliente c = neg.seleccionarCliente(this.dnitb.Text);
-                neg.darBajaCliente(c);
-                MessageBox.Show("Cliente eliminado","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            this.Close();
-        }
-
-        private void botonAceptarBusqueda_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void botonCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         public bool compruebaLosTextBox()
@@ -180,20 +135,25 @@ namespace Presentación
             }
         }
 
-        public ModeloDominio.Tipo_cliente getTipoCliente() {
-            if (this.botonA.Checked) {
-                return ModeloDominio.Tipo_cliente.Alta;
+        public Tipo_cliente GetTipo_Cliente() {
+            if (botonA.Checked) {
+                return Tipo_cliente.Alta;
+            } else {
+                if (botonB.Checked) {
+                    return Tipo_cliente.Media;
+                } else {
+                    return Tipo_cliente.Baja;
+                } 
             }
-            else { 
-                if (this.botonB.Checked)
-                {
-                    return ModeloDominio.Tipo_cliente.Media;
-                }
-                else
-                {
-                    return ModeloDominio.Tipo_cliente.Baja;
-                }
-            }
+        }
+
+        public Cliente debCliente() {
+            return this.cliente;
+        }
+
+        private void botonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

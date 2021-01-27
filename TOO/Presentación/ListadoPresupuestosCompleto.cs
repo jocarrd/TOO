@@ -14,22 +14,20 @@ namespace Presentación
 {
     public partial class ListadoPresupuestosCompleto : Form
     {
-        private NegocioAdmin neg;
-        public ListadoPresupuestosCompleto(NegocioAdmin neg)
+        public ListadoPresupuestosCompleto(List<Presupuesto> presupuestos)
         {
             InitializeComponent();
-            this.neg = neg;
-            List<Presupuesto> lista = neg.obtenerTodosPresupuestos();
+            List<Presupuesto> lista = presupuestos;
             int n;
             foreach (Presupuesto c in lista)
             {
                 n = dataGridView1.Rows.Add();
 
-                dataGridView1.Rows[n].Cells[0].Value = c.getId_presupuesto();
-                dataGridView1.Rows[n].Cells[1].Value = c.getCantidad();
-                dataGridView1.Rows[n].Cells[2].Value = c.getFecha_Realizacion().ToString();
-                dataGridView1.Rows[n].Cells[3].Value = c.getEstado();
-                dataGridView1.Rows[n].Cells[4].Value = c.getCliente().getDni();
+                dataGridView1.Rows[n].Cells[0].Value = c.Id_presupuesto;
+                dataGridView1.Rows[n].Cells[1].Value = c.Cantidad;
+                dataGridView1.Rows[n].Cells[2].Value = c.Fecha_Realizacion.ToString();
+                dataGridView1.Rows[n].Cells[3].Value = c.Estado;
+                dataGridView1.Rows[n].Cells[4].Value = c.Cliente.Dni;
             }
         }
     }

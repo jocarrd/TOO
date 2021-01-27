@@ -13,33 +13,16 @@ namespace ModeloDominio
 
         public Extra(String nombre, double precio)
         {
-            this.nombre = nombre;
-            this.precio = precio;
+            this.Nombre = nombre;
+            this.Precio = precio;
         }
 
-        public void setNombre(String nombre)
-        {
-            this.nombre = nombre;
-        }
-
-        public String getNombre()
-        {
-            return this.nombre;
-        }
-
-        public void setPrecio(double precio)
-        {
-            this.precio = precio;
-        }
-
-        public double getPrecio()
-        {
-            return this.precio;
-        }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public double Precio { get => precio; set => precio = value; }
 
         public bool equals(Extra c)
         {
-            return (this.nombre.Equals(c.getNombre()));
+            return this.Nombre.Equals(c.nombre);
         }
     }
 }

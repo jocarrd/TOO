@@ -7,76 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Persistencia;
+using ModeloDominio;
 using LogicaNegocio;
 
 namespace Presentación
 {
     public partial class IdentificadorPresupuesto : Form
     {
-        private NegocioAdmin neg;
-        private String tipo;
-        public IdentificadorPresupuesto(String tipo, NegocioAdmin neg)
+        private Presupuesto presupuesto;
+
+        public IdentificadorPresupuesto()
         {
             InitializeComponent();
-            this.neg = neg;
-            this.tipo = tipo;
+            this.botonAceptar.Click += botonAceptarCrear_Click;
         }
+
+        public IdentificadorPresupuesto(Presupuesto p)
+        {
+            InitializeComponent();
+            this.presupuesto = p;
+
+        }
+
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            if (this.IdePrestb.Text.Length >= 2)
-            {
-                bool existe = neg.existePresupuesto(this.IdePrestb.Text);
-                switch (this.tipo)
-                {
-                    case "crear":
-                        if (!existe)
-                        {
-                            GestionPresupuestos nuevo = new GestionPresupuestos(this.IdePrestb.Text, this.tipo, this.neg);
-                            nuevo.ShowDialog();
-                            this.Close();
-                        }
-                        else
-                        {
-                            if (MessageBox.Show("¿Quieres introducir otro presupuesto?", "Ya existe un presupuesto con ese identificador", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                            {
-                                this.IdePrestb.Clear();
-                                this.IdePrestb.Focus();
-                            }
-                            else
-                            {
-                                this.Close();
-                            }
-                        }
-                        break;
-
-                    case "búsqueda":
-                        if (!existe)
-                        {
-                            if (MessageBox.Show("¿Quieres introducir otro presupuesto?", "No existe un presupuesto con ese identificador", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                            {
-                                this.IdePrestb.Clear();
-                                this.IdePrestb.Focus();
-                            }
-                            else
-                            {
-                                this.Close();
-                            }
-                        }
-                        else
-                        {
-                            GestionPresupuestos nuevo = new GestionPresupuestos(this.IdePrestb.Text, this.tipo, this.neg);
-                            nuevo.ShowDialog();
-                            this.Close();
-                        }
-                        break;
-                }
-            }
-            else
-            {
-                MessageBox.Show("Error al introducir el identificador", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.IdePrestb.Focus();
-            }
+            GestionPresupuestos nuevo = new GestionPresupuestos(this.IdePrestb.Text,this.presupuesto);
+            nuevo.Text = "Alta presupuesto";
+            nuevo.ShowDialog();
         }
 
         private void botonCancelar_Click(object sender, EventArgs e)

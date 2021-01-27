@@ -45,59 +45,66 @@
             // 
             // dnitb
             // 
-            this.dnitb.Location = new System.Drawing.Point(196, 62);
+            this.dnitb.Location = new System.Drawing.Point(131, 40);
+            this.dnitb.Margin = new System.Windows.Forms.Padding(2);
             this.dnitb.Name = "dnitb";
             this.dnitb.ReadOnly = true;
-            this.dnitb.Size = new System.Drawing.Size(126, 26);
+            this.dnitb.Size = new System.Drawing.Size(85, 20);
             this.dnitb.TabIndex = 44;
             // 
             // dnilb
             // 
             this.dnilb.AutoSize = true;
-            this.dnilb.Location = new System.Drawing.Point(98, 65);
+            this.dnilb.Location = new System.Drawing.Point(65, 42);
+            this.dnilb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.dnilb.Name = "dnilb";
-            this.dnilb.Size = new System.Drawing.Size(41, 20);
+            this.dnilb.Size = new System.Drawing.Size(29, 13);
             this.dnilb.TabIndex = 43;
             this.dnilb.Text = "DNI:";
             // 
             // nombretb
             // 
-            this.nombretb.Location = new System.Drawing.Point(196, 112);
+            this.nombretb.Location = new System.Drawing.Point(131, 73);
+            this.nombretb.Margin = new System.Windows.Forms.Padding(2);
             this.nombretb.Name = "nombretb";
-            this.nombretb.Size = new System.Drawing.Size(126, 26);
+            this.nombretb.Size = new System.Drawing.Size(85, 20);
             this.nombretb.TabIndex = 46;
             // 
             // nombrelb
             // 
             this.nombrelb.AutoSize = true;
-            this.nombrelb.Location = new System.Drawing.Point(98, 115);
+            this.nombrelb.Location = new System.Drawing.Point(65, 75);
+            this.nombrelb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.nombrelb.Name = "nombrelb";
-            this.nombrelb.Size = new System.Drawing.Size(69, 20);
+            this.nombrelb.Size = new System.Drawing.Size(47, 13);
             this.nombrelb.TabIndex = 45;
             this.nombrelb.Text = "Nombre:";
             // 
             // telefonotb
             // 
-            this.telefonotb.Location = new System.Drawing.Point(196, 168);
+            this.telefonotb.Location = new System.Drawing.Point(131, 109);
+            this.telefonotb.Margin = new System.Windows.Forms.Padding(2);
             this.telefonotb.Name = "telefonotb";
-            this.telefonotb.Size = new System.Drawing.Size(126, 26);
+            this.telefonotb.Size = new System.Drawing.Size(85, 20);
             this.telefonotb.TabIndex = 48;
             // 
             // telefonolb
             // 
             this.telefonolb.AutoSize = true;
-            this.telefonolb.Location = new System.Drawing.Point(98, 169);
+            this.telefonolb.Location = new System.Drawing.Point(65, 110);
+            this.telefonolb.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.telefonolb.Name = "telefonolb";
-            this.telefonolb.Size = new System.Drawing.Size(75, 20);
+            this.telefonolb.Size = new System.Drawing.Size(52, 13);
             this.telefonolb.TabIndex = 47;
             this.telefonolb.Text = "Teléfono:";
             // 
             // botonB
             // 
             this.botonB.AutoSize = true;
-            this.botonB.Location = new System.Drawing.Point(196, 289);
+            this.botonB.Location = new System.Drawing.Point(131, 188);
+            this.botonB.Margin = new System.Windows.Forms.Padding(2);
             this.botonB.Name = "botonB";
-            this.botonB.Size = new System.Drawing.Size(45, 24);
+            this.botonB.Size = new System.Drawing.Size(32, 17);
             this.botonB.TabIndex = 52;
             this.botonB.TabStop = true;
             this.botonB.Text = "B";
@@ -106,9 +113,10 @@
             // botonA
             // 
             this.botonA.AutoSize = true;
-            this.botonA.Location = new System.Drawing.Point(90, 289);
+            this.botonA.Location = new System.Drawing.Point(60, 188);
+            this.botonA.Margin = new System.Windows.Forms.Padding(2);
             this.botonA.Name = "botonA";
-            this.botonA.Size = new System.Drawing.Size(45, 24);
+            this.botonA.Size = new System.Drawing.Size(32, 17);
             this.botonA.TabIndex = 49;
             this.botonA.TabStop = true;
             this.botonA.Text = "A";
@@ -117,25 +125,28 @@
             // categorialbl
             // 
             this.categorialbl.AutoSize = true;
-            this.categorialbl.Location = new System.Drawing.Point(86, 242);
+            this.categorialbl.Location = new System.Drawing.Point(57, 157);
+            this.categorialbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.categorialbl.Name = "categorialbl";
-            this.categorialbl.Size = new System.Drawing.Size(78, 20);
+            this.categorialbl.Size = new System.Drawing.Size(54, 13);
             this.categorialbl.TabIndex = 51;
             this.categorialbl.Text = "Categoría";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(50, 255);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(33, 166);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(326, 100);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(217, 65);
             this.flowLayoutPanel1.TabIndex = 50;
             // 
             // botonC
             // 
             this.botonC.AutoSize = true;
-            this.botonC.Location = new System.Drawing.Point(290, 289);
+            this.botonC.Location = new System.Drawing.Point(193, 188);
+            this.botonC.Margin = new System.Windows.Forms.Padding(2);
             this.botonC.Name = "botonC";
-            this.botonC.Size = new System.Drawing.Size(45, 24);
+            this.botonC.Size = new System.Drawing.Size(32, 17);
             this.botonC.TabIndex = 53;
             this.botonC.TabStop = true;
             this.botonC.Text = "C";
@@ -143,9 +154,10 @@
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(249, 422);
+            this.botonCancelar.Location = new System.Drawing.Point(166, 274);
+            this.botonCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.botonCancelar.Name = "botonCancelar";
-            this.botonCancelar.Size = new System.Drawing.Size(99, 37);
+            this.botonCancelar.Size = new System.Drawing.Size(66, 24);
             this.botonCancelar.TabIndex = 55;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
@@ -153,18 +165,20 @@
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(102, 422);
+            this.botonAceptar.Location = new System.Drawing.Point(68, 274);
+            this.botonAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.botonAceptar.Name = "botonAceptar";
-            this.botonAceptar.Size = new System.Drawing.Size(99, 37);
+            this.botonAceptar.Size = new System.Drawing.Size(66, 24);
             this.botonAceptar.TabIndex = 54;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
             // GestionClientes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 497);
+            this.ClientSize = new System.Drawing.Size(299, 323);
             this.Controls.Add(this.botonCancelar);
             this.Controls.Add(this.botonAceptar);
             this.Controls.Add(this.botonC);
@@ -178,6 +192,7 @@
             this.Controls.Add(this.nombrelb);
             this.Controls.Add(this.dnitb);
             this.Controls.Add(this.dnilb);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "GestionClientes";
             this.Text = "Gestión de Clientes";
             this.ResumeLayout(false);

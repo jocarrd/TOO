@@ -13,68 +13,29 @@ namespace ModeloDominio
         private long tfno;
         private Tipo_cliente categoria;
         private List<Presupuesto> presupuestoList;
+        
+        public Cliente(string dni) {
+            this.Dni = dni;
+        }
 
         public Cliente(string dni, string nombre, long tfno, Tipo_cliente categoria)
         {
-            this.dni = dni;
-            this.nombre = nombre;
-            this.tfno = tfno;
-            this.categoria = categoria;
-            presupuestoList = new List<Presupuesto>();
-        }
-        public void setDni(String dni)
-        {
-            this.dni = dni;
+            this.Dni = dni;
+            this.Nombre = nombre;
+            this.Tfno = tfno;
+            this.Categoria = categoria;
+            PresupuestoList = new List<Presupuesto>();
         }
 
-        public String getDni()
-        {
-            return this.dni;
-        }
-
-        public void setNombre(String nombre)
-        {
-            this.nombre = nombre;
-        }
-
-        public String getNombre()
-        {
-            return this.nombre;
-        }
-
-        public void setTfno(long tfno)
-        {
-            this.tfno = tfno;
-        }
-
-        public long getTfno()
-        {
-            return this.tfno;
-        }
-
-        public void setCategoria(Tipo_cliente categoria)
-        {
-            this.categoria = categoria;
-        }
-
-        public Tipo_cliente getCategoria()
-        {
-            return this.categoria;
-        }
-
-        public void anadirPresupuesto(Presupuesto presupuesto)
-        {
-            this.presupuestoList.Add(presupuesto);
-        }
-
-        public List<Presupuesto> getPresupuesto()
-        {
-            return presupuestoList;
-        }
+        public string Dni { get => dni; set => dni = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public long Tfno { get => tfno; set => tfno = value; }
+        public Tipo_cliente Categoria { get => categoria; set => categoria = value; }
+        public List<Presupuesto> PresupuestoList { get => presupuestoList; set => presupuestoList = value; }
 
         public bool equals(Cliente c)
         {
-            return (this.dni.Equals(c.getDni()));
+            return (this.Dni.Equals(c.dni));
         }
     }
 }

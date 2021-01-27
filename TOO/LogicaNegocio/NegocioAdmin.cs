@@ -13,10 +13,9 @@ namespace LogicaNegocio
         //-------------------------------------------------------------------------------
         //Gestion de Clientes
 
-        public void darAltaCliente(string dni, string nombre, long tfno, ModeloDominio.Tipo_cliente categoria)
+        public void darAltaCliente(Cliente c)
         {
-            ModeloDominio.Cliente nuevoCliente = new ModeloDominio.Cliente(dni,nombre,tfno,categoria);
-            PersistenciaCliente.Añadir(nuevoCliente);
+            PersistenciaCliente.Añadir(c);
         }
 
         public bool darBajaCliente(ModeloDominio.Cliente c)
@@ -24,22 +23,22 @@ namespace LogicaNegocio
             return PersistenciaCliente.Eliminar(c);
         }
 
-        public Cliente seleccionarCliente(String dni)
+        public Cliente seleccionarCliente(Cliente c)
         {
-            return PersistenciaCliente.seleccionarCliente(dni);
+            return PersistenciaCliente.Buscar(c);
         }
 
         public Boolean existeCliente(String dni)
         {
-            return PersistenciaCliente.existeCliente(dni);
+            return PersistenciaCliente.Existe(dni);
         }
 
-        public List<ModeloDominio.Cliente> listarClientes()
+        public List<Cliente> listarClientes()
         {
-            return PersistenciaCliente.getClientes();
+            return PersistenciaCliente.GETClientes();
         }
 
-        public List<ModeloDominio.Presupuesto> obtenerPresupuestosCliente(ModeloDominio.Cliente c)
+        public List<Presupuesto> obtenerPresupuestosPorCliente(Cliente c)
         {
             return PersistenciaCliente.GETPresupuestosCliente(c);
         }
@@ -47,89 +46,57 @@ namespace LogicaNegocio
         //------------------------------------------------------------------------------
         //Gestion de Vehiculos
 
-        public void darAltaVehiculo(ModeloDominio.Vehiculo nuevoVehiculo)
+        public void darAltaVehiculo(Vehiculo nuevoVehiculo)
         {
             PersistenciaVehiculo.Añadir(nuevoVehiculo);
         }
 
-        public bool darBajaVehiculo(ModeloDominio.Vehiculo v)
+        public bool darBajaVehiculo(Vehiculo v)
         {
             return PersistenciaVehiculo.Eliminar(v);
         }
 
         public Boolean existeVehiculo(String bas)
         {
-            return PersistenciaVehiculo.existeVehiculo(bas);
+            return PersistenciaVehiculo.Existe(bas);
         }
 
-        public Vehiculo seleccionarVehiculo(String bas)
+        public Vehiculo seleccionarVehiculo(Vehiculo v)
         {
-            return PersistenciaVehiculo.seleccionarVehiculo(bas);
+            return PersistenciaVehiculo.Buscar(v);
         }
 
-        public void obtenerInfoVehiculo(ModeloDominio.Vehiculo v)
+        public List<Vehiculo> listarVehiculos()
         {
-            System.Console.WriteLine("Numero de Bastidor: " + v.getNumBastidor());
-            System.Console.WriteLine("Marca: " + v.getMarca());
-            System.Console.WriteLine("Modelo: " + v.getModelo());
-            System.Console.WriteLine("Potencia: " + v.getPotencia());
-            System.Console.WriteLine("Precio: " + v.getPrecio());
+            return PersistenciaVehiculo.GETVehiculos();
         }
 
-        public List<ModeloDominio.Vehiculo> listarVehiculos()
-        {
-            return PersistenciaVehiculo.getVehiculos();
-        }
-
-        /*
-        public List<ModeloDominio.SegundaMano> obtenerVehiculosSegundaMano()
-        {
-            return Persistencia.BD.GETVehiculosSegundaMano();
-        }
-
-        public List<ModeloDominio.Nuevo> obtenerVehiculosNuevos()
-        {
-            return Persistencia.BD.GETVehiculosNuevo();
-        }
-        */
         //------------------------------------------------------------------------------
         //Gestion de Presupuestos
 
-        public void crearPresupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, EstadoPresupuesto estado, ModeloDominio.Cliente c, List<Vehiculo> vehiculos)
+        public void crearPresupuesto(Presupuesto p, List<Vehiculo> vehiculos)
         {
-            ModeloDominio.Presupuesto nuevoPresupuesto = new ModeloDominio.Presupuesto(id_presupuesto, cantidad,fecha_Realizacion, estado, c);
-
             foreach(Vehiculo v in vehiculos)
             {
-                nuevoPresupuesto.anadirVehiculo(v);
+                p.CocheList.Add(v);
+                PersistenciaPresupuestoVehiculo.Añadir(new PresupuestoVehiculoDato(new Clave(p.Id_presupuesto,v.NumBastidor)));
             }
-
-            PersistenciaPresupuesto.añadir(nuevoPresupuesto);
+            PersistenciaPresupuesto.Añadir(p);
         }
 
-        public bool eliminarPresupuesto(ModeloDominio.Presupuesto p)
+        public bool eliminarPresupuesto(Presupuesto p)
         {
-            return PersistenciaPresupuesto.eliminar(p);
+            return PersistenciaPresupuesto.Eliminar(p);
         }
 
-        public List<ModeloDominio.Presupuesto> obtenerTodosPresupuestos()
+        public List<Presupuesto> obtenerTodosPresupuestos()
         {
-            return PersistenciaPresupuesto.getPresupuestos();
-        }
-
-        public List<ModeloDominio.Presupuesto> getPresupuestosCliente(ModeloDominio.Cliente c)
-        {
-            return PersistenciaPresupuesto.getPresupuestosCliente(c);
+            return PersistenciaPresupuesto.GETPresupuestos();
         }
 
         public Boolean existePresupuesto(String iden)
         {
-            return PersistenciaPresupuesto.existePresupuesto(iden);
-        }
-
-        public Presupuesto seleccionarPresupuesto(String pres)
-        {
-            return PersistenciaPresupuesto.seleccionarPresupuesto(pres);
+            return PersistenciaPresupuesto.Existe(iden);
         }
 
         /*

@@ -12,7 +12,7 @@ namespace Persistencia
     {
         protected override string GetKeyForItem(ModeloDominio.Presupuesto item)
         {
-            return item.getId_presupuesto();
+            return item.Id_presupuesto;
         }
 
     }

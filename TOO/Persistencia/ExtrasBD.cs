@@ -11,7 +11,7 @@ namespace Persistencia
     {
         protected override string GetKeyForItem(ModeloDominio.Extra item)
         {
-            return item.getNombre();
+            return item.Nombre;
         }
     }
 }

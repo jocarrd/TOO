@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Persistencia
 {
-    public class VehiculoNuevo_extraBD : KeyedCollection<string, ModeloDominio.Nuevo>
+    public class VehiculoNuevo_extraBD : KeyedCollection<string, ModeloDominio.Vehiculo>
     {
-        protected override string GetKeyForItem(ModeloDominio.Nuevo item)
+        protected override string GetKeyForItem(ModeloDominio.Vehiculo item)
         {
             return item.getNumBastidor();
         }

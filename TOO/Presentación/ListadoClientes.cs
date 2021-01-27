@@ -13,21 +13,20 @@ using ModeloDominio;
 namespace Presentación
 {
     public partial class ListadoClientes : Form
-    {
-        private NegocioAdmin neg;
-        List<ModeloDominio.Cliente> lista = null;
-        public ListadoClientes(NegocioAdmin neg)
+    { 
+        List<Cliente> lista = null;
+        
+        public ListadoClientes(List<Cliente> list)
         {
             InitializeComponent();
-            lista = neg.listarClientes();
+            this.lista = list;
             List<Presupuesto> listaPresupuesto = null;
-
 
             foreach (Cliente c in lista)
             {
-                this.dniListB.Items.Add(c.getDni());
-                string[] nomApell = c.getNombre().Split(' ');
-                if (nomApell.Length==2)
+                this.dniListB.Items.Add(c.Dni);
+                string[] nomApell = c.Nombre.Split(' ');
+                if (nomApell.Length == 2)
                 {
                     this.nombreListB.Items.Add(nomApell[1] + "," + nomApell[0]);
                 }
@@ -36,7 +35,7 @@ namespace Presentación
                     this.nombreListB.Items.Add(nomApell[0]);
                 }
 
-                listaPresupuesto = c.getPresupuesto();
+                listaPresupuesto = c.PresupuestoList;
                 this.importeListB.Items.Add(listaPresupuesto[0]);
             }
         }

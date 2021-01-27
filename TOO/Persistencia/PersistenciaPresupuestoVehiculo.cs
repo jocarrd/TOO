@@ -11,16 +11,14 @@ namespace Persistencia
 
         public static void Añadir(PresupuestoVehiculoDato a)
         {
-
             BD.INSERTPresupuestoVehiculo(a);
-           
         }
 
-        public static PresupuestoVehiculoDato Buscar(PresupuestoVehiculoDato c)
+        public static PresupuestoVehiculoDato Buscar(PresupuestoVehiculoDato a)
         {
-            if (BD.SELECTPresupuestoVehiculo(c) != null)
+            if (BD.SELECTPresupuestoVehiculo(a) != null)
             {
-                return BD.SELECTPresupuestoVehiculo(c);
+                return BD.SELECTPresupuestoVehiculo(a);
             }
             else
             {
@@ -37,6 +35,11 @@ namespace Persistencia
         public static bool ModificarPresupuesto(PresupuestoVehiculoDato c)
         {
             return BD.UPDATEPresupuestoVehiculo(c);
+        }
+
+        public static bool Existe(Clave clave)
+        {
+            return BD.PresupuestosVehiculos.Contains(clave);
         }
 
         public static List<PresupuestoVehiculoDato> GETPresupuestosVehiculosDatos()

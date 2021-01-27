@@ -13,69 +13,57 @@ namespace ModeloDominio
         private String modelo;
         private int potencia;
         private double precio;
-        //private double IVA;
+        
 
-        public Vehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp)
-        {
-            this.numBastidor = numBastidor;
-            this.marca = marca;
-            this.modelo = modelo;
-            this.potencia = potencia;
-            this.precio = pvp;
-        }
+        private Dictionary<string, double> extras;
+        private double iva; 
 
-        public void setNumBastidor(String numBastidor)
-        {
-            this.numBastidor = numBastidor;
+        private string matricula;
+        private DateTime fecha_matriculacion;
+        
+        public Vehiculo(string numBastidor){
+            this.NumBastidor = numBastidor;
         }
 
-        public String getNumBastidor()
+            public Vehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp, Dictionary<string,double> extrillas) 
         {
-            return this.numBastidor;
-        }
-        public void setMarca(String marca)
-        {
-            this.marca = marca;
-        }
-
-        public String getMarca()
-        {
-            return this.marca;
+            this.NumBastidor = numBastidor;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Potencia = potencia;
+            this.Precio = pvp;
+            this.Extras = extrillas;
+            this.Iva = 10 / 100;
         }
 
-        public void setModelo(String modelo)
+        public Vehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp, string matricula, DateTime fecha)
         {
-            this.modelo = modelo;
+            this.NumBastidor = numBastidor;
+            this.Marca = marca;
+            this.Modelo = modelo;
+            this.Potencia = potencia;
+            this.Precio = pvp;
+            this.Extras = new Dictionary<string, double>();
+            this.Matricula= matricula;
+            this.Fecha_matriculacion = fecha;
+            this.Iva = 21 / 100;
         }
 
-        public String getModelo()
-        {
-            return this.modelo;
-        }
 
-        public void setPotencia(int potencia)
-        {
-            this.potencia = potencia;
-        }
 
-        public int getPotencia()
-        {
-            return this.potencia;
-        }
-
-        public void setPrecio(double precio)
-        {
-            this.precio = precio;
-        }
-
-        public double getPrecio()
-        {
-            return this.precio;
-        }
+        public string NumBastidor { get => numBastidor; set => numBastidor = value; }
+        public string Marca { get => marca; set => marca = value; }
+        public string Modelo { get => modelo; set => modelo = value; }
+        public int Potencia { get => potencia; set => potencia = value; }
+        public double Precio { get => precio; set => precio = value; }
+        public Dictionary<string, double> Extras { get => extras; set => extras = value; }
+        public double Iva { get => iva; set => iva = value; }
+        public string Matricula { get => matricula; set => matricula = value; }
+        public DateTime Fecha_matriculacion { get => fecha_matriculacion; set => fecha_matriculacion = value; }
 
         public bool equals(Vehiculo c)
         {
-            return (numBastidor.Equals(c.getNumBastidor()));
+            return NumBastidor.Equals(c.numBastidor);
         }
     }
 }

@@ -11,25 +11,23 @@ using LogicaNegocio;
 using ModeloDominio;
 
 namespace Presentación
-{ 
+{
     public partial class ListadoVehiculosCompleto : Form
     {
-        private NegocioAdmin neg;
-        public ListadoVehiculosCompleto(NegocioAdmin neg)
+        public ListadoVehiculosCompleto(List<Vehiculo> vehiculos)
         {
             InitializeComponent();
-            this.neg = neg;
-            List<Vehiculo> lista = neg.listarVehiculos();
+            List<Vehiculo> lista = vehiculos;
             int n;
             foreach (Vehiculo c in lista)
             {
                 n = dataGridView1.Rows.Add();
 
-                dataGridView1.Rows[n].Cells[0].Value = c.getNumBastidor();
-                dataGridView1.Rows[n].Cells[1].Value = c.getMarca();
-                dataGridView1.Rows[n].Cells[2].Value = c.getModelo();
-                dataGridView1.Rows[n].Cells[3].Value = c.getPotencia().ToString();
-                dataGridView1.Rows[n].Cells[4].Value = c.getPrecio().ToString();
+                dataGridView1.Rows[n].Cells[0].Value = c.NumBastidor;
+                dataGridView1.Rows[n].Cells[1].Value = c.Marca;
+                dataGridView1.Rows[n].Cells[2].Value = c.Modelo;
+                dataGridView1.Rows[n].Cells[3].Value = c.Potencia.ToString();
+                dataGridView1.Rows[n].Cells[4].Value = c.Precio.ToString();
                 dataGridView1.Rows[n].Cells[5].Value = "";
             }
         }

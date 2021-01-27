@@ -10,12 +10,12 @@ namespace Persistencia
 {
     public class PersistenciaCliente
     { 
-        public static void Añadir(ModeloDominio.Cliente c)
+        public static void Añadir(Cliente c)
         {           
             BD.INSERTCliente(c);
         }
        
-        public static ModeloDominio.Cliente Buscar(ModeloDominio.Cliente c)
+        public static Cliente Buscar(Cliente c)
         {
             if (BD.SELECTCliente(c)!=null)
             {
@@ -27,34 +27,22 @@ namespace Persistencia
             }                
         }
 
-        public static Cliente seleccionarCliente(String dni)
-        {
-            foreach (Cliente c in BD.Clientes)
-            {
-                if (c.getDni().Equals(dni))
-                {
-                    return c;
-                }
-            }
-            return null;
-        }
-
-        public static bool Eliminar(ModeloDominio.Cliente c)
+        public static bool Eliminar(Cliente c)
         {
             return BD.DELETECliente(c);
         }
 
-        public static bool ModificarCliente(ModeloDominio.Cliente c)
+        public static bool Modificar(Cliente c)
         {
             return BD.UPDATECliente(c);
         }
 
-        public static bool existeCliente(String dni)
+        public static bool Existe(String dni)
         {
             return BD.Clientes.Contains(dni);
         }
 
-        public static List<ModeloDominio.Cliente> getClientes()
+        public static List<Cliente> GETClientes()
         {
             List<ModeloDominio.Cliente> lista = new List<Cliente>();
             foreach (Cliente c in BD.Clientes)
@@ -64,13 +52,13 @@ namespace Persistencia
             return lista;
         }
 
-        public static List<ModeloDominio.Presupuesto> GETPresupuestosCliente(ModeloDominio.Cliente c)
+        public static List<Presupuesto> GETPresupuestosCliente(Cliente c)
         {
-            List<ModeloDominio.Presupuesto> resultado = new List<ModeloDominio.Presupuesto>();
-            foreach (ModeloDominio.Presupuesto p in BD.Presupuestos)
+            List<Presupuesto> resultado = new List<Presupuesto>();
+            foreach (Presupuesto p in BD.Presupuestos)
             {
-                ModeloDominio.Cliente cast = (ModeloDominio.Cliente)p.getCliente();
-                if (cast.getDni().Equals(c.getDni()))
+                Cliente cast = (Cliente)p.Cliente;
+                if (cast.Dni.Equals(c.Dni))
                 {
                     resultado.Add(p);
                 }

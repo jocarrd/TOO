@@ -10,7 +10,7 @@ namespace Persistencia
     {
        public Clave clavePresupuestoVehiculo;
             
-            public PresupuestoVehiculoDato(Clave c)
+        public PresupuestoVehiculoDato(Clave c)
         {
             this.clavePresupuestoVehiculo = c;
         }

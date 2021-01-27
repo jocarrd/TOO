@@ -14,18 +14,14 @@ namespace Presentación
 {
     public partial class GestionPresupuestos : Form
     {
-        private NegocioAdmin neg;
-        private String tipo;
         private List<ModeloDominio.Vehiculo> v;
         public GestionPresupuestos(String iden, String tipo, NegocioAdmin neg)
         {
             InitializeComponent();
-            this.neg = neg;
-            this.tipo = tipo;
             this.idePrestb.Text = iden;
             this.idePrestb.ReadOnly = true;
             if (this.tipo.Equals("crear"))
-            {               
+            {
                 this.estadocb.Items.Add("Aceptado");
                 this.estadocb.Items.Add("Pendiente");
                 this.estadocb.Items.Add("Desestimado");
@@ -33,11 +29,11 @@ namespace Presentación
             }
             else
             {
-                Presupuesto pres = neg.seleccionarPresupuesto(this.idePrestb.Text);
+                Presupuesto pres = new Presupuesto(this.idePrestb.Text);
                 this.cantidadtb.Text = pres.getCantidad().ToString();
                 this.cantidadtb.ReadOnly = true;
                 this.estadocb.Items.Add("pres.getEstado()");
-                this.estadocb.Text= pres.getEstado().ToString();
+                this.estadocb.Text = pres.getEstado().ToString();
                 this.clientetb.Text = pres.getCliente().getDni();
                 this.clientetb.ReadOnly = true;
                 this.dateTimePicker1.Value = pres.getFecha_Realizacion();
@@ -53,7 +49,7 @@ namespace Presentación
                 this.botonAñadir.Enabled = false;
                 this.botonEliminar.Enabled = false;
             }
-            
+
         }
 
         private void botonAceptar_Click(object sender, EventArgs e)
@@ -65,7 +61,7 @@ namespace Presentación
                     int indice = estadocb.SelectedIndex;
                     String estado = estadocb.Items[indice].ToString();
 
-                    Cliente c=neg.seleccionarCliente(this.clientetb.Text);
+                    Cliente c = neg.seleccionarCliente(this.clientetb.Text);
 
                     neg.crearPresupuesto(this.idePrestb.Text, int.Parse(this.cantidadtb.Text), this.dateTimePicker1.Value.Date, this.estadoPesupuesto(estado), c, v);
                     this.Close();
@@ -135,7 +131,7 @@ namespace Presentación
             {
                 return EstadoPresupuesto.Aceptado;
             }
-            else 
+            else
             {
                 if (a.Equals("Desestimado"))
                 {
@@ -165,7 +161,7 @@ namespace Presentación
         private void botonEliminar_Click(object sender, EventArgs e)
         {
             int indice = listBox1.SelectedIndex;
-            if (indice!=-1)
+            if (indice != -1)
             {
                 v.RemoveAt(indice);
                 this.listBox1.Items.RemoveAt(indice);

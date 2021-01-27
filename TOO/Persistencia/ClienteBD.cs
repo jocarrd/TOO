@@ -13,7 +13,7 @@ namespace Persistencia
     {
         protected override string GetKeyForItem(ModeloDominio.Cliente item)
         {
-            return item.getDni();
+            return item.Dni;
         }
     }
 }

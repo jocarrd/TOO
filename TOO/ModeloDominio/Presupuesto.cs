@@ -17,77 +17,24 @@ namespace ModeloDominio
 
         public Presupuesto(string id_presupuesto, int cantidad, DateTime fecha_Realizacion, EstadoPresupuesto estado, Cliente c)
         {
-            this.id_presupuesto = id_presupuesto;
-            this.cantidad = cantidad;
-            this.fecha_Realizacion = fecha_Realizacion;
-            this.estado = estado;
-            this.cliente = c;
-            cocheList = new List<Vehiculo>();
+            this.Id_presupuesto = id_presupuesto;
+            this.Cantidad = cantidad;
+            this.Fecha_Realizacion = fecha_Realizacion;
+            this.Estado = estado;
+            this.Cliente = c;
+            CocheList = new List<Vehiculo>();
         }
 
-        public void setId_presupuesto(String id_presupuesto)
-        {
-            this.id_presupuesto = id_presupuesto;
-        }
-
-        public String getId_presupuesto()
-        {
-            return this.id_presupuesto;
-        }
-        
-        public void setCantidad(int cantidad)
-        {
-            this.cantidad = cantidad;
-        }
-
-        public int getCantidad()
-        {
-            return this.cantidad;
-        }
-
-        public void setFecha_Realizacion(DateTime fecha_Realizacion)
-        {
-            this.fecha_Realizacion = fecha_Realizacion;
-        }
-
-        public DateTime getFecha_Realizacion()
-        {
-            return this.fecha_Realizacion;
-        }
-
-        public void setEstado(EstadoPresupuesto estado)
-        {
-            this.estado = estado;
-        }
-
-        public EstadoPresupuesto getEstado()
-        {
-            return this.estado;
-        }
-
-        public void setCliente(Cliente cliente)
-        {
-            this.cliente = cliente;
-        }
-
-        public Cliente getCliente()
-        {
-            return this.cliente;
-        }
-
-        public void anadirVehiculo(Vehiculo vehiculo)
-        {
-            this.cocheList.Add(vehiculo);
-        }
-
-        public List<Vehiculo> getVehiculos()
-        {
-            return cocheList;
-        }
+        public string Id_presupuesto { get => id_presupuesto; set => id_presupuesto = value; }
+        public int Cantidad { get => cantidad; set => cantidad = value; }
+        public DateTime Fecha_Realizacion { get => fecha_Realizacion; set => fecha_Realizacion = value; }
+        public EstadoPresupuesto Estado { get => estado; set => estado = value; }
+        public Cliente Cliente { get => cliente; set => cliente = value; }
+        public List<Vehiculo> CocheList { get => cocheList; set => cocheList = value; }
 
         public bool equals(Presupuesto c)
         {
-            return (this.id_presupuesto.Equals(c.getId_presupuesto()));
+            return this.Id_presupuesto.Equals(c.id_presupuesto);
         }
     }
 }

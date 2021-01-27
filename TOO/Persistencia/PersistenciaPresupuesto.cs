@@ -1,4 +1,5 @@
 ﻿using System;
+using ModeloDominio;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,18 +9,16 @@ namespace Persistencia
 {
    public class PersistenciaPresupuesto
     {
-        public static void añadir(ModeloDominio.Presupuesto c)
+        public static void Añadir(Presupuesto p)
         {
-            BD.INSERTPresupuesto(c);
+            BD.INSERTPresupuesto(p);
         }
 
-        //PREGUNTAR QUE HACE ESTE MÉTODO
-        public static ModeloDominio.Presupuesto buscar(ModeloDominio.Presupuesto c)
+        public static Presupuesto Buscar(Presupuesto p)
         {
-            //UNA OPCION
-            if (BD.SELECTPresupuesto(c) != null)
+            if (BD.SELECTPresupuesto(p) != null)
             {
-                return BD.SELECTPresupuesto(c);
+                return BD.SELECTPresupuesto(p);
             }
             else
             {
@@ -27,68 +26,43 @@ namespace Persistencia
             }
         }
 
-        public static bool eliminar(ModeloDominio.Presupuesto c)
+        public static bool Eliminar(Presupuesto c)
         {
             return BD.DELETEPresupuesto(c);
         }
 
-        public static bool modificarPresupuesto(ModeloDominio.Presupuesto c)
+        public static bool Modificar(Presupuesto c)
         {
             return BD.UPDATEPresupuesto(c);
         }
 
-        public static bool existePresupuesto(String bas)
+        public static bool Existe(String bas)
         {
-            if (BD.Presupuestos.Contains(bas))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return BD.Presupuestos.Contains(bas);
         }
 
-        public static ModeloDominio.Presupuesto seleccionarPresupuesto(String pres)
+        public static List<Presupuesto> GETPresupuestos()
         {
-            foreach (ModeloDominio.Presupuesto c in BD.Presupuestos)
-            {
-                if (c.getId_presupuesto().Equals(pres))
-                {
-                    return c;
-                }
-            }
-            return null;
-        }
-
-        public static List<ModeloDominio.Presupuesto> getPresupuestos()
-        {
-            List<ModeloDominio.Presupuesto> lista = new List<ModeloDominio.Presupuesto>();
-            foreach (ModeloDominio.Presupuesto c in BD.Presupuestos)
+            List<Presupuesto> lista = new List<Presupuesto>();
+            foreach (Presupuesto c in BD.Presupuestos)
             {
                 lista.Add(c);
             }
             return lista;
         }
 
-        public static List<ModeloDominio.Presupuesto> getPresupuestosCliente(ModeloDominio.Cliente c)
+        public static List<Presupuesto> GETPresupuestosCliente(Cliente c)
         {
-            //UNA OPCION ES ASI
-            
-            List<ModeloDominio.Presupuesto> resultado = new List<ModeloDominio.Presupuesto>();
-            foreach (ModeloDominio.Presupuesto p in BD.Presupuestos)
+            List<Presupuesto> resultado = new List<Presupuesto>();
+            foreach (Presupuesto p in BD.Presupuestos)
             {
-                ModeloDominio.Cliente cast = (ModeloDominio.Cliente)p.getCliente();
-                if (cast.getDni().Equals(c.getDni()))
+                Cliente cast = (Cliente)p.Cliente;
+                if (cast.Dni.Equals(c.Dni))
                 {
                     resultado.Add(p);
                 }
             }
             return resultado;
-
-            //OTRA OPCIÓN PUEDE SER APROBECHAR EL ATRIBUTO DE CLIENTE
-
-            //return c.getPresupuesto();
         }
 
     }
