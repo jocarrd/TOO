@@ -143,7 +143,6 @@
             this.tsmiListadoCompletoVehiculos.Name = "tsmiListadoCompletoVehiculos";
             this.tsmiListadoCompletoVehiculos.Size = new System.Drawing.Size(180, 22);
             this.tsmiListadoCompletoVehiculos.Text = "Listado Completo";
-            this.tsmiListadoCompletoVehiculos.Click += new System.EventHandler(this.listarToolStripMenuItem1_Click);
             // 
             // presupuestosToolStripMenuItem
             // 

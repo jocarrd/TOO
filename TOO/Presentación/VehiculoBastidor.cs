@@ -37,6 +37,7 @@ namespace Presentación
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
+            this.vehiculo.NumBastidor = "";
             this.Close();
         }
     }

@@ -131,6 +131,17 @@ namespace Persistencia
         }
         public static ModeloDominio.Cliente SELECTCliente(ModeloDominio.Cliente c)
         {
+            foreach (ModeloDominio.Cliente c1 in BD.Clientes)
+            {
+                if (c1.Dni.Equals(c.Dni))
+                {
+                    return c1;
+                }
+            }
+            return null;
+
+            /*
+             * NO FUNCIONA REVISAR
             IEnumerable<ModeloDominio.Cliente> cliente = BD.clientes.Select(clientes => c);
 
             if (cliente == null)
@@ -140,7 +151,7 @@ namespace Persistencia
             else
             {
                 return cliente.First();
-            }
+            }*/
         }
 
         public static bool DELETECliente(ModeloDominio.Cliente c)
@@ -189,7 +200,15 @@ namespace Persistencia
 
         public static ModeloDominio.Presupuesto SELECTPresupuesto(ModeloDominio.Presupuesto p)
         {
-
+            foreach (ModeloDominio.Presupuesto p1 in BD.Presupuestos)
+            {
+                if (p1.Id_presupuesto.Equals(p.Id_presupuesto))
+                {
+                    return p1;
+                }
+            }
+            return null;
+            /*
             IEnumerable<ModeloDominio.Presupuesto> presupuesto = BD.presupuestos.Select(presupuestos => p);
 
             if (presupuesto == null)
@@ -199,7 +218,7 @@ namespace Persistencia
             else
             {
                 return presupuesto.First();
-            }
+            }*/
         }
 
         public static bool DELETEPresupuesto(ModeloDominio.Presupuesto p)
@@ -243,6 +262,15 @@ namespace Persistencia
 
         public static ModeloDominio.Vehiculo SELECTVehiculo(ModeloDominio.Vehiculo v)
         {
+            foreach (ModeloDominio.Vehiculo v1 in BD.vehiculos)
+            {
+                if (v1.NumBastidor.Equals(v1.NumBastidor))
+                {
+                    return v1;
+                }
+            }
+            return null;
+            /*
             IEnumerable<ModeloDominio.Vehiculo> vehiculo = BD.vehiculos.Select(vehiculos => v);
             if (vehiculo == null)
             {
@@ -251,7 +279,7 @@ namespace Persistencia
             else
             {
                 return vehiculo.First();
-            }
+            }*/
         }
 
         public static bool DELETEVehiculo(ModeloDominio.Vehiculo v)

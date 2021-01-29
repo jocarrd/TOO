@@ -34,16 +34,24 @@ namespace Presentación
                 alta.ShowDialog();
                 cliente=alta.debCliente();
                 if (Administrador.existeCliente(cliente.Dni)) {
-                    if (MessageBox.Show("¿Quierres introducir otro?", "Existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Quieres introducir otro?", "Existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.tsmiAltaCliente.PerformClick();
                     }
                 }
                 else {
-                    GestionClientes datos = new GestionClientes(cliente.Dni);
-                    datos.ShowDialog();
-                    cliente = datos.debCliente();
-                    Administrador.darAltaCliente(cliente); 
+                    if (!cliente.Dni.Equals(""))
+                    {
+                        GestionClientes datos = new GestionClientes(cliente.Dni);
+                        datos.ShowDialog();
+                        cliente = datos.debCliente();
+                        Administrador.darAltaCliente(cliente);
+                        if (!cliente.Dni.Equals(""))
+                        {
+                            MessageBox.Show("Se ha añadido a " + cliente.Nombre, "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
                 }
                 
             }
@@ -54,7 +62,7 @@ namespace Presentación
                 baja.ShowDialog();
                 cliente = baja.debCliente();
                 if (!Administrador.existeCliente(cliente.Dni)) {
-                    if (MessageBox.Show("¿Quierres introducir otro?", "No existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                    if (MessageBox.Show("¿Quieres introducir otro?", "No existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                         this.tsmiBajaCliente.PerformClick();
                     }
                 }
@@ -63,7 +71,7 @@ namespace Presentación
                     gestion.ShowDialog();
                     if (MessageBox.Show("Está seguro que desea dar de baja a " + cliente.Nombre + " ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                         Administrador.darBajaCliente(cliente);
-                        MessageBox.Show("Cliente " + cliente.Nombre + " eliminado", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MessageBox.Show("Cliente " + cliente.Nombre + " eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     } 
                 }
             }
@@ -75,16 +83,16 @@ namespace Presentación
                 cliente = busqueda.debCliente();
                 if (!Administrador.existeCliente(cliente.Dni))
                 {
-                    if (MessageBox.Show("¿Quierres introducir otro?", "No existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Quieres introducir otro?", "No existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.tsmiBusquedaCliente.PerformClick();
                     }
                 }
                 else
                 {
-                    //FALLO EN LA BASE DE DATOS AL ACCDER POR EL ADMINISTRADOR
                     GestionClientes gestion = new GestionClientes(Administrador.seleccionarCliente(cliente));
                     gestion.ShowDialog();
+
                 }
             }
 
@@ -92,6 +100,11 @@ namespace Presentación
             {
                 ListadoClientes lis = new ListadoClientes(Administrador.listarClientes());
                 lis.ShowDialog();
+            }
+
+            if (e.ClickedItem.Text.Equals("Listado Completo"))
+            {
+                
             }
         }
 
@@ -104,20 +117,27 @@ namespace Presentación
                 VehiculoBastidor alta = new VehiculoBastidor(vehiculo);
                 alta.ShowDialog();
                 vehiculo = alta.debVehiculo();
-                Administrador.darAltaVehiculo(vehiculo);
                 if (Administrador.existeVehiculo(vehiculo.NumBastidor))
                 {
-                    if (MessageBox.Show("¿Quierres introducir otro?", "Existe un vehiculo con ese Numero de Bastidor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Quieres introducir otro?", "Existe un vehiculo con ese Numero de Bastidor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.tsmiAltaVehiculo.PerformClick();
                     }
                 }
                 else
                 {
-                    GestionVehiculos datos = new GestionVehiculos(vehiculo.NumBastidor);
-                    datos.ShowDialog();
-                    vehiculo = datos.debVehiculo();
-                    Administrador.darAltaVehiculo(vehiculo);
+                    if (!vehiculo.NumBastidor.Equals(""))
+                    {
+                        GestionVehiculos datos = new GestionVehiculos(vehiculo.NumBastidor);
+                        datos.ShowDialog();
+                        vehiculo = datos.debVehiculo();
+                        Administrador.darAltaVehiculo(vehiculo);
+                        if (!vehiculo.NumBastidor.Equals(""))
+                        {
+                            MessageBox.Show("Se ha añadido a " + vehiculo.NumBastidor, "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
                 }
 
             }
@@ -127,22 +147,22 @@ namespace Presentación
                 VehiculoBastidor baja = new VehiculoBastidor(vehiculo);
                 baja.ShowDialog();
                 vehiculo = baja.debVehiculo();
-                if (!Administrador.existeCliente(vehiculo.NumBastidor))
+                if (!Administrador.existeVehiculo(vehiculo.NumBastidor))
                 {
-                    if (MessageBox.Show("¿Quierres introducir otro?", "No existe un vehiculo con ese Numero de Bastidor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Quieres introducir otro?", "No existe un vehiculo con ese Numero de Bastidor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.tsmiAltaVehiculo.PerformClick();
                     }
                 }
                 else 
                 {
-                    GestionVehiculos datos = new GestionVehiculos(vehiculo);
+                    GestionVehiculos datos = new GestionVehiculos(Administrador.seleccionarVehiculo(vehiculo));
                     datos.ShowDialog();
                     vehiculo = datos.debVehiculo();
                     if (MessageBox.Show("Está seguro que desea dar de baja a " + vehiculo.NumBastidor + " ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         Administrador.darBajaVehiculo(vehiculo);
-                        MessageBox.Show("Vehiculo " + vehiculo.NumBastidor + " eliminado", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        MessageBox.Show("Vehiculo " + vehiculo.NumBastidor + " eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Question);
                     }
                 }
             }
@@ -152,20 +172,24 @@ namespace Presentación
                 VehiculoBastidor busqueda = new VehiculoBastidor(vehiculo);
                 busqueda.ShowDialog();
                 vehiculo = busqueda.debVehiculo();
-                if (!Administrador.existeCliente(vehiculo.NumBastidor))
+                if (!Administrador.existeVehiculo(vehiculo.NumBastidor))
                 {
-                    if (MessageBox.Show("¿Quierres introducir otro?", "No existe un vehiculo con ese Numero de Bastidor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Quieres introducir otro?", "No existe un vehiculo con ese Numero de Bastidor", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.tsmiAltaVehiculo.PerformClick();
                     }
                 }
                 else
                 {
-                    GestionVehiculos datos = new GestionVehiculos(vehiculo);
+                    GestionVehiculos datos = new GestionVehiculos(Administrador.seleccionarVehiculo(vehiculo));
                     datos.ShowDialog();
                 }
             }
-
+            if (e.ClickedItem.Text.Equals("Listado Completo"))
+            {
+                ListadoVehiculosCompleto l = new ListadoVehiculosCompleto(Administrador.listarVehiculos());
+                l.ShowDialog();
+            }
 
         }
         private void presupuestosToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -179,7 +203,7 @@ namespace Presentación
                 presupuesto = crear.debPresupuesto();
                 if (Administrador.existePresupuesto(presupuesto.Id_presupuesto))
                 {
-                    if (MessageBox.Show("¿Quierres introducir otro?", "Existe un presupuesto con ese Id", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    if (MessageBox.Show("¿Quieres introducir otro?", "Existe un presupuesto con ese Id", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
                         this.tsmiCrearNuevo.PerformClick();
                     }
@@ -192,18 +216,6 @@ namespace Presentación
                     Administrador.crearPresupuesto(presupuesto,presupuesto.CocheList);
                 }
             }
-
-            if (e.ClickedItem.Text.Equals("Búsqueda"))
-            {
-                IdentificadorPresupuesto vehiculo = new IdentificadorPresupuesto(presupuesto);
-                vehiculo.ShowDialog();
-            }
-        }
-
-        private void listarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ListadoVehiculosCompleto l = new ListadoVehiculosCompleto(Administrador.listarVehiculos());
-            l.ShowDialog();
         }
 
         private void listadoCompletoToolStripMenuItem1_Click(object sender, EventArgs e)

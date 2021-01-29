@@ -68,6 +68,7 @@
             this.botonAceptar.TabIndex = 37;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptarAlta_Click);
             // 
             // fechaMatriculatb
             // 

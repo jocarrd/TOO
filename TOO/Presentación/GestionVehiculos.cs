@@ -49,12 +49,7 @@ namespace Presentación
             this.marcarTipoVehiculo(v);
             this.botonNuevo.Enabled = false;
             this.botonSegMano.Enabled = false;
-            this.matriculalb.Visible = false;
-            this.matriculatb.Enabled = false;
-            this.matriculatb.Visible = false;
-            this.fechaMatriculatb.Visible = false;
-            this.fechaMatriculatb.Enabled = false;
-            this.fechaMatriculalb.Visible = false;
+            
             this.botonAceptar.Focus();
         }
 
@@ -81,9 +76,13 @@ namespace Presentación
                 this.vehiculo.Marca = this.marcatb.Text;
                 this.vehiculo.Modelo = this.modelotb.Text;
                 this.vehiculo.Potencia = int.Parse(this.potenciatb.Text);
-                this.vehiculo.Precio = double.Parse(this.fechaMatriculatb.Text);
-                this.vehiculo.Matricula = this.fechaMatriculatb.Text;
-                this.vehiculo.Fecha_matriculacion = DateTime.Parse(this.fechaMatriculatb.Text);
+                this.vehiculo.Precio = double.Parse(this.precioRectb.Text);
+                if (this.botonSegMano.Checked)
+                {
+                    this.vehiculo.Matricula = this.matriculatb.Text;
+                    //this.vehiculo.Fecha_matriculacion = this.fechaMatriculatb.Text;
+                }
+                
                 this.Close();
             }
             else
@@ -106,9 +105,9 @@ namespace Presentación
                     }
                     else
                     {
-                        if (this.potenciatb.Text.Equals("") || !int.TryParse(potencialb.Text, out int pot))
+                        if (this.potenciatb.Text.Equals("") || !int.TryParse(potenciatb.Text, out int pot))
                         {
-                            MessageBox.Show("Corrige el campo potenia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Corrige el campo potencia", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             this.potencialb.Font = new Font(potenciatb.Font, FontStyle.Bold);
                             this.potencialb.ForeColor = Color.Red;
                             this.potencialb.Focus();
@@ -124,23 +123,36 @@ namespace Presentación
                             }
                             else
                             {
-                                if (this.matriculatb.Text.Equals(""))
+                                if (!this.botonSegMano.Checked && !this.botonNuevo.Checked)
                                 {
-                                    MessageBox.Show("Completa el campo matrícula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    this.matriculalb.Font = new Font(precioRectb.Font, FontStyle.Bold);
-                                    this.matriculalb.ForeColor = Color.Red;
-                                    this.matriculalb.Focus();
+                                    MessageBox.Show("Marca el tipo del vehículo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    this.label6.Font = new Font(precioRectb.Font, FontStyle.Bold);
+                                    this.label6.ForeColor = Color.Red;
+                                    this.label6.Focus();
                                 }
                                 else
                                 {
-                                    if (this.fechaMatriculatb.Text.Equals(""))
+                                    if (this.botonSegMano.Checked)
                                     {
-                                        MessageBox.Show("Completa el campo fecha matriculacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        this.fechaMatriculalb.Font = new Font(precioRectb.Font, FontStyle.Bold);
-                                        this.fechaMatriculalb.ForeColor = Color.Red;
-                                        this.fechaMatriculalb.Focus();
-                                    }
-                                }
+                                        if (this.matriculatb.Text.Equals(""))
+                                        {
+                                            MessageBox.Show("Completa el campo matrícula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                            this.matriculalb.Font = new Font(precioRectb.Font, FontStyle.Bold);
+                                            this.matriculalb.ForeColor = Color.Red;
+                                            this.matriculalb.Focus();
+                                        }
+                                        else
+                                        {
+                                            if (this.fechaMatriculatb.Text.Equals(""))
+                                            {
+                                                MessageBox.Show("Completa el campo fecha matriculacion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                                this.fechaMatriculalb.Font = new Font(precioRectb.Font, FontStyle.Bold);
+                                                this.fechaMatriculalb.ForeColor = Color.Red;
+                                                this.fechaMatriculalb.Focus();
+                                            }
+                                        }
+                                    }                                   
+                                }                             
                             }
                         }
                     }
@@ -150,20 +162,20 @@ namespace Presentación
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
+            this.vehiculo.NumBastidor = "";
             this.Close();
         }
 
         public bool compruebaLosTextBox()
         {
             //Comprueba si los TextBox son vacíos o si tienen algun dato mal introducido
-
             //Comprobamos que no sean vacíos, sino dev falso
-            if (this.botonNuevo.Checked)
+            if (this.botonSegMano.Checked)
             {
-                if (!marcatb.Text.Equals("") || !modelolb.Text.Equals("") || !matriculatb.Text.Equals("") || !fechaMatriculatb.Text.Equals(""))
+                if (!marcatb.Text.Equals("") && !modelolb.Text.Equals("") && !potenciatb.Text.Equals("") && !precioRectb.Text.Equals("") && !matriculatb.Text.Equals("") && !fechaMatriculatb.Text.Equals(""))
                 {
                     //Como los otros campos no pueden ser parseados por ser strings, comprobamos que la pot es in int
-                    if (int.TryParse(potencialb.Text, out int pot) || double.TryParse(precioRectb.Text, out double prec))
+                    if (int.TryParse(potenciatb.Text, out int pot) && double.TryParse(precioRectb.Text, out double prec))
                     {
                         return true;
                     }
@@ -171,12 +183,15 @@ namespace Presentación
             }
             else
             {
-                if (!marcatb.Text.Equals("") || !modelolb.Text.Equals(""))
+                if (this.botonNuevo.Checked)
                 {
-                    //Como los otros campos no pueden ser parseados por ser strings, comprobamos que la pot es in int
-                    if (int.TryParse(potencialb.Text, out int pot) || double.TryParse(precioRectb.Text, out double prec))
+                    if (!marcatb.Text.Equals("") && !modelolb.Text.Equals("") && !potenciatb.Text.Equals("") && !precioRectb.Text.Equals(""))
                     {
-                        return true;
+                        //Como los otros campos no pueden ser parseados por ser strings, comprobamos que la pot es in int
+                        if (int.TryParse(potenciatb.Text, out int pot) && double.TryParse(precioRectb.Text, out double prec))
+                        {
+                            return true;
+                        }
                     }
                 }
             }
@@ -196,6 +211,12 @@ namespace Presentación
             {
                 botonSegMano.Checked = true;
                 botonNuevo.Checked = false;
+                this.matriculalb.Visible = true;
+                this.matriculatb.Enabled = false;
+                this.matriculatb.Visible = true;
+                this.fechaMatriculatb.Visible = true;
+                this.fechaMatriculatb.Enabled = false;
+                this.fechaMatriculalb.Visible = false;
             }
         }
 

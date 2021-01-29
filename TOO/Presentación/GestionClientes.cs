@@ -62,6 +62,7 @@ namespace Presentación
                     this.cliente.Nombre = this.nombretb.Text;
                     this.cliente.Tfno = long.Parse(this.telefonotb.Text);
                     this.cliente.Categoria = this.GetTipo_Cliente();
+
                     this.Close();
                 }
                 else
@@ -155,6 +156,7 @@ namespace Presentación
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
+            this.cliente.Dni = "";
             this.Close();
         }
     }
