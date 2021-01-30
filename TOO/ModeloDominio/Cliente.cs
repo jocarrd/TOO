@@ -16,6 +16,7 @@ namespace ModeloDominio
         
         public Cliente(string dni) {
             this.Dni = dni;
+            PresupuestoList = new List<Presupuesto>();
         }
 
         public Cliente(string dni, string nombre, long tfno, Tipo_cliente categoria)
@@ -32,6 +33,11 @@ namespace ModeloDominio
         public long Tfno { get => tfno; set => tfno = value; }
         public Tipo_cliente Categoria { get => categoria; set => categoria = value; }
         public List<Presupuesto> PresupuestoList { get => presupuestoList; set => presupuestoList = value; }
+
+        public void añadirPresupuesto(Presupuesto p)
+        {
+            this.presupuestoList.Add(p);
+        }
 
         public bool equals(Cliente c)
         {

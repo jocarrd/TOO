@@ -52,6 +52,12 @@
     <Compile Include="BusquedaCliente.Designer.cs">
       <DependentUpon>BusquedaCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecorridoCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecorridoCliente.Designer.cs">
+      <DependentUpon>RecorridoCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="GestionPresupuestos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BusquedaCliente.resx">
       <DependentUpon>BusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecorridoCliente.resx">
+      <DependentUpon>RecorridoCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GestionPresupuestos.resx">
       <DependentUpon>GestionPresupuestos.cs</DependentUpon>

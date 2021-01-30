@@ -109,6 +109,12 @@ namespace Presentación
                 lis.ShowDialog();
             }
 
+            if (e.ClickedItem.Text.Equals("Recorrido uno a uno"))
+            {
+                RecorridoCliente gestion = new RecorridoCliente(Administrador.listarClientes());
+                gestion.ShowDialog();
+            }
+
             if (e.ClickedItem.Text.Equals("Listado Completo"))
             {
                 
@@ -235,8 +241,10 @@ namespace Presentación
                             {
                                 if (Administrador.existeCliente(presupuesto.Cliente.Dni))
                                 {
-                                    Cliente c = Administrador.seleccionarCliente(presupuesto.Cliente);
+                                    Cliente c = Administrador.seleccionarCliente(presupuesto.Cliente);  
                                     presupuesto.Cliente = c;
+                                    c.añadirPresupuesto(presupuesto);
+                                    Administrador.modificarCliente(c);
                                     salir = true;
                                 }
                                 else
@@ -247,7 +255,7 @@ namespace Presentación
                         }
 
                         if (!presupuesto.Id_presupuesto.Equals(""))
-                        {
+                        {                            
                             Administrador.crearPresupuesto(presupuesto, presupuesto.CocheList);
                             MessageBox.Show("Se ha añadido a " + presupuesto.Id_presupuesto, "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
@@ -273,12 +281,32 @@ namespace Presentación
                     datos.ShowDialog();
                 }
             }
-        }
 
-        private void listadoCompletoToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ListadoPresupuestosCompleto lis = new ListadoPresupuestosCompleto(Administrador.obtenerTodosPresupuestos());
-            lis.ShowDialog();
+            if (e.ClickedItem.Text.Equals("Información Cliente"))
+            {
+                IdentificadorPresupuesto busqueda = new IdentificadorPresupuesto(presupuesto);
+                busqueda.ShowDialog();
+                presupuesto = busqueda.debPresupuesto();
+                if (!Administrador.existePresupuesto(presupuesto.Id_presupuesto))
+                {
+                    if (MessageBox.Show("¿Quieres introducir otro?", "No existe un presupuesto con ese Id", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        this.tsmiAltaVehiculo.PerformClick();
+                    }
+                }
+                else
+                {
+                    Presupuesto p=Administrador.seleccionarPresupuesto(presupuesto);
+                    GestionClientes gestion = new GestionClientes(Administrador.seleccionarCliente(p.Cliente));
+                    gestion.ShowDialog();
+                }
+            }
+
+            if (e.ClickedItem.Text.Equals("Listado Completo"))
+            {
+                ListadoPresupuestosCompleto lis = new ListadoPresupuestosCompleto(Administrador.obtenerTodosPresupuestos());
+                lis.ShowDialog();
+            }
         }
     }
 }

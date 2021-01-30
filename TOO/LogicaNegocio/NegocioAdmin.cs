@@ -28,6 +28,11 @@ namespace LogicaNegocio
             return PersistenciaCliente.Buscar(c);
         }
 
+        public bool modificarCliente(Cliente c)
+        {
+            return PersistenciaCliente.Modificar(c);
+        }
+
         public Boolean existeCliente(String dni)
         {
             return PersistenciaCliente.Existe(dni);
