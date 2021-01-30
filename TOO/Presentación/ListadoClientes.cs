@@ -23,6 +23,7 @@ namespace Presentación
             foreach(Cliente c in lista)
             {
                 list.Add(c);
+                
             }
 
             this.dniListB.DataSource = list;
@@ -31,11 +32,11 @@ namespace Presentación
             this.nombreListB.DataSource = list;
             this.nombreListB.DisplayMember = "Nombre";
 
+            
 
+            this.importeListB.DataSource = list;
+            this.importeListB.DisplayMember = "GetUnValorPresupuesto";
 
-
-
-        
         }
 
         private void botonDNI_Click(object sender, EventArgs e)
@@ -72,14 +73,21 @@ namespace Presentación
         private void RefrescarList()
         {
             this.dniListB.DataSource = null;
-
             this.dniListB.DataSource = list;
             this.dniListB.DisplayMember = "Dni";
 
             this.nombreListB.DataSource = null;
-
             this.nombreListB.DataSource = list;
             this.nombreListB.DisplayMember = "Nombre";
+
+
+            this.importeListB.DataSource = null;
+            this.importeListB.DataSource = list;
+            this.importeListB.DisplayMember = "GetUnValorPresupuesto";
+
+
+
+
 
         }
     }

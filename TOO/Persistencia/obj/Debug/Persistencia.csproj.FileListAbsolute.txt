@@ -22,3 +22,10 @@ C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Persistencia\bin\Debug\ModeloD
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.dll
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Persistencia\bin\Debug\Persistencia.dll
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Persistencia\bin\Debug\ModeloDominio.dll
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Persistencia\bin\Debug\ModeloDominio.pdb
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.csproj.CopyComplete
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.dll
+C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Persistencia\obj\Debug\Persistencia.pdb

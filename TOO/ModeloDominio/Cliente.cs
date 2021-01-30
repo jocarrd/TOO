@@ -13,7 +13,7 @@ namespace ModeloDominio
         private long tfno;
         private Tipo_cliente categoria;
         private List<Presupuesto> presupuestoList;
-        
+
         public Cliente(string dni) {
             this.Dni = dni;
             PresupuestoList = new List<Presupuesto>();
@@ -33,6 +33,8 @@ namespace ModeloDominio
         public long Tfno { get => tfno; set => tfno = value; }
         public Tipo_cliente Categoria { get => categoria; set => categoria = value; }
         public List<Presupuesto> PresupuestoList { get => presupuestoList; set => presupuestoList = value; }
+
+        public double GetUnValorPresupuesto { get { if (this.presupuestoList.Count == 0) { return 0; } else { return this.presupuestoList.First().Cantidad; } } }
 
         public void añadirPresupuesto(Presupuesto p)
         {
