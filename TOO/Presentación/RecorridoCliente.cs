@@ -27,10 +27,11 @@ namespace Presentación
             {
                 this.nombretb.Text = nomApell[0];
             }
-            
-            
-            
-            this.importetb.Text = li[indice].PresupuestoList[0].Cantidad.ToString();
+
+            if (li[indice].PresupuestoList.Count>0 && li[indice].PresupuestoList[0].Cantidad.ToString()!=null)
+            {
+                this.importetb.Text = li[indice].PresupuestoList[0].Cantidad.ToString();
+            }      
         }
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
