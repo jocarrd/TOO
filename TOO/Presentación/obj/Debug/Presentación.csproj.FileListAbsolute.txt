@@ -86,3 +86,4 @@ C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presen
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ListadoClientes.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ListadoPresupuestosCompleto.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ListadoVehiculosCompleto.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.BusquedaCliente.resources

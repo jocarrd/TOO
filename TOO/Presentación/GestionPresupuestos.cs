@@ -20,6 +20,7 @@ namespace Presentación
         public GestionPresupuestos(String iden)
         {
             InitializeComponent();
+            presupuesto = new Presupuesto(iden);
             this.idePrestb.Text = iden;
             this.idePrestb.ReadOnly = true;
             this.estadocb.Items.Add("Aceptado");
@@ -29,7 +30,10 @@ namespace Presentación
         }
 
          public GestionPresupuestos(Presupuesto p){
+            InitializeComponent();
             this.presupuesto = p;
+            this.idePrestb.Text = p.Id_presupuesto;
+            this.idePrestb.ReadOnly = true;
             this.cantidadtb.Text = this.presupuesto.Cantidad.ToString();
             this.cantidadtb.ReadOnly = true;
             this.estadocb.Items.Add(this.presupuesto.Estado);
@@ -56,7 +60,7 @@ namespace Presentación
             {
                 int indice = estadocb.SelectedIndex;
                 String estado = estadocb.Items[indice].ToString();
-                presupuesto.Cantidad = int.Parse(this.cantidadtb.Text);
+                presupuesto.Cantidad = int.Parse(cantidadtb.Text);
                 presupuesto.Cliente = new Cliente(this.clientetb.Text);
                 presupuesto.Estado =this.estadoPesupuesto(estado);
                 presupuesto.Fecha_Realizacion = this.dateTimePicker1.Value;
@@ -100,7 +104,7 @@ namespace Presentación
             //Comprueba si los TextBox son vacíos o si tienen algun dato mal introducido
 
             //Comprobamos que no sean vacíos, sino dev falso
-            if (!cantidadtb.Text.Equals("") || !estadocb.Text.Equals("") || !clientetb.Text.Equals(""))
+            if (!cantidadtb.Text.Equals("") && !estadocb.Text.Equals("") && !clientetb.Text.Equals(""))
             {
                 //Como los otros campos no pueden ser parseados por ser strings, comprobamos que el telf es un long
                 if (int.TryParse(cantidadtb.Text, out int cant))
@@ -156,6 +160,7 @@ namespace Presentación
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
+            this.presupuesto.Id_presupuesto = "";
             this.Close();
         }
     }

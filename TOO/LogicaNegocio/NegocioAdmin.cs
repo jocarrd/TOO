@@ -89,6 +89,11 @@ namespace LogicaNegocio
             return PersistenciaPresupuesto.Eliminar(p);
         }
 
+        public Presupuesto seleccionarPresupuesto(Presupuesto p)
+        {
+            return PersistenciaPresupuesto.Buscar(p);
+        }
+
         public List<Presupuesto> obtenerTodosPresupuestos()
         {
             return PersistenciaPresupuesto.GETPresupuestos();

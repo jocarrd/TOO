@@ -31,6 +31,7 @@ namespace Presentación
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
+            this.presupuesto.Id_presupuesto = "";
             this.Close();
         }
 

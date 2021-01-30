@@ -12,8 +12,7 @@ namespace ModeloDominio
         private String marca;
         private String modelo;
         private int potencia;
-        private double precio;
-        
+        private double precio;        
 
         private Dictionary<string, double> extras;
         private double iva; 
@@ -25,7 +24,7 @@ namespace ModeloDominio
             this.NumBastidor = numBastidor;
         }
 
-            public Vehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp, Dictionary<string,double> extrillas) 
+        public Vehiculo(string numBastidor, string marca, string modelo, int potencia, double pvp, Dictionary<string,double> extrillas) 
         {
             this.NumBastidor = numBastidor;
             this.Marca = marca;

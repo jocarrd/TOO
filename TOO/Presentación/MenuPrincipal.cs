@@ -45,9 +45,10 @@ namespace Presentación
                         GestionClientes datos = new GestionClientes(cliente.Dni);
                         datos.ShowDialog();
                         cliente = datos.debCliente();
-                        Administrador.darAltaCliente(cliente);
+                        
                         if (!cliente.Dni.Equals(""))
                         {
+                            Administrador.darAltaCliente(cliente);
                             MessageBox.Show("Se ha añadido a " + cliente.Nombre, "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
@@ -96,6 +97,12 @@ namespace Presentación
                 }
             }
 
+            if (e.ClickedItem.Text.Equals("Búsqueda2"))
+            {            
+                BusquedaCliente gestion = new BusquedaCliente(Administrador.listarClientes());
+                gestion.ShowDialog();       
+            }
+
             if (e.ClickedItem.Text.Equals("Listar"))
             {
                 ListadoClientes lis = new ListadoClientes(Administrador.listarClientes());
@@ -131,9 +138,10 @@ namespace Presentación
                         GestionVehiculos datos = new GestionVehiculos(vehiculo.NumBastidor);
                         datos.ShowDialog();
                         vehiculo = datos.debVehiculo();
-                        Administrador.darAltaVehiculo(vehiculo);
+                        
                         if (!vehiculo.NumBastidor.Equals(""))
                         {
+                            Administrador.darAltaVehiculo(vehiculo);
                             MessageBox.Show("Se ha añadido a " + vehiculo.NumBastidor, "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
@@ -185,6 +193,7 @@ namespace Presentación
                     datos.ShowDialog();
                 }
             }
+
             if (e.ClickedItem.Text.Equals("Listado Completo"))
             {
                 ListadoVehiculosCompleto l = new ListadoVehiculosCompleto(Administrador.listarVehiculos());
@@ -210,10 +219,58 @@ namespace Presentación
                 }
                 else 
                 {
-                    GestionPresupuestos datos = new GestionPresupuestos(presupuesto.Id_presupuesto);
+                    if (!presupuesto.Id_presupuesto.Equals(""))
+                    {
+                        Boolean salir = false;
+                        while (!salir && !presupuesto.Id_presupuesto.Equals("")) {
+                            GestionPresupuestos datos = new GestionPresupuestos(presupuesto.Id_presupuesto);
+                            datos.ShowDialog();
+                            presupuesto = datos.devPresupuesto();
+
+                            if (presupuesto.Id_presupuesto.Equals(""))
+                            {
+                                salir = true;
+                            }
+                            else
+                            {
+                                if (Administrador.existeCliente(presupuesto.Cliente.Dni))
+                                {
+                                    Cliente c = Administrador.seleccionarCliente(presupuesto.Cliente);
+                                    presupuesto.Cliente = c;
+                                    salir = true;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("No se ha encontrado al cliente especificado en la BD", "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                            }                           
+                        }
+
+                        if (!presupuesto.Id_presupuesto.Equals(""))
+                        {
+                            Administrador.crearPresupuesto(presupuesto, presupuesto.CocheList);
+                            MessageBox.Show("Se ha añadido a " + presupuesto.Id_presupuesto, "Añadido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+
+            if (e.ClickedItem.Text.Equals("Búsqueda"))
+            {
+                IdentificadorPresupuesto busqueda = new IdentificadorPresupuesto(presupuesto);
+                busqueda.ShowDialog();
+                presupuesto = busqueda.debPresupuesto();
+                if (!Administrador.existePresupuesto(presupuesto.Id_presupuesto))
+                {
+                    if (MessageBox.Show("¿Quieres introducir otro?", "No existe un presupuesto con ese Id", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        this.tsmiAltaVehiculo.PerformClick();
+                    }
+                }
+                else
+                {
+                    GestionPresupuestos datos = new GestionPresupuestos(Administrador.seleccionarPresupuesto(presupuesto));
                     datos.ShowDialog();
-                    presupuesto = datos.devPresupuesto();
-                    Administrador.crearPresupuesto(presupuesto,presupuesto.CocheList);
                 }
             }
         }
