@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,31 +13,74 @@ using ModeloDominio;
 namespace Presentación
 {
     public partial class ListadoClientes : Form
-    { 
-        List<Cliente> lista = null;
-        
-        public ListadoClientes(List<Cliente> list)
+    {
+        BindingList<Cliente> list = new BindingList<Cliente>();
+
+
+        public ListadoClientes(List<Cliente> lista)
         {
             InitializeComponent();
-            this.lista = list;
-            List<Presupuesto> listaPresupuesto = null;
-
-            foreach (Cliente c in lista)
+            foreach(Cliente c in lista)
             {
-                this.dniListB.Items.Add(c.Dni);
-                string[] nomApell = c.Nombre.Split(' ');
-                if (nomApell.Length == 2)
-                {
-                    this.nombreListB.Items.Add(nomApell[1] + "," + nomApell[0]);
-                }
-                else
-                {
-                    this.nombreListB.Items.Add(nomApell[0]);
-                }
-
-                listaPresupuesto = c.PresupuestoList;
-                this.importeListB.Items.Add(listaPresupuesto[0]);
+                list.Add(c);
             }
+
+            this.dniListB.DataSource = list;
+            this.dniListB.DisplayMember = "Dni";
+
+            this.nombreListB.DataSource = list;
+            this.nombreListB.DisplayMember = "Nombre";
+
+
+
+
+
+        
+        }
+
+        private void botonDNI_Click(object sender, EventArgs e)
+        {
+           IEnumerable<Cliente> n=list.OrderBy(f => f.Dni);
+            BindingList<Cliente> lista = new BindingList<Cliente>();
+            foreach (Cliente c in n.ToList())
+            {
+               lista.Add(c);
+
+            }
+            this.list = lista;
+
+
+            this.RefrescarList();
+
+        }
+
+        private void botonNombre_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Cliente> n = list.OrderBy(f => f.Nombre);
+            BindingList<Cliente> lista = new BindingList<Cliente>();
+            foreach (Cliente c in n.ToList())
+            {
+                lista.Add(c);
+
+            }
+            this.list = lista;
+
+
+            this.RefrescarList();
+        }
+
+        private void RefrescarList()
+        {
+            this.dniListB.DataSource = null;
+
+            this.dniListB.DataSource = list;
+            this.dniListB.DisplayMember = "Dni";
+
+            this.nombreListB.DataSource = null;
+
+            this.nombreListB.DataSource = list;
+            this.nombreListB.DisplayMember = "Nombre";
+
         }
     }
 }
