@@ -18,7 +18,7 @@ namespace Presentación
             NegocioAdmin neg = new NegocioAdmin();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MenuPrincipal("JUAN", neg));
+            Application.Run(new MenuPrincipal("Concesionario", neg));
         }
     }
 }
