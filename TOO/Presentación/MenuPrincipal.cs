@@ -135,6 +135,9 @@ namespace Presentación
             }
         }
 
+        ///<summary>
+        ///Se referencia al pulsar cualquiera de las opciones de Vehiculo en el menuStrip dando lugar a distintas acciones
+        ///</summary>
         private void vehiculosToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             Vehiculo vehiculo = new Vehiculo("");
@@ -226,6 +229,10 @@ namespace Presentación
                 gestion.ShowDialog();
             }
         }
+
+        ///<summary>
+        ///Se referencia al pulsar cualquiera de las opciones de Presupuesto en el menuStrip dando lugar a distintas acciones
+        ///</summary>
         private void presupuestosToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
             Presupuesto presupuesto = new Presupuesto("");

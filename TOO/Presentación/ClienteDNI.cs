@@ -23,12 +23,17 @@ namespace Presentación
             this.cliente = c;
         }
 
+        ///<summary>
+        ///Asigna el contenido del textBox a la propiedad DNI del Cliente
+        ///</summary>
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             this.cliente.Dni = this.dnitb.Text;
             this.Close();
         }
-
+        ///<summary>
+        ///Devuelve el Cliente de esta clase
+        ///</summary>
         public Cliente debCliente() { 
             return this.cliente;
         }

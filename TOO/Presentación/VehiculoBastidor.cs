@@ -25,12 +25,18 @@ namespace Presentación
             this.vehiculo = v;
         }
 
+        ///<summary>
+        ///Asigna el contenido del textBox a la propiedad Numero Bastidor del Vehiculo
+        ///</summary>
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             this.vehiculo.NumBastidor = this.numBastb.Text;
             this.Close();
         }
 
+        ///<summary>
+        ///Devuelve el Vehiculo de esta clase
+        ///</summary>
         public Vehiculo debVehiculo() {
             return this.vehiculo;
         }

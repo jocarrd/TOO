@@ -31,6 +31,9 @@ namespace Presentación
             this.preciotb.Text = v.Precio.ToString() + "€";
         }
 
+        ///<summary>
+        ///Actualiza el contendo de los TextBoxes con los datos del Vehiculo al que referencia
+        ///</summary>
         private void actualizar()
         {
             ModeloDominio.Vehiculo v = b.Current as ModeloDominio.Vehiculo;

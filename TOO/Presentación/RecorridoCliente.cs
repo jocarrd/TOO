@@ -42,6 +42,9 @@ namespace Presentación
             
         }
 
+        ///<summary>
+        ///Actualiza el contendo de los TextBoxes con los datos del Cliente al que referencia
+        ///</summary>
         private void actualizar()
         {
             ModeloDominio.Cliente c = b.Current as ModeloDominio.Cliente;

@@ -23,6 +23,9 @@ namespace Presentación
             this.presupuesto = p;
         }
 
+        ///<summary>
+        ///Asigna el contenido del textBox a la propiedad IdPresupuesto del Presupuesto
+        ///</summary>
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             this.presupuesto.Id_presupuesto = this.IdePrestb.Text;
@@ -35,6 +38,9 @@ namespace Presentación
             this.Close();
         }
 
+        ///<summary>
+        ///Devuelve el Presupuesto de esta clase
+        ///</summary>
         public Presupuesto debPresupuesto() {
             return this.presupuesto;
         }

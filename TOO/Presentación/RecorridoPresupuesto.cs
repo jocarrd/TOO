@@ -31,6 +31,10 @@ namespace Presentación
             this.estadotb.Text = p.Estado.ToString();
             this.clientetb.Text = p.Cliente.Dni;
         }
+
+        ///<summary>
+        ///Actualiza el contendo de los TextBoxes con los datos del Presupuesto al que referencia
+        ///</summary>
         private void actualizar()
         {
             ModeloDominio.Presupuesto p = b.Current as ModeloDominio.Presupuesto;
