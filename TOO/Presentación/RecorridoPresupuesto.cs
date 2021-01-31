@@ -29,7 +29,7 @@ namespace Presentación
             this.cantidadtb.Text = p.Cantidad.ToString();
             this.fechaRealizaciontb.Text = p.Fecha_Realizacion.ToString();
             this.estadotb.Text = p.Estado.ToString();
-            this.clientetb.Text = p.Cliente.Nombre;
+            this.clientetb.Text = p.Cliente.Dni;
         }
         private void actualizar()
         {
@@ -39,7 +39,7 @@ namespace Presentación
             this.cantidadtb.Text = p.Cantidad.ToString();
             this.fechaRealizaciontb.Text = p.Fecha_Realizacion.ToString();
             this.estadotb.Text = p.Estado.ToString();
-            this.clientetb.Text = p.Cliente.Nombre;
+            this.clientetb.Text = p.Cliente.Dni;
         }
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)

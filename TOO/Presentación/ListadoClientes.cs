@@ -100,5 +100,10 @@ namespace Presentación
 
             this.RefrescarList();
         }
+
+        private void botonCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -38,6 +38,7 @@ namespace Presentación
             InitializeComponent();
             this.vehiculo = v;
             this.numBastb.Text = v.NumBastidor;
+            this.numBastb.ReadOnly = true;
             this.marcatb.Text = v.Marca;
             this.marcatb.ReadOnly = true;
             this.modelotb.Text = v.Modelo;
@@ -212,11 +213,13 @@ namespace Presentación
                 botonSegMano.Checked = true;
                 botonNuevo.Checked = false;
                 this.matriculalb.Visible = true;
+                this.matriculatb.Text = v.Matricula;
                 this.matriculatb.Enabled = false;
                 this.matriculatb.Visible = true;
+                this.fechaMatriculatb.Text = v.Fecha_matriculacion.ToString();
                 this.fechaMatriculatb.Visible = true;
                 this.fechaMatriculatb.Enabled = false;
-                this.fechaMatriculalb.Visible = false;
+                this.fechaMatriculalb.Visible = true;
             }
         }
 

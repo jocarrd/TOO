@@ -99,3 +99,5 @@ C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presen
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoCliente.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoPresupuesto.resources
 C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoVehiculo.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoPresupuesto.resources
+C:\Users\juanp\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoVehiculo.resources

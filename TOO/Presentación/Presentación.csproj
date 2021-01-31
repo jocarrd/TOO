@@ -191,6 +191,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -218,6 +219,12 @@
       <Project>{07a65b12-2eb4-4105-bf1e-e02e254634ba}</Project>
       <Name>Persistencia</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondoConcesionario.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imagenConc.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

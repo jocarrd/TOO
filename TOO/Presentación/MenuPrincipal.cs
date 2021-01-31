@@ -15,8 +15,14 @@ namespace Presentación
 {
     public partial class MenuPrincipal : Form
     {
+        ///<summary>
+        ///Vvariable objeto de tipo NegocioAdmin del proyecto LogicaNegocio
+        ///</summary>
         NegocioAdmin Administrador;
 
+        ///<summary>
+        ///Constructor del Form "Menu Principal"
+        ///</summary>
         public MenuPrincipal(String nombreComercial, NegocioAdmin neg )
         {
             InitializeComponent();
@@ -24,15 +30,21 @@ namespace Presentación
             this.Text = nombreComercial+": Gestión de concesionario";
         }
 
+        ///<summary>
+        ///Se referencia al pulsar cualquiera de las opciones de Cliente en el menuStrip dando lugar a distintas acciones
+        ///</summary>
         private void clientesToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e) {
 
             Cliente cliente = new Cliente("");
 
+            //Al dar en el botón "Alta" se le debe de pasar un DNI primero, y a partir de ahí, introcducir los demás datos del cliente
             if (e.ClickedItem.Text.Equals("Alta"))
             {
                 ClienteDNI alta = new ClienteDNI(cliente);
                 alta.ShowDialog();
                 cliente=alta.debCliente();
+
+                //Comprueba si existe un cliente con ese Dni en la base de datos
                 if (Administrador.existeCliente(cliente.Dni)) {
                     if (MessageBox.Show("¿Quieres introducir otro?", "Existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
@@ -40,12 +52,15 @@ namespace Presentación
                     }
                 }
                 else {
+                    //Comprueba si se ha dado a cancelar en el formulario en el que se debe introducir el Dni
                     if (!cliente.Dni.Equals(""))
                     {
                         GestionClientes datos = new GestionClientes(cliente.Dni);
                         datos.ShowDialog();
                         cliente = datos.debCliente();
-                        
+
+
+                        // Comprueba si se ha dado a cancelar en el formulario en el que se debe introducir los demás datos del cliente
                         if (!cliente.Dni.Equals(""))
                         {
                             Administrador.darAltaCliente(cliente);
@@ -57,11 +72,14 @@ namespace Presentación
                 
             }
 
+            //Al dar en el botón "Baja" se le debe de pasar un DNI primero, y a partir de ahí, introcducir los demás datos del cliente
             if (e.ClickedItem.Text.Equals("Baja"))
             {
                 ClienteDNI baja = new ClienteDNI(cliente);
                 baja.ShowDialog();
                 cliente = baja.debCliente();
+
+                //Comprueba si ya existe un cliente con ese Dni en la base de datos
                 if (!Administrador.existeCliente(cliente.Dni)) {
                     if (MessageBox.Show("¿Quieres introducir otro?", "No existe un cliente con ese DNI", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                         this.tsmiBajaCliente.PerformClick();
@@ -70,6 +88,7 @@ namespace Presentación
                 else {
                     GestionClientes gestion = new GestionClientes(Administrador.seleccionarCliente(cliente));
                     gestion.ShowDialog();
+                    cliente = gestion.debCliente();
                     if (MessageBox.Show("Está seguro que desea dar de baja a " + cliente.Nombre + " ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                         Administrador.darBajaCliente(cliente);
                         MessageBox.Show("Cliente " + cliente.Nombre + " eliminado", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Question);
@@ -113,11 +132,6 @@ namespace Presentación
             {
                 RecorridoCliente gestion = new RecorridoCliente(Administrador.listarClientes());
                 gestion.ShowDialog();
-            }
-
-            if (e.ClickedItem.Text.Equals("Listado Completo"))
-            {
-                
             }
         }
 
