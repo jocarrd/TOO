@@ -14,6 +14,10 @@ namespace Presentación
 {
     public partial class ListadoPresupuestosCompleto : Form
     {
+
+        ///<summary>
+        ///Lista todos los presupuestos existentes junto a todos sus atributos utilizando un dataGridView
+        ///</summary>
         public ListadoPresupuestosCompleto(List<Presupuesto> presupuestos)
         {
             InitializeComponent();
