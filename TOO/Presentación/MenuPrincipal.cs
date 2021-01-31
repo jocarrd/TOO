@@ -206,6 +206,11 @@ namespace Presentación
                 l.ShowDialog();
             }
 
+            if (e.ClickedItem.Text.Equals("Recorrido uno a uno"))
+            {
+                RecorridoVehiculo gestion = new RecorridoVehiculo(Administrador.listarVehiculos());
+                gestion.ShowDialog();
+            }
         }
         private void presupuestosToolStripMenuItem_DropDownItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -304,8 +309,14 @@ namespace Presentación
 
             if (e.ClickedItem.Text.Equals("Listado Completo"))
             {
-                ListadoPresupuestosCompleto lis = new ListadoPresupuestosCompleto(Administrador.obtenerTodosPresupuestos());
+                ListadoPresupuestosCompleto lis = new ListadoPresupuestosCompleto(Administrador.listarPresupuestos());
                 lis.ShowDialog();
+            }
+
+            if (e.ClickedItem.Text.Equals("Recorrido uno a uno"))
+            {
+                RecorridoPresupuesto gestion = new RecorridoPresupuesto(Administrador.listarPresupuestos());
+                gestion.ShowDialog();
             }
         }
     }

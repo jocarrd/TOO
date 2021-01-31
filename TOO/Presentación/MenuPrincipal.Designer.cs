@@ -35,6 +35,7 @@
             this.tsmiBusquedaCliente = new System.Windows.Forms.ToolStripMenuItem();
             this.búsqueda2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiListarClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.recorridoUnoAUnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiListarCompletoClientes = new System.Windows.Forms.ToolStripMenuItem();
             this.vehiculosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiAltaVehiculo = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,13 +48,13 @@
             this.búsquedaPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiListadoCmpletoPresupuesto = new System.Windows.Forms.ToolStripMenuItem();
             this.configuraciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.recorridoUnoAUnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.recorridoUnoAUnoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.recorridoUnoAUnoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clientesToolStripMenuItem,
@@ -62,7 +63,8 @@
             this.configuraciónToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 33);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip1.Size = new System.Drawing.Size(533, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -77,44 +79,50 @@
             this.recorridoUnoAUnoToolStripMenuItem,
             this.tsmiListarCompletoClientes});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(89, 29);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(61, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             this.clientesToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.clientesToolStripMenuItem_DropDownItemClicked);
             // 
             // tsmiAltaCliente
             // 
             this.tsmiAltaCliente.Name = "tsmiAltaCliente";
-            this.tsmiAltaCliente.Size = new System.Drawing.Size(276, 34);
+            this.tsmiAltaCliente.Size = new System.Drawing.Size(182, 22);
             this.tsmiAltaCliente.Text = "Alta";
             // 
             // tsmiBajaCliente
             // 
             this.tsmiBajaCliente.Name = "tsmiBajaCliente";
-            this.tsmiBajaCliente.Size = new System.Drawing.Size(276, 34);
+            this.tsmiBajaCliente.Size = new System.Drawing.Size(182, 22);
             this.tsmiBajaCliente.Text = "Baja";
             // 
             // tsmiBusquedaCliente
             // 
             this.tsmiBusquedaCliente.Name = "tsmiBusquedaCliente";
-            this.tsmiBusquedaCliente.Size = new System.Drawing.Size(276, 34);
+            this.tsmiBusquedaCliente.Size = new System.Drawing.Size(182, 22);
             this.tsmiBusquedaCliente.Text = "Búsqueda";
             // 
             // búsqueda2ToolStripMenuItem
             // 
             this.búsqueda2ToolStripMenuItem.Name = "búsqueda2ToolStripMenuItem";
-            this.búsqueda2ToolStripMenuItem.Size = new System.Drawing.Size(276, 34);
+            this.búsqueda2ToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.búsqueda2ToolStripMenuItem.Text = "Búsqueda2";
             // 
             // tsmiListarClientes
             // 
             this.tsmiListarClientes.Name = "tsmiListarClientes";
-            this.tsmiListarClientes.Size = new System.Drawing.Size(276, 34);
+            this.tsmiListarClientes.Size = new System.Drawing.Size(182, 22);
             this.tsmiListarClientes.Text = "Listar";
+            // 
+            // recorridoUnoAUnoToolStripMenuItem
+            // 
+            this.recorridoUnoAUnoToolStripMenuItem.Name = "recorridoUnoAUnoToolStripMenuItem";
+            this.recorridoUnoAUnoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.recorridoUnoAUnoToolStripMenuItem.Text = "Recorrido uno a uno";
             // 
             // tsmiListarCompletoClientes
             // 
             this.tsmiListarCompletoClientes.Name = "tsmiListarCompletoClientes";
-            this.tsmiListarCompletoClientes.Size = new System.Drawing.Size(276, 34);
+            this.tsmiListarCompletoClientes.Size = new System.Drawing.Size(182, 22);
             this.tsmiListarCompletoClientes.Text = "Listado Completo";
             // 
             // vehiculosToolStripMenuItem
@@ -123,34 +131,35 @@
             this.tsmiAltaVehiculo,
             this.tsmiBajaVehiculo,
             this.tsmiBusquedaVehiculo,
-            this.tsmiListadoCompletoVehiculos});
+            this.tsmiListadoCompletoVehiculos,
+            this.recorridoUnoAUnoToolStripMenuItem1});
             this.vehiculosToolStripMenuItem.Name = "vehiculosToolStripMenuItem";
-            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(102, 29);
+            this.vehiculosToolStripMenuItem.Size = new System.Drawing.Size(69, 22);
             this.vehiculosToolStripMenuItem.Text = "Vehículos";
             this.vehiculosToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.vehiculosToolStripMenuItem_DropDownItemClicked);
             // 
             // tsmiAltaVehiculo
             // 
             this.tsmiAltaVehiculo.Name = "tsmiAltaVehiculo";
-            this.tsmiAltaVehiculo.Size = new System.Drawing.Size(270, 34);
+            this.tsmiAltaVehiculo.Size = new System.Drawing.Size(182, 22);
             this.tsmiAltaVehiculo.Text = "Alta";
             // 
             // tsmiBajaVehiculo
             // 
             this.tsmiBajaVehiculo.Name = "tsmiBajaVehiculo";
-            this.tsmiBajaVehiculo.Size = new System.Drawing.Size(270, 34);
+            this.tsmiBajaVehiculo.Size = new System.Drawing.Size(182, 22);
             this.tsmiBajaVehiculo.Text = "Baja";
             // 
             // tsmiBusquedaVehiculo
             // 
             this.tsmiBusquedaVehiculo.Name = "tsmiBusquedaVehiculo";
-            this.tsmiBusquedaVehiculo.Size = new System.Drawing.Size(270, 34);
+            this.tsmiBusquedaVehiculo.Size = new System.Drawing.Size(182, 22);
             this.tsmiBusquedaVehiculo.Text = "Búsqueda";
             // 
             // tsmiListadoCompletoVehiculos
             // 
             this.tsmiListadoCompletoVehiculos.Name = "tsmiListadoCompletoVehiculos";
-            this.tsmiListadoCompletoVehiculos.Size = new System.Drawing.Size(270, 34);
+            this.tsmiListadoCompletoVehiculos.Size = new System.Drawing.Size(182, 22);
             this.tsmiListadoCompletoVehiculos.Text = "Listado Completo";
             // 
             // presupuestosToolStripMenuItem
@@ -159,55 +168,63 @@
             this.tsmiCrearNuevo,
             this.tsmiBusquedaPresupuesto,
             this.búsquedaPorClienteToolStripMenuItem,
-            this.tsmiListadoCmpletoPresupuesto});
+            this.tsmiListadoCmpletoPresupuesto,
+            this.recorridoUnoAUnoToolStripMenuItem2});
             this.presupuestosToolStripMenuItem.Name = "presupuestosToolStripMenuItem";
-            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(134, 29);
+            this.presupuestosToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.presupuestosToolStripMenuItem.Text = "Presupuestos";
             this.presupuestosToolStripMenuItem.DropDownItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.presupuestosToolStripMenuItem_DropDownItemClicked);
             // 
             // tsmiCrearNuevo
             // 
             this.tsmiCrearNuevo.Name = "tsmiCrearNuevo";
-            this.tsmiCrearNuevo.Size = new System.Drawing.Size(270, 34);
+            this.tsmiCrearNuevo.Size = new System.Drawing.Size(182, 22);
             this.tsmiCrearNuevo.Text = "Crear nuevo";
             // 
             // tsmiBusquedaPresupuesto
             // 
             this.tsmiBusquedaPresupuesto.Name = "tsmiBusquedaPresupuesto";
-            this.tsmiBusquedaPresupuesto.Size = new System.Drawing.Size(270, 34);
+            this.tsmiBusquedaPresupuesto.Size = new System.Drawing.Size(182, 22);
             this.tsmiBusquedaPresupuesto.Text = "Búsqueda";
             // 
             // búsquedaPorClienteToolStripMenuItem
             // 
             this.búsquedaPorClienteToolStripMenuItem.Name = "búsquedaPorClienteToolStripMenuItem";
-            this.búsquedaPorClienteToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.búsquedaPorClienteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.búsquedaPorClienteToolStripMenuItem.Text = "Información Cliente";
             // 
             // tsmiListadoCmpletoPresupuesto
             // 
             this.tsmiListadoCmpletoPresupuesto.Name = "tsmiListadoCmpletoPresupuesto";
-            this.tsmiListadoCmpletoPresupuesto.Size = new System.Drawing.Size(270, 34);
+            this.tsmiListadoCmpletoPresupuesto.Size = new System.Drawing.Size(182, 22);
             this.tsmiListadoCmpletoPresupuesto.Text = "Listado Completo";
             // 
             // configuraciónToolStripMenuItem
             // 
             this.configuraciónToolStripMenuItem.Name = "configuraciónToolStripMenuItem";
-            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(139, 29);
+            this.configuraciónToolStripMenuItem.Size = new System.Drawing.Size(95, 22);
             this.configuraciónToolStripMenuItem.Text = "Configuración";
             // 
-            // recorridoUnoAUnoToolStripMenuItem
+            // recorridoUnoAUnoToolStripMenuItem1
             // 
-            this.recorridoUnoAUnoToolStripMenuItem.Name = "recorridoUnoAUnoToolStripMenuItem";
-            this.recorridoUnoAUnoToolStripMenuItem.Size = new System.Drawing.Size(276, 34);
-            this.recorridoUnoAUnoToolStripMenuItem.Text = "Recorrido uno a uno";
+            this.recorridoUnoAUnoToolStripMenuItem1.Name = "recorridoUnoAUnoToolStripMenuItem1";
+            this.recorridoUnoAUnoToolStripMenuItem1.Size = new System.Drawing.Size(182, 22);
+            this.recorridoUnoAUnoToolStripMenuItem1.Text = "Recorrido uno a uno";
+            // 
+            // recorridoUnoAUnoToolStripMenuItem2
+            // 
+            this.recorridoUnoAUnoToolStripMenuItem2.Name = "recorridoUnoAUnoToolStripMenuItem2";
+            this.recorridoUnoAUnoToolStripMenuItem2.Size = new System.Drawing.Size(182, 22);
+            this.recorridoUnoAUnoToolStripMenuItem2.Text = "Recorrido uno a uno";
             // 
             // MenuPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 449);
+            this.ClientSize = new System.Drawing.Size(533, 292);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "MenuPrincipal";
             this.Text = "(Se cambia al hacer el login)";
             this.menuStrip1.ResumeLayout(false);
@@ -239,5 +256,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiListadoCmpletoPresupuesto;
         private System.Windows.Forms.ToolStripMenuItem búsqueda2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem recorridoUnoAUnoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem recorridoUnoAUnoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem recorridoUnoAUnoToolStripMenuItem2;
     }
 }

@@ -99,7 +99,7 @@ namespace LogicaNegocio
             return PersistenciaPresupuesto.Buscar(p);
         }
 
-        public List<Presupuesto> obtenerTodosPresupuestos()
+        public List<Presupuesto> listarPresupuestos()
         {
             return PersistenciaPresupuesto.GETPresupuestos();
         }

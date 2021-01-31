@@ -94,6 +94,18 @@
     <Compile Include="ListadoVehiculosCompleto.Designer.cs">
       <DependentUpon>ListadoVehiculosCompleto.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecorridoPresupuesto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecorridoPresupuesto.Designer.cs">
+      <DependentUpon>RecorridoPresupuesto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RecorridoVehiculo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RecorridoVehiculo.Designer.cs">
+      <DependentUpon>RecorridoVehiculo.cs</DependentUpon>
+    </Compile>
     <Compile Include="VehiculoBastidor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ListadoVehiculosCompleto.resx">
       <DependentUpon>ListadoVehiculosCompleto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecorridoPresupuesto.resx">
+      <DependentUpon>RecorridoPresupuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecorridoVehiculo.resx">
+      <DependentUpon>RecorridoVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="VehiculoBastidor.resx">
       <DependentUpon>VehiculoBastidor.cs</DependentUpon>

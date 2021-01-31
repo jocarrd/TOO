@@ -95,3 +95,7 @@ C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentac
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ListadoPresupuestosCompleto.resources
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.ListadoVehiculosCompleto.resources
 C:\Users\usuariolocal\Documents\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.VehiculoBastidor.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.BusquedaCliente.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoCliente.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoPresupuesto.resources
+C:\Users\mario\OneDrive\Documentos\GitHub\TOO\TOO\Presentación\obj\Debug\Presentación.RecorridoVehiculo.resources
