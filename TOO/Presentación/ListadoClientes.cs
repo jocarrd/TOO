@@ -67,7 +67,7 @@ namespace Presentación
             this.list = lista;
 
 
-            this.RefrescarList();
+            
         }
 
         private void RefrescarList()
@@ -84,11 +84,21 @@ namespace Presentación
             this.importeListB.DataSource = null;
             this.importeListB.DataSource = list;
             this.importeListB.DisplayMember = "GetUnValorPresupuesto";
+        }
+
+        private void botonImporte_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Cliente> n = list.OrderBy(f => f.GetUnValorPresupuesto);
+            BindingList<Cliente> lista = new BindingList<Cliente>();
+            foreach (Cliente c in n.ToList())
+            {
+                lista.Add(c);
+
+            }
+            this.list = lista;
 
 
-
-
-
+            this.RefrescarList();
         }
     }
 }
