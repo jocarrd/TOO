@@ -38,7 +38,9 @@ namespace Presentación
             this.importeListB.DisplayMember = "GetUnValorPresupuesto";
 
         }
-
+        ///<summary>
+        ///Ordena los textbox por dni
+        ///</summary>
         private void botonDNI_Click(object sender, EventArgs e)
         {
            IEnumerable<Cliente> n=list.OrderBy(f => f.Dni);
@@ -55,6 +57,10 @@ namespace Presentación
 
         }
 
+        ///<summary>
+        ///Ordena los textbox por nombre
+        ///</summary>
+
         private void botonNombre_Click(object sender, EventArgs e)
         {
             IEnumerable<Cliente> n = list.OrderBy(f => f.Nombre);
@@ -66,10 +72,17 @@ namespace Presentación
             }
             this.list = lista;
 
-
+            this.dniListB.DataSource = null;
+            this.dniListB.DataSource = list;
+            this.dniListB.DisplayMember = "Dni";
+           
             
         }
 
+
+        ///<summary>
+        ///Refresca los data source para que los cambios fruto de una ordenacion sean visibles
+        ///</summary>
         private void RefrescarList()
         {
             this.dniListB.DataSource = null;
@@ -85,7 +98,9 @@ namespace Presentación
             this.importeListB.DataSource = list;
             this.importeListB.DisplayMember = "GetUnValorPresupuesto";
         }
-
+        ///<summary>
+        ///Ordena los textbox por importe
+        ///</summary>
         private void botonImporte_Click(object sender, EventArgs e)
         {
             IEnumerable<Cliente> n = list.OrderBy(f => f.GetUnValorPresupuesto);
