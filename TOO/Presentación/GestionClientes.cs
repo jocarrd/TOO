@@ -44,7 +44,9 @@ namespace Presentación
             this.botonAceptar.Focus();
         }
 
-
+        ///<summary>
+        ///Coprueba que todo este completo y en orden, sino, marca los campos que fallan y sino cierra el formulario
+        ///</summary>
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             if (this.compruebaLosTextBox())
@@ -95,6 +97,7 @@ namespace Presentación
             }
         }
 
+
         public bool compruebaLosTextBox()
         {
             //Comprueba si los TextBox son vacíos o si tienen algun dato mal introducido
@@ -116,6 +119,9 @@ namespace Presentación
             return this.botonA.Checked || this.botonB.Checked || this.botonC.Checked;
         }
 
+        ///<summary>
+        ///Marca los botones segun el Tipo Cliente
+        ///</summary>
         public void marcarTipoCliente(Tipo_cliente t)
         {
             switch (t)
@@ -138,6 +144,9 @@ namespace Presentación
             }
         }
 
+        ///<summary>
+        ///Obtiene el Tipo Clinte de un CCliente
+        ///</summary>
         public Tipo_cliente GetTipo_Cliente() {
             if (botonA.Checked) {
                 return Tipo_cliente.Alta;
@@ -150,6 +159,9 @@ namespace Presentación
             }
         }
 
+        ///<summary>
+        ///Devuelve el Cliente de esta clase
+        ///</summary>
         public Cliente debCliente() {
             return this.cliente;
         }

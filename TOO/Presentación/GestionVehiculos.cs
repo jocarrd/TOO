@@ -54,6 +54,9 @@ namespace Presentación
             this.botonAceptar.Focus();
         }
 
+        ///<summary>
+        ///Coprueba que todo este completo y en orden, sino, marca los campos que fallan y sino cierra el formulario
+        ///</summary>
         private void botonAceptarAlta_Click(object sender, EventArgs e)
         {
             if (this.compruebaLosTextBox())
@@ -200,7 +203,9 @@ namespace Presentación
         }
 
 
-
+        ///<summary>
+        ///Marca los botones segun el Tipo Vehiculo
+        ///</summary>
         public void marcarTipoVehiculo(Vehiculo v)
         {
             if (v.Matricula==null)
@@ -223,6 +228,9 @@ namespace Presentación
             }
         }
 
+        ///<summary>
+        ///Muestra los campos referentes a Segunda Mano
+        ///</summary>
         private void botonSegMano_Click(object sender, EventArgs e)
         {
             this.matriculalb.Visible = true;
@@ -233,6 +241,9 @@ namespace Presentación
             this.fechaMatriculalb.Visible = true;
         }
 
+        ///<summary>
+        ///Oculta los campos referentes a Segunda Mano
+        ///</summary>
         private void botonNuevo_CheckedChanged(object sender, EventArgs e)
         {
             this.matriculalb.Visible = false;
@@ -242,7 +253,9 @@ namespace Presentación
             this.fechaMatriculatb.Enabled = false;
             this.fechaMatriculalb.Visible = false;
         }
-
+        ///<summary>
+        ///Devuelve el Vehiculo de esta clase
+        ///</summary>
         public Vehiculo debVehiculo() {
             return this.vehiculo;
         }

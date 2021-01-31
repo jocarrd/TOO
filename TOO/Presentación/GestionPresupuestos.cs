@@ -53,6 +53,9 @@ namespace Presentación
             this.botonEliminar.Enabled = false;
          }
 
+        ///<summary>
+        ///Coprueba que todo este completo y en orden, sino, marca los campos que fallan y sino cierra el formulario
+        ///</summary>
         private void botonAceptar_Click(object sender, EventArgs e)
         {
 
@@ -115,6 +118,9 @@ namespace Presentación
             return false;
         }
 
+        ///<summary>
+        ///Dado un string, obtiene el Estado del Presupuesto
+        ///</summary>
         public EstadoPresupuesto estadoPesupuesto(String a)
         {
             if (a.Equals("Aceptado"))
@@ -148,11 +154,17 @@ namespace Presentación
             }
         }
 
+        ///<summary>
+        ///Devuelve el Presupuesto de esta clase
+        ///</summary>
         public Presupuesto devPresupuesto()
         {
             return this.presupuesto;
         }
 
+        ///<summary>
+        ///Devuelve la Lista de Vehiculos de esta clase
+        ///</summary>
         public List<Vehiculo> devVehiculos()
         {
             return this.v;
