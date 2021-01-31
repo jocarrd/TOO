@@ -13,30 +13,56 @@ namespace Presentación
     public partial class RecorridoCliente : Form
     {
         private List<ModeloDominio.Cliente> li;
-        private int indice;
+        BindingSource b;
 
         public RecorridoCliente(List<ModeloDominio.Cliente> li)
         {
             InitializeComponent();
             this.li = li;
-            this.indice = 0;
-            this.dnitb.Text = li[indice].Dni;
+            b = new BindingSource();
+            b.DataSource = li;
+            bindingNavigator1.BindingSource = b;
+            ModeloDominio.Cliente c = b.Current as ModeloDominio.Cliente;
 
-            string[] nomApell = li[indice].Nombre.Split(' ');
-            if (nomApell.Length == 2)
+            dnitb.Text = c.Dni;
+            String s = c.Nombre;
+            string[] subs = s.Split(' ');
+            if (subs.Length>1)
             {
-                this.nombretb.Text = nomApell[0];
+                this.nombretb.Text = subs[0];
+                this.nombretb.Text = subs[1];
             }
-
-            if (li[indice].PresupuestoList.Count>0 && li[indice].PresupuestoList[0].Cantidad.ToString()!=null)
+            else
             {
-                this.importetb.Text = li[indice].PresupuestoList[0].Cantidad.ToString();
-            }      
+                this.nombretb.Text = subs[0];
+            }
+            if (c.PresupuestoList.Count>0)
+            {
+                this.importetb.Text = c.PresupuestoList[0].Cantidad.ToString()+"€";
+            }
+            
         }
 
         private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
+            ModeloDominio.Cliente c = b.Current as ModeloDominio.Cliente;
 
+            dnitb.Text = c.Dni;
+            String s = c.Nombre;
+            string[] subs = s.Split(' ');
+            if (subs.Length > 1)
+            {
+                this.nombretb.Text = subs[0];
+                this.nombretb.Text = subs[1];
+            }
+            else
+            {
+                this.nombretb.Text = subs[0];
+            }
+            if (c.PresupuestoList.Count > 0)
+            {
+                this.importetb.Text = c.PresupuestoList[0].Cantidad.ToString() + "€";
+            }
         }
     }
 }

@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecorridoCliente));
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dnitb = new System.Windows.Forms.TextBox();
+            this.nombretb = new System.Windows.Forms.TextBox();
+            this.Apellidostb = new System.Windows.Forms.TextBox();
+            this.importetb = new System.Windows.Forms.TextBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -42,17 +50,73 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dnitb = new System.Windows.Forms.TextBox();
-            this.nombretb = new System.Windows.Forms.TextBox();
-            this.Apellidostb = new System.Windows.Forms.TextBox();
-            this.importetb = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(75, 99);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "DNI:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(75, 172);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(69, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nombre:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(75, 252);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(77, 20);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Apellidos:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(75, 340);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 20);
+            this.label4.TabIndex = 5;
+            this.label4.Text = "Importe:";
+            // 
+            // dnitb
+            // 
+            this.dnitb.Location = new System.Drawing.Point(220, 99);
+            this.dnitb.Name = "dnitb";
+            this.dnitb.Size = new System.Drawing.Size(139, 26);
+            this.dnitb.TabIndex = 6;
+            // 
+            // nombretb
+            // 
+            this.nombretb.Location = new System.Drawing.Point(220, 172);
+            this.nombretb.Name = "nombretb";
+            this.nombretb.Size = new System.Drawing.Size(139, 26);
+            this.nombretb.TabIndex = 7;
+            // 
+            // Apellidostb
+            // 
+            this.Apellidostb.Location = new System.Drawing.Point(220, 252);
+            this.Apellidostb.Name = "Apellidostb";
+            this.Apellidostb.Size = new System.Drawing.Size(139, 26);
+            this.Apellidostb.TabIndex = 8;
+            // 
+            // importetb
+            // 
+            this.importetb.Location = new System.Drawing.Point(220, 340);
+            this.importetb.Name = "importetb";
+            this.importetb.Size = new System.Drawing.Size(139, 26);
+            this.importetb.TabIndex = 9;
             // 
             // bindingNavigator1
             // 
@@ -80,7 +144,7 @@
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
             this.bindingNavigator1.Size = new System.Drawing.Size(466, 33);
-            this.bindingNavigator1.TabIndex = 1;
+            this.bindingNavigator1.TabIndex = 10;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
@@ -170,75 +234,12 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "DNI:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 172);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nombre:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 252);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 20);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Apellidos:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(75, 340);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Importe:";
-            // 
-            // dnitb
-            // 
-            this.dnitb.Location = new System.Drawing.Point(220, 99);
-            this.dnitb.Name = "dnitb";
-            this.dnitb.Size = new System.Drawing.Size(139, 26);
-            this.dnitb.TabIndex = 6;
-            // 
-            // nombretb
-            // 
-            this.nombretb.Location = new System.Drawing.Point(220, 172);
-            this.nombretb.Name = "nombretb";
-            this.nombretb.Size = new System.Drawing.Size(139, 26);
-            this.nombretb.TabIndex = 7;
-            // 
-            // Apellidostb
-            // 
-            this.Apellidostb.Location = new System.Drawing.Point(220, 252);
-            this.Apellidostb.Name = "Apellidostb";
-            this.Apellidostb.Size = new System.Drawing.Size(139, 26);
-            this.Apellidostb.TabIndex = 8;
-            // 
-            // importetb
-            // 
-            this.importetb.Location = new System.Drawing.Point(220, 340);
-            this.importetb.Name = "importetb";
-            this.importetb.Size = new System.Drawing.Size(139, 26);
-            this.importetb.TabIndex = 9;
-            // 
             // RecorridoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(466, 450);
+            this.Controls.Add(this.bindingNavigator1);
             this.Controls.Add(this.importetb);
             this.Controls.Add(this.Apellidostb);
             this.Controls.Add(this.nombretb);
@@ -247,7 +248,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.bindingNavigator1);
             this.Name = "RecorridoCliente";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
@@ -259,7 +259,14 @@
         }
 
         #endregion
-
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox dnitb;
+        private System.Windows.Forms.TextBox nombretb;
+        private System.Windows.Forms.TextBox Apellidostb;
+        private System.Windows.Forms.TextBox importetb;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -272,13 +279,5 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox dnitb;
-        private System.Windows.Forms.TextBox nombretb;
-        private System.Windows.Forms.TextBox Apellidostb;
-        private System.Windows.Forms.TextBox importetb;
     }
 }
